@@ -61,6 +61,13 @@ dialog{border:1px solid var(--line);border-radius:22px;padding:30px;background:#
 :root[data-theme=dark] .news-item:first-child .category,:root[data-theme=dark] .news-item:first-child .text-button{color:var(--accent)}
 :root[data-theme=dark] .joke-question{color:var(--soft-ink)}:root[data-theme=dark] .joke-answer{color:var(--muted)}
 :root[data-theme=dark] .live-badge{background:#21392f;color:#99d9b4}
+
+/* A compact briefing leaves more room for the student's own day. */
+@media(min-width:761px){.dashboard-grid{grid-template-columns:minmax(0,1.18fr) minmax(305px,1fr)}}
+.news-card{padding:24px}.news-card .section-subtitle{margin-bottom:12px}.news-item{padding:16px 0;gap:8px}.news-item h3{font-size:17px;line-height:1.35}.news-item:first-child{padding:19px}.news-item:first-child h3{font-size:21px}.news-date{margin:6px 0}.news-summary{font-size:12px;line-height:1.65}.news-item:first-child .news-summary{font-size:12px}
+.article-image{float:right;width:112px;margin:3px 0 8px 13px}.article-image img{width:112px;height:76px;min-height:0;max-height:76px;aspect-ratio:auto;border-radius:8px}.article-image figcaption{display:none}.news-item:has(.news-summary.expanded) .article-image figcaption{display:block}.source-line{clear:both}.compact-summary:not(.expanded){display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.news-expand{font-size:10px;color:var(--accent);padding:4px 0;text-decoration:underline;text-underline-offset:3px}.news-item:first-child .news-expand{color:#d7dcec}.news-item:has(.compact-summary:not(.expanded)) .fine-print{display:none}
+.tasks-card{padding:23px}.tasks-total{flex-shrink:0;background:var(--accent-light);color:var(--accent);font-size:10px;border-radius:20px;padding:5px 10px;font-weight:650}.tasks-card .section-subtitle{margin-bottom:12px}.task-column-labels{display:grid;grid-template-columns:1fr 66px 30px;gap:7px;color:var(--muted);font-size:9px;padding-left:1px;margin-bottom:4px}.task-subject{padding:11px 0;border-bottom:1px solid var(--line)}.task-subject:last-child{border-bottom:0}.task-subject-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:7px}.task-subject-heading h3{font-size:12px;font-weight:650;display:flex;align-items:center;gap:7px;letter-spacing:-.1px}.subject-mark{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:6px;font-size:10px;background:var(--accent-light);color:var(--accent)}.task-subject:nth-child(2n) .subject-mark{background:var(--soft-alt);color:var(--soft-ink)}.task-subject:nth-child(3n) .subject-mark{background:var(--soft-third);color:var(--soft-ink)}.task-count{font-size:9px;color:var(--muted);white-space:nowrap}.task-form fieldset{display:grid;grid-template-columns:minmax(0,1fr) 66px 30px;gap:7px;align-items:center}.task-form input{width:100%;min-width:0;height:33px;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font-size:11px}.task-form input::placeholder{color:var(--muted);opacity:.85}.task-form input[type=number]{padding:7px 6px}.task-add{background:var(--accent-light);color:var(--accent);height:30px;width:30px;border-radius:8px;font-size:20px;line-height:1}.task-add:hover{filter:brightness(.95)}.task-list{list-style:none;margin:0;padding:0}.task-entry{display:flex;align-items:flex-start;gap:7px;padding:7px 0;min-width:0}.task-entry label{display:flex;align-items:flex-start;gap:8px;flex:1;min-width:0;font-size:11px;cursor:pointer;line-height:1.6}.task-entry input[type=checkbox]{flex-shrink:0;accent-color:var(--accent);width:14px;height:14px;margin:2px 0 0}.task-title{overflow-wrap:anywhere}.task-entry small{display:block;color:var(--muted);font-size:9px}.task-time{flex-shrink:0;font-size:9px;white-space:nowrap;color:var(--muted);padding-top:2px}.task-delete{font-size:16px;line-height:1;padding:3px 4px;color:var(--muted)}.task-delete:hover{color:var(--accent)}.task-done .task-title{text-decoration:line-through;color:var(--muted)}.completed-tasks{margin-top:12px;border-top:1px solid var(--line);padding-top:12px}.completed-tasks summary{font-size:11px;color:var(--muted);cursor:pointer}.task-help{margin-top:10px}.tasks-card .form-status{font-size:10px;min-height:0}.fact-attribution{font-size:9px!important;opacity:.85;margin-top:12px}.fact-section #fact-text{font-size:12px;line-height:1.8}
+@media(max-width:760px){.dashboard-grid .card{grid-row:auto}.dashboard-grid .tasks-card{grid-row:1}.dashboard-grid .news-card{grid-row:2}.news-card{padding:21px}.tasks-card{padding:21px}.article-image,.article-image img{width:92px}.article-image img{height:65px;max-height:65px}.task-subject-heading h3{font-size:12px}}
 </style>
   
 </head>
@@ -93,10 +100,11 @@ dialog{border:1px solid var(--line);border-radius:22px;padding:30px;background:#
         <section class="card vocabulary-card" aria-labelledby="vocab-heading"><div class="section-heading"><div><p class="section-kicker">ONE NEW WORD, EVERY DAY</p><h2 id="vocab-heading">Word of the day</h2></div><span id="vocab-kind" class="vocab-kind"></span></div><div class="vocab-word-row"><h3 id="vocab-word"></h3><span id="vocab-part"></span></div><p id="vocab-meaning"></p><p id="vocab-example" class="vocab-example"></p><a id="vocab-source" class="text-button" target="_blank" rel="noopener noreferrer">Dictionary →</a></section>
         </div>
         <div class="right-column">
+          <section class="card tasks-card" id="tasks-panel" aria-labelledby="tasks-heading"><div class="section-heading"><div><p class="section-kicker">A LITTLE PLAN, A LITTLE PROGRESS</p><h2 id="tasks-heading">Your to-do list</h2></div><span id="tasks-total" class="tasks-total">0 to do</span></div><p class="section-subtitle">Classes, projects, and everything else.</p><div class="task-column-labels" aria-hidden="true"><span>Task</span><span>Time · min</span></div><div id="task-groups"></div><details id="completed-tasks" class="completed-tasks" hidden><summary id="completed-tasks-count">Completed (0)</summary><ul id="completed-task-list" class="task-list"></ul></details><p class="fine-print task-help">Time estimates are optional. Unfinished tasks carry over.</p><p id="tasks-status" class="form-status" role="status"></p></section>
           <section class="card exercise-card" id="movement-panel" aria-labelledby="exercise-heading"><div class="section-heading"><div><p class="section-kicker">SHOW UP FOR YOURSELF</p><h2 id="exercise-heading">Daily movement</h2></div><span class="movement-icon"><svg><use href="#i-move"/></svg></span></div><p class="section-subtitle">Two small sets. One habit worth keeping.</p><div class="exercise-options"><label class="exercise-option"><input type="checkbox" id="pushups"><span class="check-visual" aria-hidden="true"></span><span><strong>25</strong><span>push-ups</span></span></label><label class="exercise-option"><input type="checkbox" id="situps"><span class="check-visual" aria-hidden="true"></span><span><strong>25</strong><span>sit-ups</span></span></label></div><div class="exercise-footer"><span id="exercise-message" role="status"></span><span id="exercise-progress">0 / 2</span></div><div class="week-heading"><span>YOUR LAST 7 DAYS</span><span id="streak" class="streak-pill">0 check-ins</span></div><div id="exercise-week" class="exercise-week" aria-label="Exercise history for the last seven days"></div><div class="history-footer"><span><i class="legend-dot"></i> AM / PM check-ins</span><button class="text-button" id="exercise-history-button">View history <svg><use href="#i-arrow"/></svg></button></div><p class="fine-print">Resets at 7 AM & 7 PM. Refreshing keeps your progress.</p><div class="running-block"><div class="running-heading"><h3>Went for a run?</h3><span id="run-week-stat">0 runs this week</span></div><p class="running-help">About 3 runs a week. Log one whenever you go.</p><form id="run-form" novalidate><fieldset class="entry-fields" data-requires-app disabled><div class="run-fields"><div><label for="run-distance">Distance</label><div class="distance-input"><input id="run-distance" type="number" min="0.01" max="1000" step="any" placeholder="3.0" required><label class="sr-only" for="run-unit">Distance unit</label><select id="run-unit"><option value="mi">mi</option><option value="km">km</option></select></div></div><div><label for="run-time">Time (optional)</label><input id="run-time" type="text" maxlength="15" placeholder="24:30" aria-describedby="run-time-help"></div></div><div class="run-save-row"><label class="sr-only" for="run-date">Date of run</label><input id="run-date" type="date" required><button class="primary-button" type="submit">Log run →</button></div><p id="run-time-help" class="fine-print">Time: minutes or mm:ss. Your log is saved.</p><p id="run-status" class="form-status" role="status"></p></fieldset></form><div id="recent-runs"></div><button id="runs-history-button" class="text-button">All your runs →</button></div></section>
           <section class="card agenda-card" aria-labelledby="agenda-heading"><div class="section-heading"><div><p class="section-kicker">YOUR SHEET · NEXT 7 DAYS</p><h2 id="agenda-heading">Coming up</h2></div><svg aria-hidden="true"><use href="#i-calendar"/></svg></div><p id="agenda-status" class="agenda-status" role="status">Checking your Sheet…</p><div id="upcoming-events"></div><button class="text-button" id="agenda-calendar-button">All your dates →</button></section>
           <section class="card break-card" aria-labelledby="break-heading"><div class="section-heading"><p class="section-kicker">SOMETHING TO LOOK FORWARD TO</p><svg aria-hidden="true"><use href="#i-calendar"/></svg></div><h2 id="break-heading" class="sr-only">School breaks</h2><div id="break-content"></div><button class="text-button light" id="break-button">Your school breaks <svg><use href="#i-arrow"/></svg></button><div class="break-doodle" aria-hidden="true"></div></section>
-        <section class="card small-delights" aria-labelledby="delights-heading"><div class="delights-heading"><p class="section-kicker">FRESH AT 7 AM & 7 PM</p><h2 id="delights-heading">A little fuel for your day</h2></div><div class="delight quote-section"><div class="delight-label"><span class="delight-symbol">“</span><span>A LITTLE MOMENTUM</span></div><blockquote id="motivation-quote"></blockquote><cite id="motivation-author"></cite></div><div class="delight joke-section"><div class="delight-label"><span class="delight-symbol">:)</span><span>THIS CHECK-IN’S SMALL LAUGH</span></div><p id="joke-question" class="joke-question"></p><button id="joke-reveal" class="text-button">I’ll bite. Tell me →</button><p id="joke-answer" class="joke-answer" hidden></p></div><div class="delight fact-section"><div class="delight-label"><span class="delight-symbol">✦</span><span>DOWN A LITTLE RABBIT HOLE</span></div><h3 id="fact-title"></h3><p id="fact-text"></p><a id="fact-source" class="text-button" target="_blank" rel="noopener noreferrer">Read more →</a></div></section>
+        <section class="card small-delights" aria-labelledby="delights-heading"><div class="delights-heading"><p class="section-kicker">FRESH AT 7 AM & 7 PM</p><h2 id="delights-heading">A little fuel for your day</h2></div><div class="delight quote-section"><div class="delight-label"><span class="delight-symbol">“</span><span>A LITTLE MOMENTUM</span></div><blockquote id="motivation-quote"></blockquote><cite id="motivation-author"></cite></div><div class="delight joke-section"><div class="delight-label"><span class="delight-symbol">:)</span><span>THIS CHECK-IN’S SMALL LAUGH</span></div><p id="joke-question" class="joke-question"></p><button id="joke-reveal" class="text-button">I’ll bite. Tell me →</button><p id="joke-answer" class="joke-answer" hidden></p></div><div class="delight fact-section"><div class="delight-label"><span class="delight-symbol">✦</span><span>DOWN A LITTLE RABBIT HOLE</span></div><h3 id="fact-title"></h3><p id="fact-text"></p><p id="fact-source" class="fact-attribution"></p></div></section>
         </div>
       </div><section class="card youtube-card" id="youtube-panel" aria-labelledby="youtube-heading"><div class="section-heading"><div><p class="section-kicker">MAKE ROOM FOR YOUR OWN LIFE</p><h2 id="youtube-heading">A little less YouTube</h2></div><span id="youtube-streak" class="streak-pill">0 check-in streak</span></div><div class="youtube-check-row"><label class="youtube-option"><input type="checkbox" id="no-youtube"><span class="check-visual" aria-hidden="true"></span><span><strong id="youtube-label">No YouTube last night</strong><span id="youtube-period"></span></span></label><p id="youtube-message" role="status"></p></div><div class="youtube-bottom"><p class="fine-print">7 AM: previous night · 7 PM: daytime. Self-reported.</p><button class="text-button" id="youtube-history-button">Your streak history →</button></div></section>
       <footer class="site-footer"><span class="footer-brand">Matthew Wei <small>A little more intentional.</small></span><span>7 AM & 7 PM · Eastern Time <button class="text-button" id="about-button">About your dashboard</button></span></footer>
@@ -106,7 +114,7 @@ dialog{border:1px solid var(--line);border-radius:22px;padding:30px;background:#
   <dialog id="runs-dialog" class="wide-dialog"><div class="dialog-header"><div><p class="eyebrow">A RECORD OF SHOWING UP</p><h2>Your running log</h2></div><button class="icon-button close-dialog" aria-label="Close running log">✕</button></div><div id="runs-totals" class="history-stats"></div><div id="runs-list"></div><p class="field-help">Log runs whenever you go. Distances stay in the unit you entered; totals are converted to miles.</p></dialog>
   <dialog id="youtube-dialog" class="wide-dialog"><div class="dialog-header"><div><p class="eyebrow">ONE HALF-DAY AT A TIME</p><h2>Your no-YouTube history</h2></div><button class="icon-button close-dialog" aria-label="Close no-YouTube history">✕</button></div><p class="field-help">Morning check-ins cover the previous night. Evening check-ins cover the daytime. Correct a past entry here if you need to.</p><div id="youtube-history"></div></dialog>
   <dialog id="history-dialog" class="wide-dialog"><div class="dialog-header"><div><p class="eyebrow">CONSISTENCY, ONE CHECK-IN AT A TIME</p><h2>Your movement history</h2></div><button class="icon-button close-dialog" aria-label="Close exercise history">✕</button></div><div id="history-stats" class="history-stats"></div><div class="month-controls"><button class="icon-button" id="history-prev" aria-label="Previous month">←</button><label class="sr-only" for="history-month">History month</label><input type="month" id="history-month"><button class="icon-button" id="history-next" aria-label="Next month">→</button></div><div class="calendar-weekdays"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div id="history-calendar" class="history-calendar"></div><p class="history-legend"><span><i class="legend-dot complete"></i> Complete</span><span><i class="legend-dot partial"></i> One set</span><span><i class="legend-dot empty"></i> No entry</span></p><div id="history-day"></div><p class="field-help">Tap a day to review or correct your self-reported sets. Each dot is one morning or evening check-in. Future check-ins can’t be logged.</p></dialog>
-  <dialog id="settings-dialog"><div class="dialog-header"><div><p class="eyebrow">MAKE IT YOURS</p><h2>Dashboard settings</h2></div><button class="icon-button close-dialog" aria-label="Close settings">✕</button></div><p>Check-ins use Eastern Time, including daylight saving time.</p><form id="settings-form"><label for="sheet-url">Google Sheets calendar</label><input id="sheet-url" type="url" placeholder="https://docs.google.com/spreadsheets/d/…"><p class="field-help">Optional. This first version can read a public or published sheet. Don’t publish a private calendar just to connect it—use manual events instead. Google sign-in and private Drive access aren’t connected yet.</p><details><summary>Sheet format</summary><p>Your current MON–SUN weekly grid is supported directly, with 2026–2027 dates. Times without AM/PM stay as written. A list format is also supported: <code>title,date,time,notes,type</code>. Date: <code>2026-11-20</code>. Time: <code>15:00</code> (Eastern), or blank for all day. Set type to <code>break</code> to include an event in the countdown.</p></details><button type="submit" class="primary-button">Save & connect</button><p id="settings-status" role="status"></p></form><hr><h3>Your data stays here</h3><p>Exercise progress, running logs, no-YouTube history, good moments and manual events are saved on this browser and device. When updating a downloaded file, download a backup from the old file first, then restore it here if your history doesn’t appear. Export a backup before clearing browser data. There is no account or cloud sync yet.</p><button class="secondary-button" id="export-button">Download a backup</button><label class="secondary-button import-label" for="import-file">Restore a backup<input id="import-file" type="file" accept="application/json,.json" hidden></label></dialog>
+  <dialog id="settings-dialog"><div class="dialog-header"><div><p class="eyebrow">MAKE IT YOURS</p><h2>Dashboard settings</h2></div><button class="icon-button close-dialog" aria-label="Close settings">✕</button></div><p>Check-ins use Eastern Time, including daylight saving time.</p><form id="settings-form"><label for="sheet-url">Google Sheets calendar</label><input id="sheet-url" type="url" placeholder="https://docs.google.com/spreadsheets/d/…"><p class="field-help">Optional. This first version can read a public or published sheet. Don’t publish a private calendar just to connect it—use manual events instead. Google sign-in and private Drive access aren’t connected yet.</p><details><summary>Sheet format</summary><p>Your current MON–SUN weekly grid is supported directly, with 2026–2027 dates. Times without AM/PM stay as written. A list format is also supported: <code>title,date,time,notes,type</code>. Date: <code>2026-11-20</code>. Time: <code>15:00</code> (Eastern), or blank for all day. Set type to <code>break</code> to include an event in the countdown.</p></details><button type="submit" class="primary-button">Save & connect</button><p id="settings-status" role="status"></p></form><hr><h3>Your data stays here</h3><p>Tasks, exercise progress, running logs, no-YouTube history, good moments and manual events are saved on this browser and device. When updating a downloaded file, download a backup from the old file first, then restore it here if your history doesn’t appear. Export a backup before clearing browser data. There is no account or cloud sync yet.</p><button class="secondary-button" id="export-button">Download a backup</button><label class="secondary-button import-label" for="import-file">Restore a backup<input id="import-file" type="file" accept="application/json,.json" hidden></label></dialog>
 
   <dialog id="event-dialog"><div class="dialog-header"><div><p class="eyebrow">SOMETHING AHEAD</p><h2>Add an event</h2></div><button class="icon-button close-dialog" aria-label="Close add event">✕</button></div><form id="event-form"><label for="event-title">What’s happening?</label><input id="event-title" name="title" maxlength="200" placeholder="Dinner with friends" required><div class="form-row"><div><label for="event-date">Date</label><input id="event-date" type="date" name="date" required></div><div><label for="event-time">Time · Eastern (optional)</label><input id="event-time" type="time" name="time"></div></div><label for="event-notes">Notes (optional)</label><input id="event-notes" name="notes" maxlength="1000" placeholder="Anything worth remembering"><label class="checkbox-label"><input type="checkbox" name="isBreak"> This is a school break — include in countdown</label><button type="submit" class="primary-button">Add to my calendar</button></form></dialog>
 
@@ -114,7 +122,7 @@ dialog{border:1px solid var(--line);border-radius:22px;padding:30px;background:#
 
   <dialog id="moments-dialog"><div class="dialog-header"><div><p class="eyebrow">THE GOOD ADDS UP</p><h2>Your little collection</h2></div><button class="icon-button close-dialog" aria-label="Close good moments">✕</button></div><div id="moments-list"></div></dialog>
 
-  <dialog id="about-dialog"><div class="dialog-header"><h2>A calmer kind of dashboard.</h2><button class="icon-button close-dialog" aria-label="Close about">✕</button></div><p>Your morning and evening reset: a little perspective, a little movement, and something good to keep.</p><h3>What works now</h3><p>Exercise tracking and a streak for consecutive completed check-in windows, a personal good-moments journal, manual calendar events, school-break dates, running records, a separate no-YouTube streak, a daily Duolingo reminder, a daily vocabulary word, and a twice-daily quote, joke, and sourced fact.</p><h3>Live connections</h3><p>News from BBC, NPR, Ars Technica, The Verge, science publishers and college reporting, public Google Sheets work when their providers can be reached. The downloaded dashboard uses a public-feed service for news and Google’s own API for the Sheet; those services can have delays or outages. Failures and old data are labeled. News selection uses automated weighted scoring and source-date checks. It can miss good stories; shortfalls are shown without filler.</p><h3>About the schedule</h3><p>A new check-in opens at 7 a.m. and 7 p.m. Eastern. An open page checks news and your Sheet within 30 seconds of each 7 AM / 7 PM reset; background source research may take a few minutes to finish. Colors switch to dark mode at 7 PM and back to light at 7 AM; reopening catches up. Exercise gets a fresh window. Your journal is kept and the quote, joke, rabbit hole, and soft color palette shuffle at each check-in. Vocabulary changes daily. Running and no-YouTube logs are kept. The server also checks feeds while running. This local version does not send notifications or run when its host is stopped. A hosted deployment is needed for always-on access.</p><h3>Your privacy</h3><p>The Duolingo reminder is self-reported and links to your profile; it does not read your Duolingo account. Personal entries stay in this browser’s local storage. No account, analytics, or cloud sync is included. Use Settings to back up your data.</p></dialog>
+  <dialog id="about-dialog"><div class="dialog-header"><h2>A calmer kind of dashboard.</h2><button class="icon-button close-dialog" aria-label="Close about">✕</button></div><p>Your morning and evening reset: a little perspective, a little movement, and something good to keep.</p><h3>What works now</h3><p>Exercise tracking and a streak for consecutive completed check-in windows, a personal good-moments journal, manual calendar events, school-break dates, running records, a separate no-YouTube streak, a daily Duolingo reminder, a challenging daily vocabulary word, class to-do lists with time estimates, and a twice-daily quote, joke, and fun fact.</p><h3>Live connections</h3><p>News from BBC, NPR, Ars Technica, The Verge, science publishers and college reporting, public Google Sheets work when their providers can be reached. The downloaded dashboard uses a public-feed service for news and Google’s own API for the Sheet; those services can have delays or outages. Failures and old data are labeled. News selection uses automated weighted scoring and source-date checks. It can miss good stories; shortfalls are shown without filler.</p><h3>About the schedule</h3><p>A new check-in opens at 7 a.m. and 7 p.m. Eastern. An open page checks news and your Sheet within 30 seconds of each 7 AM / 7 PM reset; background source research may take a few minutes to finish. Colors switch to dark mode at 7 PM and back to light at 7 AM; reopening catches up. Exercise gets a fresh window. Your journal is kept and the quote, joke, rabbit hole, and soft color palette shuffle at each check-in. Vocabulary changes daily. Running and no-YouTube logs are kept. The server also checks feeds while running. This local version does not send notifications or run when its host is stopped. A hosted deployment is needed for always-on access.</p><h3>Your privacy</h3><p>The Duolingo reminder is self-reported and links to your profile; it does not read your Duolingo account. Personal entries stay in this browser’s local storage. No account, analytics, or cloud sync is included. Use Settings to back up your data.</p></dialog>
   <div id="toast" class="toast" role="status" hidden></div>
 <script>(()=>{globalThis.DAYMARK_STANDALONE=true;globalThis.DAYMARK_RESEARCHED=true;globalThis.DAYMARK_SNAPSHOT={"fetchedAt":"2026-10-14T18:28:52.176Z","news":{"schemaVersion":2,"mode":"researched","editionKey":"2026-10-14-am","stories":[{"id":"https://www.theverge.com/science/1011127/ai-weather-forecast-microsoft","url":"https://www.theverge.com/science/1011127/ai-weather-forecast-microsoft","title":"Microsoft has a new machine learning tool to improve weather forecasts","summary":"Old-school physics-based weather forecasting and even new AI models typically become less reliable beyond two weeks, a problem Microsoft claims to have solved using computer methods trained to find patterns. Researchers with the company say they’ve found a new, cost-effective way to make more accurate weather forecasts two to six weeks in advance — allowing farmers and emergency responders to plan ahead with greater certainty. The findings were published today in the journal Nature, and the tool is now open-source software. Microsoft joins Google, Nvidia, and other companies developing AI tools for weather forecasting. Instead of creating a new standalone weather model, Microsoft’s latest research in this realm uses computer methods trained to find patterns to correct bias in existing models.","publishedAt":"2026-10-14T16:05:21.000Z","source":"The Verge","category":"Technology","coverage":"Source report","score":53.75,"dimensions":{"surprise":15,"consequence":60,"novelty":85,"relevance":90},"freshness":"24h","displayTitle":"A new method aims to make weather forecasts useful two to six weeks ahead","originalSummary":"Old-school physics-based weather forecasting and even new AI models typically become less reliable beyond two weeks, a problem Microsoft claims to have solved using machine learning. Researchers with the company say they've found a new, cost-effective way to make more accurate weather forecasts two to six weeks in advance - allowing farmers and emergency responders [&#8230;]","whyMatters":null,"originalPublishedAt":"2026-10-14T16:05:21.000Z","eventDate":"2026-10-14","eventKind":"Published","eventDateVerified":true,"dateEvidence":"The findings were published today in the journal Nature, and the tool is now open-source software.","dateEvidenceUrl":"https://www.theverge.com/science/1011127/ai-weather-forecast-microsoft","eventRevision":"2026-10-14:Published","majorUpdateVerified":false,"explanation":"Old-school physics-based weather forecasting and even new AI models typically become less reliable beyond two weeks, a problem Microsoft claims to have solved using computer methods trained to find patterns. Researchers with the company say they’ve found a new, cost-effective way to make more accurate weather forecasts two to six weeks in advance — allowing farmers and emergency responders to plan ahead with greater certainty. The findings were published today in the journal Nature, and the tool is now open-source software. Microsoft joins Google, Nvidia, and other companies developing AI tools for weather forecasting. Instead of creating a new standalone weather model, Microsoft’s latest research in this realm uses computer methods trained to find patterns to correct bias in existing models.","summaryKind":"Source excerpt","imageUrl":null,"imageCaption":"","imageSourceUrl":"https://www.theverge.com/science/1011127/ai-weather-forecast-microsoft","checkedAt":"2026-10-14T18:28:52.176Z"},{"id":"https://science.nasa.gov/missions/chandra/nasas-chandra-breaks-down-treble-clefs-galaxy-cluster-collision/","url":"https://science.nasa.gov/missions/chandra/nasas-chandra-breaks-down-treble-clefs-galaxy-cluster-collision/","title":"NASA’s Chandra Breaks Down ‘Treble Clef’s’ Galaxy Cluster Collision","summary":"Astronomers have used NASA’s Chandra X-ray Observatory to break down the cause of a remarkable formation of radio waves they have nicknamed the “Treble Clef” because its distinct shape strongly resembles the musical symbol. The researchers discovered the Treble Clef is likely caused by an outburst from a supermassive black hole, followed by a collision of two galaxy clusters (large groups of galaxies). A paper describing the findings, led by Andrea Botteon of the National Institute for Astrophysics, or INAF, in Italy, published Wednesday in the Astronomy & Astrophysics journal.","publishedAt":"2026-10-14T16:46:58.000Z","source":"NASA","category":"Science","coverage":"Institution announcement","score":47.25,"dimensions":{"surprise":65,"consequence":20,"novelty":85,"relevance":10},"freshness":"24h","displayTitle":"Colliding galaxy clusters may explain a cosmic “treble clef”","originalSummary":"Astronomers have used NASA’s Chandra X-ray Observatory to break down the cause of a remarkable formation of radio waves they have nicknamed the “Treble Clef” because its distinct shape strongly resembles the musical symbol. The researchers discovered the Treble Clef is likely caused by an outburst from a supermassive black hole, followed by a collision […]","whyMatters":null,"originalPublishedAt":"2026-10-14T16:46:58.000Z","eventDate":"2026-10-14","eventKind":"Published","eventDateVerified":true,"dateEvidence":"A paper describing the findings, led by Andrea Botteon of the National Institute for Astrophysics, or INAF, in Italy, published Wednesday in the Astronomy & Astrophysics journal.","dateEvidenceUrl":"https://science.nasa.gov/missions/chandra/nasas-chandra-breaks-down-treble-clefs-galaxy-cluster-collision/","eventRevision":"2026-10-14:Published","majorUpdateVerified":false,"explanation":"Astronomers have used NASA’s Chandra X-ray Observatory to break down the cause of a remarkable formation of radio waves they have nicknamed the “Treble Clef” because its distinct shape strongly resembles the musical symbol. The researchers discovered the Treble Clef is likely caused by an outburst from a supermassive black hole, followed by a collision of two galaxy clusters (large groups of galaxies). A paper describing the findings, led by Andrea Botteon of the National Institute for Astrophysics, or INAF, in Italy, published Wednesday in the Astronomy & Astrophysics journal.","summaryKind":"Source excerpt","imageUrl":"https://assets.science.nasa.gov/content/dam/science/missions/chandra/2026/trebleclef.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg","imageCaption":"","imageSourceUrl":"https://science.nasa.gov/missions/chandra/nasas-chandra-breaks-down-treble-clefs-galaxy-cluster-collision/","checkedAt":"2026-10-14T18:28:52.176Z"},{"id":"https://www.bbc.co.uk/news/articles/c305649p2d6o","url":"https://www.bbc.co.uk/news/articles/c305649p2d6o","title":"'It's rough out here': Americans struggle with rising inflation","summary":"Kathryn Vaughn returned to work at a rural West Tennessee elementary school this autumn with a lot more stress on her plate than in previous years. The 46-year-old, like many Americans, is juggling how to provide for her family with rising costs of, as she described it, \"everything\". She spends her days working three different jobs to support her family of four, including as a primary school art teacher, as US inflation continues to rise. Inflation in September was above forecasts. Over the past 12 months, prices rose by 3.7% - up from 3.4% in the 12 months to August, according to officials numbers released on Wednesday.","publishedAt":"2026-10-14T15:57:11.430Z","source":"BBC News","category":"U.S.","coverage":"Source report","score":36.75,"dimensions":{"surprise":15,"consequence":90,"novelty":15,"relevance":10},"freshness":"24h","displayTitle":"'It's rough out here': Americans struggle with rising inflation","originalSummary":"US inflation continues to rise, and this month the jump was above forecasts. Here's how some are surviving.","whyMatters":null,"originalPublishedAt":"2026-10-14T15:57:11.430Z","eventDate":"2026-10-14","eventKind":"Event","eventDateVerified":true,"dateEvidence":"Over the past 12 months, prices rose by 3.7% - up from 3.4% in the 12 months to August, according to officials numbers released on Wednesday.","dateEvidenceUrl":"https://www.bbc.co.uk/news/articles/c305649p2d6o","eventRevision":"2026-10-14:Event","majorUpdateVerified":false,"explanation":"Kathryn Vaughn returned to work at a rural West Tennessee elementary school this autumn with a lot more stress on her plate than in previous years. The 46-year-old, like many Americans, is juggling how to provide for her family with rising costs of, as she described it, \"everything\". She spends her days working three different jobs to support her family of four, including as a primary school art teacher, as US inflation continues to rise. Inflation in September was above forecasts. Over the past 12 months, prices rose by 3.7% - up from 3.4% in the 12 months to August, according to officials numbers released on Wednesday.","summaryKind":"Source excerpt","imageUrl":"https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/e691/live/4f2f6b20-adf0-11f1-ad53-0d91a06f3150.jpg","imageCaption":"Image caption, Kathryn Vaughn works many odd jobs to supplement her teacher's salary","imageSourceUrl":"https://www.bbc.co.uk/news/articles/c305649p2d6o","checkedAt":"2026-10-14T18:28:52.176Z"},{"id":"https://www.npr.org/2026/10/14/nx-s1-6001398/white-house-media-ban","url":"https://www.npr.org/2026/10/14/nx-s1-6001398/white-house-media-ban","title":"CNN, MS NOW and Politico prevail against White House — for now","summary":"A federal judge ruled late Tuesday that President Trump cannot ban news organizations from covering him at the White House because he does not like the nature of their coverage — at least, not until the matter goes to a formal trial. U.S. District Court Judge Timothy J. Kelly found that Trump's decision to bar more than 70 journalists from CNN, MS NOW and Politico violated their fundamental free speech in two separate ways as well as their due process rights. Both rights are enshrined in the Bill of Rights to the U.S. Constitution. The news organizations sued last month after the Trump administration denied them access.","publishedAt":"2026-10-14T07:16:02.000Z","source":"NPR","category":"U.S.","coverage":"Source report","score":36.75,"dimensions":{"surprise":15,"consequence":90,"novelty":15,"relevance":10},"freshness":"48h","displayTitle":"Judge temporarily blocks White House bans on news outlets over their coverage","originalSummary":"A federal judge ruled late Tuesday that President Trump cannot ban news organizations from covering him at the White House because he does not like the nature of their coverage - at least, not until the matter goes to a formal trial.","whyMatters":null,"originalPublishedAt":"2026-10-14T07:16:02.000Z","eventDate":"2026-10-13","eventKind":"Event","eventDateVerified":true,"dateEvidence":"A federal judge ruled late Tuesday that President Trump cannot ban news organizations from covering him at the White House because he does not like the nature of their coverage — at least, not until the matter goes to a formal trial.","dateEvidenceUrl":"https://www.npr.org/2026/10/14/nx-s1-6001398/white-house-media-ban","eventRevision":"2026-10-13:Event","majorUpdateVerified":false,"explanation":"A federal judge ruled late Tuesday that President Trump cannot ban news organizations from covering him at the White House because he does not like the nature of their coverage — at least, not until the matter goes to a formal trial. U.S. District Court Judge Timothy J. Kelly found that Trump's decision to bar more than 70 journalists from CNN, MS NOW and Politico violated their fundamental free speech in two separate ways as well as their due process rights. Both rights are enshrined in the Bill of Rights to the U.S. Constitution. The news organizations sued last month after the Trump administration denied them access.","summaryKind":"Source excerpt","imageUrl":"https://npr.brightspotcdn.com/dims3/default/strip/false/crop/5000x2813+0+0/resize/1400/quality/85/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fe0%2F43%2F782065af4948bc749692b20c1373%2Fgettyimages-2295498318.jpg","imageCaption":"","imageSourceUrl":"https://www.npr.org/2026/10/14/nx-s1-6001398/white-house-media-ban","checkedAt":"2026-10-14T18:28:52.176Z"},{"id":"https://www.bbc.co.uk/news/articles/cw8dzg094zd9o","url":"https://www.bbc.co.uk/news/articles/cw8dzg094zd9o","title":"Cornell bans all fraternity parties over gang sex assault allegations","summary":"Cornell University is banning all parties at fraternity houses as it faces a backlash over its handling of an alleged sexual assault on campus two years ago. Last month, a woman known as Jane Doe filed a lawsuit alleging she was plied with drugs and raped by several men in 2024 at a party at a Cornell fraternity house. In a statement on Tuesday, Cornell's president, Michael Kotlikoff, announced a series of measures responding to the alleged assault, including the end to fraternity parties for the remainder of the university year. \"I am deeply sorry for the harm Jane Doe suffered in 2024, and appalled that this act of sexual violence occurred within our Cornell community,\" he said.","publishedAt":"2026-10-13T17:59:28.603Z","source":"BBC News","category":"U.S.","coverage":"Source report","score":36.75,"dimensions":{"surprise":15,"consequence":90,"novelty":15,"relevance":10},"freshness":"48h","displayTitle":"Cornell bans all fraternity parties over gang sex assault allegations","originalSummary":"The school has faced an uproar over how it handled assault allegations brought by a woman known as Jane Doe.","whyMatters":null,"originalPublishedAt":"2026-10-13T17:59:28.603Z","eventDate":"2026-10-13","eventKind":"Announced","eventDateVerified":true,"dateEvidence":"In a statement on Tuesday, Cornell's president, Michael Kotlikoff, announced a series of measures responding to the alleged assault, including the end to fraternity parties for the remainder of the university year.","dateEvidenceUrl":"https://www.bbc.co.uk/news/articles/cw8dzg094zd9o","eventRevision":"2026-10-13:Announced","majorUpdateVerified":false,"explanation":"Cornell University is banning all parties at fraternity houses as it faces a backlash over its handling of an alleged sexual assault on campus two years ago. Last month, a woman known as Jane Doe filed a lawsuit alleging she was plied with drugs and raped by several men in 2024 at a party at a Cornell fraternity house. In a statement on Tuesday, Cornell's president, Michael Kotlikoff, announced a series of measures responding to the alleged assault, including the end to fraternity parties for the remainder of the university year. \"I am deeply sorry for the harm Jane Doe suffered in 2024, and appalled that this act of sexual violence occurred within our Cornell community,\" he said.","summaryKind":"Source excerpt","imageUrl":"https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/0bfb/live/6e2d8910-c738-11f1-9a39-31b474234113.jpg","imageCaption":"","imageSourceUrl":"https://www.bbc.co.uk/news/articles/cw8dzg094zd9o","checkedAt":"2026-10-14T18:28:52.176Z"}],"fetchedAt":"2026-10-14T18:28:52.176Z","checkedAt":"2026-10-14T18:28:52.176Z","sources":["The Verge","NASA","BBC News","NPR"],"providersAvailable":17,"providersTotal":18,"research":{"rawCandidates":376,"candidatesReviewed":40,"sourcePagesRead":40,"primaryDatesChecked":14,"rejected":35,"qualifying":5,"targetCandidates":20,"method":"Live publisher feeds, original source pages, explicit event-date evidence and Crossref publication dates; automated weighted ranking; attributed source excerpts."},"selectedIds":["https://www.theverge.com/science/1011127/ai-weather-forecast-microsoft","https://science.nasa.gov/missions/chandra/nasas-chandra-breaks-down-treble-clefs-galaxy-cluster-collision/","https://www.bbc.co.uk/news/articles/c305649p2d6o","https://www.npr.org/2026/10/14/nx-s1-6001398/white-house-media-ban","https://www.bbc.co.uk/news/articles/cw8dzg094zd9o"]}};
 const TIME_ZONE = 'America/New_York';
@@ -354,6 +362,30 @@ function checkInPick(key, length, salt) {
   const lastPrevious = shuffledBag(length, contentHash(`${salt}:${cycle - 1}`)).at(-1);
   if (bag[0] === lastPrevious) [bag[0], bag[1]] = [bag[1], bag[0]];
   return bag[position];
+}
+
+const taskSubjects = [
+  { id: 'history', label: 'History', short: 'H' },
+  { id: 'english', label: 'English', short: 'E' },
+  { id: 'math', label: 'Math', short: 'M' },
+  { id: 'chinese', label: 'Chinese', short: '中' },
+  { id: 'physics', label: 'Physics', short: 'P' },
+  { id: 'other', label: 'Other · extracurriculars', short: '+' },
+];
+
+function validTask(task) {
+  return Boolean(task && typeof task.id === 'string' && task.id.length > 0
+    && taskSubjects.some(s => s.id === task.subject)
+    && typeof task.title === 'string' && task.title.trim().length > 0 && task.title.length <= 300
+    && typeof task.completed === 'boolean'
+    && (task.minutes === null || Number.isInteger(task.minutes) && task.minutes > 0 && task.minutes <= 1440)
+    && Number.isFinite(Date.parse(task.createdAt)));
+}
+
+function taskTime(minutes) {
+  if (!minutes) return '';
+  const hours = Math.floor(minutes / 60), rest = minutes % 60;
+  return hours ? `${hours}h${rest ? ` ${rest}m` : ''}` : `${minutes} min`;
 }
 
 // Shared, dependency-free parsers for public Google Sheets.
@@ -803,20 +835,126 @@ const jokes = [
 ];
 
 const facts = [
-  { title: 'A very old board game', text: 'People played the Royal Game of Ur in Mesopotamia about 4,500 years ago. A surviving clay tablet helped researchers reconstruct its rules.', source: 'British Museum', url: 'https://www.britishmuseum.org/collection/object/W_1928-1009-378' },
-  { title: 'The original Olympic arts', text: 'From 1912 to 1948, the Olympics awarded medals for art inspired by sport, including architecture, literature, music, painting and sculpture.', source: 'Olympics', url: 'https://olympics.com/ioc/olympic-museum' },
-  { title: 'A language made of dots', text: 'Louis Braille developed his raised-dot reading system as a teenager. Its six-dot cells can represent letters, numbers and musical notation.', source: 'American Foundation for the Blind', url: 'https://www.afb.org/blindness-and-low-vision/braille' },
-  { title: 'A message in three scripts', text: 'The Rosetta Stone carries a decree in hieroglyphic, Demotic and Greek scripts. Comparing them helped scholars decipher Egyptian hieroglyphs.', source: 'British Museum', url: 'https://www.britishmuseum.org/collection/egypt/explore-rosetta-stone' },
-  { title: 'Books before Gutenberg', text: 'The Diamond Sutra, dated 868 CE, is the earliest complete dated printed book known to survive. It was made with woodblock printing in China.', source: 'British Library', url: 'https://www.bl.uk/collection-items/the-diamond-sutra' },
-  { title: 'A city across continents', text: 'Istanbul spans Europe and Asia, divided by the Bosporus. It has served as the capital of the Roman, Byzantine and Ottoman empires.', source: 'UNESCO', url: 'https://whc.unesco.org/en/list/356/' },
-  { title: 'An ancient mechanical cosmos', text: 'The Antikythera mechanism used bronze gears to model astronomical cycles over 2,000 years ago. It was recovered from a shipwreck in 1901.', source: 'Nature', url: 'https://www.nature.com/articles/nature05357' },
-  { title: 'A library on clay', text: 'The library of Assyrian king Ashurbanipal preserved thousands of clay tablets, including parts of the Epic of Gilgamesh.', source: 'British Museum', url: 'https://www.britishmuseum.org/collection/galleries/mesopotamia' },
-  { title: 'A bridge that grows', text: 'In Meghalaya, India, Khasi and Jaintia communities train living tree roots into bridges. The roots strengthen as they continue to grow.', source: 'UNESCO', url: 'https://whc.unesco.org/en/tentativelists/6606/' },
-  { title: 'The world’s first national park', text: 'Yellowstone became a national park in 1872. Its creation helped establish the idea of protecting large landscapes for public benefit.', source: 'National Park Service', url: 'https://www.nps.gov/yell/learn/historyculture/index.htm' },
-  { title: 'An alphabet with a birthday', text: 'Korea’s Hangul alphabet was promulgated in 1446 under King Sejong. The Hunminjeongeum manuscript explains its design and use.', source: 'UNESCO', url: 'https://www.unesco.org/en/memory-world' },
-  { title: 'A thousand-year-old story', text: 'Murasaki Shikibu wrote The Tale of Genji in early 11th-century Japan. It remains a foundational work of Japanese literature.', source: 'The Metropolitan Museum of Art', url: 'https://www.metmuseum.org/exhibitions/listings/2019/tale-of-genji' },
-  { title: 'A new way to see Earth', text: 'The Apollo 8 crew photographed Earthrise in December 1968, during the first crewed mission to orbit the Moon.', source: 'NASA', url: 'https://www.nasa.gov/history/50-years-ago-apollo-8-earthrise/' },
-  { title: 'A place for the whole world', text: 'The Great Exhibition of 1851 filled London’s Crystal Palace with inventions and objects from around the world, helping establish the modern world’s fair.', source: 'Victoria and Albert Museum', url: 'https://www.vam.ac.uk/articles/the-great-exhibition' },
+  {
+    "title": "Cleopatra’s surprisingly modern timeline",
+    "text": "Cleopatra VII lived closer in time to the Apollo 11 Moon landing than to the building of the Great Pyramid. The pyramid was already about 2,500 years old during her lifetime.",
+    "source": "Encyclopaedia Britannica; NASA"
+  },
+  {
+    "title": "Oxford predates the Aztec Empire",
+    "text": "Teaching was taking place at Oxford by 1096. The Aztec Empire formed in 1428—more than three centuries later.",
+    "source": "University of Oxford; Encyclopaedia Britannica"
+  },
+  {
+    "title": "Nintendo existed during the Ottoman Empire",
+    "text": "Nintendo started in 1889 as a maker of Japanese playing cards. The Ottoman Empire did not end until 1922, so the two existed at the same time for decades.",
+    "source": "Nintendo company history; Encyclopaedia Britannica"
+  },
+  {
+    "title": "T. rex is closer to us than to Stegosaurus",
+    "text": "Stegosaurus lived roughly 150 million years ago; T. rex lived around 68–66 million years ago. More time separated those two dinosaurs than separates T. rex from us.",
+    "source": "Smithsonian National Museum of Natural History"
+  },
+  {
+    "title": "A day longer than a year",
+    "text": "Venus takes about 243 Earth days to rotate once, but only about 225 Earth days to orbit the Sun. Its rotation is so slow that a full turn takes longer than its year.",
+    "source": "NASA"
+  },
+  {
+    "title": "Metal that melts in a warm hand",
+    "text": "Gallium is a metal with a melting point of about 29.8°C (85.6°F). A solid piece can turn into liquid in a warm hand, even though it looks like an ordinary silvery metal.",
+    "source": "Royal Society of Chemistry"
+  },
+  {
+    "title": "A computer from an ancient shipwreck",
+    "text": "The Antikythera mechanism used intricate bronze gears to model astronomical cycles and predict eclipses more than 2,000 years ago. Divers recovered it from a shipwreck in 1901.",
+    "source": "Nature; National Archaeological Museum, Athens"
+  },
+  {
+    "title": "A tower that changes height",
+    "text": "The Eiffel Tower can grow by roughly 15 centimeters in hot weather. Heat makes its iron expand, so the tower’s dimensions change with the temperature.",
+    "source": "Eiffel Tower official website"
+  },
+  {
+    "title": "Olympic medals for paintings",
+    "text": "From 1912 to 1948, the Olympics awarded medals for art inspired by sport. Architecture, literature, music, painting, and sculpture all had competitions alongside athletics.",
+    "source": "International Olympic Committee"
+  },
+  {
+    "title": "Why wombat poop is cube-shaped",
+    "text": "Wombats produce cube-shaped droppings. Researchers found that differences in the stiffness of the intestinal walls help create the corners—the shape does not come from a square opening.",
+    "source": "Georgia Institute of Technology; Soft Matter"
+  },
+  {
+    "title": "Mushrooms are closer to us than to trees",
+    "text": "Fungi and animals share a more recent evolutionary ancestor with each other than either does with plants. A mushroom is therefore more closely related to you than it is to an oak tree.",
+    "source": "Natural History Museum, London"
+  },
+  {
+    "title": "A notebook made of knots",
+    "text": "The Inka used quipus: bundles of colored strings with carefully placed knots. They recorded numerical information such as taxes and inventories without relying on an alphabet.",
+    "source": "British Museum"
+  },
+  {
+    "title": "The forty hidden in quarantine",
+    "text": "The word “quarantine” comes from the Italian for forty days. Ships and their passengers could be held apart for that long to prevent the spread of plague.",
+    "source": "Encyclopaedia Britannica"
+  },
+  {
+    "title": "A program for a computer that did not exist yet",
+    "text": "In 1843, Ada Lovelace described how Charles Babbage’s planned Analytical Engine could calculate Bernoulli numbers. The full machine was never built during her lifetime.",
+    "source": "Science Museum, London"
+  },
+  {
+    "title": "Bridges that are still alive",
+    "text": "Khasi and Jaintia communities in Meghalaya, India, guide living tree roots into bridges. Unlike a cut wooden beam, the roots keep growing and can strengthen over time.",
+    "source": "UNESCO"
+  },
+  {
+    "title": "A teenager invented this reading system",
+    "text": "Louis Braille developed his raised-dot reading system as a teenager. The same basic six-dot cells can represent letters, numbers, and musical notation.",
+    "source": "American Foundation for the Blind"
+  },
+  {
+    "title": "A shark lineage older than forests",
+    "text": "The shark lineage reaches back more than 400 million years. That puts its origins before the first forests, which appeared roughly 385 million years ago.",
+    "source": "Smithsonian; Natural History Museum, London"
+  },
+  {
+    "title": "Roman street food",
+    "text": "Ancient Pompeii had food counters called thermopolia, with large jars built into their worktops. People could buy prepared food away from home nearly two thousand years ago.",
+    "source": "Archaeological Park of Pompeii"
+  },
+  {
+    "title": "The guillotine outlasted the first Star Wars",
+    "text": "France’s last execution by guillotine took place in September 1977. The original Star Wars had already opened in cinemas that May.",
+    "source": "Encyclopaedia Britannica; American Film Institute"
+  },
+  {
+    "title": "One animal, three hearts",
+    "text": "An octopus has three hearts: two send blood through its gills, and one sends blood around the rest of its body. Its copper-containing oxygen carrier also makes its blood blue.",
+    "source": "Smithsonian Ocean"
+  },
+  {
+    "title": "Australia is wider than the Moon",
+    "text": "Mainland Australia is roughly 4,000 kilometers wide from east to west. The Moon’s diameter is about 3,475 kilometers, so Australia’s width is greater.",
+    "source": "Geoscience Australia; NASA"
+  },
+  {
+    "title": "A book older than movable type in Europe",
+    "text": "The Diamond Sutra, dated 868 CE, is the earliest complete dated printed book known to survive. It was printed from carved wooden blocks in China, centuries before Gutenberg’s press.",
+    "source": "British Library"
+  },
+  {
+    "title": "A language with its design notes preserved",
+    "text": "Hangul was promulgated in Korea in 1446 under King Sejong. The surviving Hunminjeongeum manuscript explains why the alphabet was created and how its letters work.",
+    "source": "UNESCO"
+  },
+  {
+    "title": "Earthrise was taken on a lunar voyage",
+    "text": "The Apollo 8 crew photographed Earthrise in December 1968 during the first crewed mission to orbit the Moon. Humans saw Earth rising above another world before anyone had walked on the Moon.",
+    "source": "NASA"
+  }
 ];
 
 const motivationalQuotes = [
@@ -837,26 +975,286 @@ const motivationalQuotes = [
 ];
 
 const vocabulary = [
-  { word: 'tenacious', part: 'adjective', kind: 'SAT-style', meaning: 'Determined; unwilling to give up.', example: 'Her tenacious practice finally paid off at the audition.' },
-  { word: 'cogent', part: 'adjective', kind: 'SAT-style', meaning: 'Clear, logical, and convincing.', example: 'He made a cogent argument for moving the meeting.' },
-  { word: 'ephemeral', part: 'adjective', kind: 'SAT-style', meaning: 'Lasting for only a short time.', example: 'The sunset’s colors were beautiful but ephemeral.' },
-  { word: 'pragmatic', part: 'adjective', kind: 'SAT-style', meaning: 'Focused on practical solutions.', example: 'A shorter to-do list was the pragmatic choice.' },
-  { word: 'ubiquitous', part: 'adjective', kind: 'SAT-style', meaning: 'Present or found almost everywhere.', example: 'Smartphones are ubiquitous on campus.' },
-  { word: 'laconic', part: 'adjective', kind: 'SAT-style', meaning: 'Using very few words.', example: 'His laconic reply was simply, “Agreed.”' },
-  { word: 'assiduous', part: 'adjective', kind: 'SAT-style', meaning: 'Careful and persistent in your effort.', example: 'Assiduous preparation helped her feel ready for the test.' },
-  { word: 'magnanimous', part: 'adjective', kind: 'SAT-style', meaning: 'Generous and forgiving, especially toward a rival.', example: 'The winner was magnanimous toward the other team.' },
-  { word: 'equivocal', part: 'adjective', kind: 'SAT-style', meaning: 'Unclear or open to more than one interpretation.', example: 'His equivocal answer left the group uncertain.' },
-  { word: 'ameliorate', part: 'verb', kind: 'SAT-style', meaning: 'To improve something or make a problem less severe.', example: 'A short walk helped ameliorate her stress.' },
-  { word: 'sanguine', part: 'adjective', kind: 'SAT-style', meaning: 'Optimistic, especially in a difficult situation.', example: 'He remained sanguine despite the setback.' },
-  { word: 'incongruous', part: 'adjective', kind: 'SAT-style', meaning: 'Out of place or not matching its surroundings.', example: 'The beach umbrella looked incongruous in the snowy yard.' },
-  { word: 'perspicacious', part: 'adjective', kind: 'SAT-style', meaning: 'Quick to notice and understand things.', example: 'Her perspicacious question uncovered the flaw in the plan.' },
-  { word: 'petrichor', part: 'noun', kind: 'Fun word', meaning: 'The pleasant earthy smell after rain falls on dry ground.', example: 'Petrichor filled the air after the afternoon shower.' },
-  { word: 'mellifluous', part: 'adjective', kind: 'Fun word', meaning: 'Pleasant and smooth to hear.', example: 'The violin’s mellifluous tone filled the room.' },
-  { word: 'serendipity', part: 'noun', kind: 'Fun word', meaning: 'Finding something good or useful by chance.', example: 'Meeting his future lab partner on the train was pure serendipity.' },
-  { word: 'susurrus', part: 'noun', kind: 'Fun word', meaning: 'A soft whispering or rustling sound.', example: 'The susurrus of leaves made the path feel peaceful.' },
-  { word: 'sesquipedalian', part: 'adjective', kind: 'Fun word', meaning: 'Using, or characterized by, very long words.', example: 'The joke poked fun at his sesquipedalian vocabulary.' },
-  { word: 'eloquent', part: 'adjective', kind: 'SAT-style', meaning: 'Expressing ideas clearly and effectively.', example: 'Her eloquent speech made the proposal easy to understand.' },
-  { word: 'resilient', part: 'adjective', kind: 'SAT-style', meaning: 'Able to recover after a setback.', example: 'A resilient team learned from the loss and tried again.' },
+  {
+    "word": "apodictic",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Clearly established or logically certain.",
+    "example": "The proof was apodictic: its conclusion followed necessarily from its premises."
+  },
+  {
+    "word": "recondite",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Difficult to understand because it is obscure or highly specialized.",
+    "example": "Her essay made a recondite philosophical debate surprisingly readable."
+  },
+  {
+    "word": "contumacious",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Stubbornly disobedient to authority.",
+    "example": "The contumacious witness refused to comply with the court’s order."
+  },
+  {
+    "word": "anfractuous",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Full of twists, turns, or winding passages.",
+    "example": "The anfractuous path wound through the old city."
+  },
+  {
+    "word": "fuliginous",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Sooty, smoky, or dark in color.",
+    "example": "A fuliginous haze hung over the abandoned foundry."
+  },
+  {
+    "word": "eleemosynary",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Relating to charity or supported by charitable donations.",
+    "example": "The eleemosynary foundation paid for the free clinic."
+  },
+  {
+    "word": "tergiversation",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "Evasive or deliberately ambiguous speech; also, changing one’s allegiance.",
+    "example": "Asked for a direct answer, the spokesperson resorted to tergiversation."
+  },
+  {
+    "word": "persiflage",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "Light, playful teasing or banter.",
+    "example": "Their friendly persiflage made the long rehearsal pass quickly."
+  },
+  {
+    "word": "obloquy",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "Harsh public criticism or disgrace.",
+    "example": "The scandal exposed the official to widespread obloquy."
+  },
+  {
+    "word": "aporia",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "A state of uncertainty or puzzlement, especially when reasoning leads to difficulty.",
+    "example": "The opposing arguments left the seminar in aporia."
+  },
+  {
+    "word": "antinomy",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "A contradiction between two apparently sound principles or conclusions.",
+    "example": "The philosopher explored the antinomy between freedom and determinism."
+  },
+  {
+    "word": "opsimath",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "Someone who begins studying or learning late in life.",
+    "example": "At seventy, the enthusiastic opsimath started learning Chinese."
+  },
+  {
+    "word": "ultracrepidarian",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Offering opinions on matters beyond one’s knowledge or expertise.",
+    "example": "His confident but uninformed lecture was ultracrepidarian."
+  },
+  {
+    "word": "sprezzatura",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "A practiced ease that makes difficult accomplishments look effortless.",
+    "example": "The violinist’s sprezzatura concealed years of exacting practice."
+  },
+  {
+    "word": "palimpsest",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "A manuscript whose earlier writing was erased for reuse, with traces remaining.",
+    "example": "Imaging revealed an older mathematical text beneath the palimpsest’s prayers."
+  },
+  {
+    "word": "chthonic",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Relating to the underworld or the earth beneath the surface.",
+    "example": "The myth’s chthonic spirits lived below the world of the living."
+  },
+  {
+    "word": "apotropaic",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Intended to ward off evil or bad luck.",
+    "example": "The doorway carried an apotropaic symbol."
+  },
+  {
+    "word": "prolepsis",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "The anticipation of a future event or objection before it occurs.",
+    "example": "The novel uses prolepsis to reveal the hero’s fate in its opening chapter."
+  },
+  {
+    "word": "synecdoche",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "A figure of speech in which a part represents the whole, or the whole a part.",
+    "example": "Calling workers “hands” is an example of synecdoche."
+  },
+  {
+    "word": "metonymy",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "Referring to something by the name of a closely associated thing.",
+    "example": "“The White House announced” uses metonymy for the administration."
+  },
+  {
+    "word": "periphrasis",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "Expressing something indirectly or with more words than necessary.",
+    "example": "“The instrument for telling time” is a periphrasis for “clock.”"
+  },
+  {
+    "word": "catachresis",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "A strained, unusual, or incorrect use of a word or metaphor.",
+    "example": "The critic called “a voice of broken glass” a striking catachresis."
+  },
+  {
+    "word": "adumbrate",
+    "part": "verb",
+    "kind": "Advanced",
+    "meaning": "To sketch an idea faintly or in outline; to foreshadow it.",
+    "example": "The opening paragraph adumbrates the argument developed later."
+  },
+  {
+    "word": "excogitate",
+    "part": "verb",
+    "kind": "Advanced",
+    "meaning": "To work out or devise through careful thought.",
+    "example": "The engineers spent weeks excogitating a solution to the vibration problem."
+  },
+  {
+    "word": "objurgate",
+    "part": "verb",
+    "kind": "Advanced",
+    "meaning": "To rebuke or scold sharply.",
+    "example": "The director objurgated the team for ignoring the safety procedure."
+  },
+  {
+    "word": "vituperative",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Filled with harsh and abusive criticism.",
+    "example": "The debate deteriorated into vituperative personal attacks."
+  },
+  {
+    "word": "inimical",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Hostile or harmful to something.",
+    "example": "The policy was inimical to open scientific cooperation."
+  },
+  {
+    "word": "impecunious",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Having little or no money.",
+    "example": "The impecunious student searched for a fully funded research placement."
+  },
+  {
+    "word": "insouciance",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "A relaxed lack of concern or worry.",
+    "example": "She greeted the unexpected delay with enviable insouciance."
+  },
+  {
+    "word": "meretricious",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Attractively showy but lacking real value or substance.",
+    "example": "The proposal’s meretricious graphics disguised its weak evidence."
+  },
+  {
+    "word": "pulchritude",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "Physical beauty.",
+    "example": "The poem celebrates the pulchritude of the landscape."
+  },
+  {
+    "word": "quiddity",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "The essential nature of a thing; also, a subtle distinction or quibble.",
+    "example": "The discussion asked whether consciousness is the quiddity of personhood."
+  },
+  {
+    "word": "haecceity",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "The unique qualities that make a thing this particular thing.",
+    "example": "The philosopher contrasted a person’s shared humanity with their haecceity."
+  },
+  {
+    "word": "numinous",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Suggesting a mysterious, spiritual, or awe-inspiring presence.",
+    "example": "The silent cathedral had a numinous atmosphere."
+  },
+  {
+    "word": "velleity",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "A wish or inclination too weak to lead to action.",
+    "example": "His plan to learn the instrument remained a velleity."
+  },
+  {
+    "word": "abstruse",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Difficult to understand; obscure or intricate.",
+    "example": "A simple diagram clarified the otherwise abstruse argument."
+  },
+  {
+    "word": "inanition",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "Exhaustion from lack of nourishment; also, emptiness or lack of vitality.",
+    "example": "The doctor warned that prolonged lack of food could cause inanition."
+  },
+  {
+    "word": "lambent",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Glowing softly, flickering lightly, or expressing gentle wit.",
+    "example": "Lambent light moved across the water."
+  },
+  {
+    "word": "syzygy",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "An alignment of celestial bodies, especially the Sun, Earth, and Moon.",
+    "example": "An eclipse requires a syzygy with a sufficiently close alignment."
+  },
+  {
+    "word": "zeugma",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "A figure of speech in which one word applies to two others in different senses.",
+    "example": "“She lost her keys and her patience” is a zeugma."
+  }
 ];
 
 const paletteNames = ['lavender', 'sage', 'blue', 'rose', 'sand', 'teal'];
@@ -866,9 +1264,10 @@ const paletteNames = ['lavender', 'sage', 'blue', 'rose', 'sand', 'teal'];
 
 
 
+
 const $ = selector => document.querySelector(selector);
 const STORAGE_KEY = 'daymark:v1';
-const defaults = () => ({ version: 1, sessions: {}, newsHistory: {}, briefingEdition: null, duolingoDays: {}, runs: [], youtubeSessions: {}, jokeWindow: null, moments: [], events: [], sheetEvents: [], sheetUrl: DEFAULT_SHEET_URL, sheetConfigured: true, sheetFetchedAt: null, seen: {}, lastVisit: null, jokeDate: null, weather: null, news: null });
+const defaults = () => ({ version: 1, tasks: [], sessions: {}, newsHistory: {}, briefingEdition: null, duolingoDays: {}, runs: [], youtubeSessions: {}, jokeWindow: null, moments: [], events: [], sheetEvents: [], sheetUrl: DEFAULT_SHEET_URL, sheetConfigured: true, sheetFetchedAt: null, seen: {}, lastVisit: null, jokeDate: null, weather: null, news: null });
 let storageReadable = true;
 let state = defaults();
 
@@ -881,6 +1280,7 @@ function validateState(value) {
   if ([...value.events, ...value.sheetEvents].some(e => !e || typeof e.id !== 'string' || typeof e.title !== 'string' || !validDate(e.date) || (e.time && !/^([01]\d|2[0-3]):[0-5]\d$/.test(e.time)))) throw new Error('The backup contains an invalid calendar event.');
   if (Object.entries(value.sessions).some(([key, v]) => !/^\d{4}-\d{2}-\d{2}-(am|pm)$/.test(key) || !v || typeof v.pushups !== 'boolean' || typeof v.situps !== 'boolean')) throw new Error('The backup contains invalid exercise history.');
   if (value.runs !== undefined && (!Array.isArray(value.runs) || value.runs.some(r => !validRun(r)))) throw new Error('The backup contains an invalid run.');
+  if (value.tasks !== undefined && (!Array.isArray(value.tasks) || value.tasks.some(t => !validTask(t)) || new Set(value.tasks.map(t => t.id)).size !== value.tasks.length)) throw new Error('The backup contains an invalid task.');
   if (value.youtubeSessions !== undefined && (!value.youtubeSessions || typeof value.youtubeSessions !== 'object' || Array.isArray(value.youtubeSessions) || Object.entries(value.youtubeSessions).some(([k, v]) => !/^\d{4}-\d{2}-\d{2}-(am|pm)$/.test(k) || !validDate(k.slice(0, 10)) || !v || typeof v.completed !== 'boolean'))) throw new Error('The backup contains invalid no-YouTube history.');
   if (value.duolingoDays !== undefined && (!value.duolingoDays || typeof value.duolingoDays !== 'object' || Array.isArray(value.duolingoDays) || Object.entries(value.duolingoDays).some(([date, v]) => !validDate(date) || !v || typeof v.completed !== 'boolean'))) throw new Error('The backup contains invalid Duolingo history.');
   if (value.newsHistory !== undefined && (!value.newsHistory || typeof value.newsHistory !== 'object' || Array.isArray(value.newsHistory))) throw new Error('The backup contains invalid news history.');
@@ -962,6 +1362,54 @@ function renderHeader() {
   $('#edition').textContent = `${currentWindow.period === 'am' ? 'Morning' : 'Evening'} check-in`;
   $('#next-refresh').textContent = `Next reset ${formatTime(currentWindow.next)} · Eastern`;
 }
+
+function taskMarkup(task, showSubject = false) {
+  const subject = taskSubjects.find(s => s.id === task.subject);
+  return `<li class="task-entry ${task.completed ? 'task-done' : ''}"><label><input type="checkbox" data-task-id="${esc(task.id)}" ${task.completed ? 'checked' : ''}><span>${showSubject ? `<small>${esc(subject.label)}</small>` : ''}<span class="task-title">${esc(task.title)}</span></span></label>${task.minutes ? `<span class="task-time">${taskTime(task.minutes)}</span>` : ''}<button class="task-delete" data-delete-task="${esc(task.id)}" aria-label="Remove task: ${esc(task.title)}">×</button></li>`;
+}
+function renderTasks() {
+  // Keep the forms mounted so changing one class doesn't erase another draft.
+  if (!$('#task-groups').children.length) $('#task-groups').innerHTML = taskSubjects.map(subject => `<section class="task-subject" data-subject="${subject.id}" aria-labelledby="tasks-${subject.id}-heading"><div class="task-subject-heading"><h3 id="tasks-${subject.id}-heading"><span class="subject-mark" aria-hidden="true">${subject.short}</span>${subject.label}</h3><span id="tasks-${subject.id}-count" class="task-count"></span></div><ul id="tasks-${subject.id}-list" class="task-list"></ul><form class="task-form" data-task-subject="${subject.id}" novalidate><fieldset class="entry-fields" data-requires-app disabled><label class="sr-only" for="task-${subject.id}-title">${subject.label} task</label><input id="task-${subject.id}-title" name="task" maxlength="300" placeholder="Add a task…" required><label class="sr-only" for="task-${subject.id}-minutes">${subject.label} estimated minutes (optional)</label><input id="task-${subject.id}-minutes" name="minutes" type="number" min="1" max="1440" step="1" placeholder="min" inputmode="numeric"><button class="task-add" type="submit" aria-label="Add ${subject.label} task">+</button></fieldset></form></section>`).join('');
+  const active = state.tasks.filter(t => !t.completed), done = state.tasks.filter(t => t.completed);
+  for (const subject of taskSubjects) {
+    const tasks = active.filter(t => t.subject === subject.id);
+    $(`#tasks-${subject.id}-list`).innerHTML = tasks.map(t => taskMarkup(t)).join('');
+    const minutes = tasks.reduce((sum, t) => sum + (t.minutes || 0), 0);
+    $(`#tasks-${subject.id}-count`).textContent = tasks.length ? `${tasks.length} task${tasks.length === 1 ? '' : 's'}${minutes ? ` · ~${taskTime(minutes)}` : ''}` : '';
+  }
+  $('#tasks-total').textContent = `${active.length} to do`;
+  $('#completed-tasks-count').textContent = `Completed (${done.length})`;
+  $('#completed-task-list').innerHTML = done.slice().reverse().map(t => taskMarkup(t, true)).join('');
+  $('#completed-tasks').hidden = done.length === 0;
+}
+$('#tasks-panel').addEventListener('submit', event => {
+  const form = event.target.closest('[data-task-subject]');
+  if (!form) return;
+  event.preventDefault();
+  const title = form.elements.task.value.trim(), rawMinutes = form.elements.minutes.value;
+  if (!title) { $('#tasks-status').textContent = 'Write a task first.'; form.elements.task.focus(); return; }
+  if (rawMinutes && (!Number.isInteger(Number(rawMinutes)) || Number(rawMinutes) < 1 || Number(rawMinutes) > 1440)) { $('#tasks-status').textContent = 'Use a whole number of minutes from 1 to 1,440, or leave it blank.'; form.elements.minutes.focus(); return; }
+  state.tasks.push({ id: entryId(), subject: form.dataset.taskSubject, title, minutes: rawMinutes ? Number(rawMinutes) : null, completed: false, createdAt: new Date().toISOString() });
+  const saved = persist(); form.reset(); renderTasks(); form.elements.task.focus();
+  $('#tasks-status').textContent = saved ? 'Task saved.' : 'Added for this visit. Export a backup to keep it.';
+});
+$('#tasks-panel').addEventListener('change', event => {
+  const task = state.tasks.find(t => t.id === event.target.dataset.taskId);
+  if (!task) return;
+  const id = task.id; task.completed = event.target.checked;
+  const saved = persist(); renderTasks();
+  if (task.completed) $('#completed-tasks').open = true;
+  const checkbox = [...document.querySelectorAll('[data-task-id]')].find(input => input.dataset.taskId === id);
+  checkbox?.focus();
+  $('#tasks-status').textContent = saved ? task.completed ? 'Done. Kept in Completed below.' : 'Moved back to your to-do list.' : 'Updated for this visit. Export a backup to keep it.';
+});
+$('#tasks-panel').addEventListener('click', event => {
+  const button = event.target.closest('[data-delete-task]');
+  if (!button) return;
+  state.tasks = state.tasks.filter(t => t.id !== button.dataset.deleteTask);
+  const saved = persist(); renderTasks();
+  $('#tasks-status').textContent = saved ? 'Task removed.' : 'Removed for this visit. Export a backup to keep changes.';
+});
 
 function renderDuolingo() {
   const done = state.duolingoDays[currentWindow.today]?.completed === true;
@@ -1189,7 +1637,7 @@ function renderDelights() {
   $('#joke-reveal').hidden = state.jokeWindow === currentWindow.key;
   const fact = facts[checkInPick(currentWindow.key, facts.length, 'rabbit-holes')];
   $('#fact-title').textContent = fact.title; $('#fact-text').textContent = fact.text;
-  $('#fact-source').href = fact.url; $('#fact-source').textContent = `${fact.source} →`;
+  $('#fact-source').textContent = `Source: ${fact.source}`;
   const quote = motivationalQuotes[checkInPick(currentWindow.key, motivationalQuotes.length, 'quotes')];
   $('#motivation-quote').textContent = quote.text; $('#motivation-author').textContent = quote.author;
   const word = vocabulary[dailyIndex(currentWindow.today, vocabulary.length)];
@@ -1234,8 +1682,9 @@ function renderNews(data, error = '') {
   } else {
     $('#news-list').innerHTML = changes.map((s, i) => {
       const image = sourceImage(s.imageUrl);
+      const expandable = (s.explanation || s.summary || '').length > 260;
       const eventLabel = s.eventDateVerified && s.eventDate ? `${s.eventKind || 'Event'}: ${formatDate(dateOnly(s.eventDate.slice(0,10)), { month: 'long', day: 'numeric', year: 'numeric' })}` : 'Event date not verified · feed report only';
-      return `<article class="news-item"><span class="news-number">${String(i + 1).padStart(2, '0')}</span><div><div class="news-meta"><span class="category">${esc(s.category)}</span><span>·</span><span>${esc(s.coverage || 'Source report')}</span>${s.majorUpdateVerified ? '<span class="story-badge updated">Major new development</span>' : ''}</div><h3><a href="${safeUrl(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.displayTitle || s.title)}</a></h3><p class="news-date">${esc(eventLabel)}${s.freshness === '48h' ? ' · 48-hour fallback' : ''}</p>${image ? `<figure class="article-image"><img src="${safeUrl(image)}" alt="Image accompanying ${esc(s.title)} on ${esc(s.source)}" loading="lazy" referrerpolicy="no-referrer"><figcaption>${esc(s.imageCaption || 'Image from the source article.')} <a href="${safeUrl(s.imageSourceUrl || s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.source)}</a></figcaption></figure>` : ''}<p class="news-summary">${esc(s.explanation || s.summary)}</p>${s.summaryKind ? `<p class="fine-print">${esc(s.summaryKind)} · known jargon expanded; source claims and uncertainty preserved.</p>` : ''}${s.whyInteresting ? `<p class="news-context"><strong>Why it’s interesting</strong><br>${esc(s.whyInteresting)}</p>` : ''}${s.dateEvidence ? `<details class="date-evidence"><summary>How the date was checked</summary><p>${esc(s.dateEvidence)}</p><a href="${safeUrl(s.dateEvidenceUrl || s.url)}" target="_blank" rel="noopener noreferrer">Date source →</a></details>` : ''}<div class="source-line"><span><b class="source-brand">${esc(s.source)}</b><time datetime="${esc(s.originalPublishedAt || s.publishedAt)}">Reported ${esc(fullStamp(s.originalPublishedAt || s.publishedAt))}</time></span><a class="text-button" href="${safeUrl(s.url)}" target="_blank" rel="noopener noreferrer">Read source →</a></div></div></article>`;
+      return `<article class="news-item"><span class="news-number">${String(i + 1).padStart(2, '0')}</span><div><div class="news-meta"><span class="category">${esc(s.category)}</span><span>·</span><span>${esc(s.coverage || 'Source report')}</span>${s.majorUpdateVerified ? '<span class="story-badge updated">Major new development</span>' : ''}</div><h3><a href="${safeUrl(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.displayTitle || s.title)}</a></h3><p class="news-date">${esc(eventLabel)}${s.freshness === '48h' ? ' · 48-hour fallback' : ''}</p>${image ? `<figure class="article-image"><img src="${safeUrl(image)}" alt="Image accompanying ${esc(s.title)} on ${esc(s.source)}" loading="lazy" referrerpolicy="no-referrer"><figcaption>${esc(s.imageCaption || 'Image from the source article.')} <a href="${safeUrl(s.imageSourceUrl || s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.source)}</a></figcaption></figure>` : ''}<p class="news-summary ${expandable ? 'compact-summary' : ''}" id="news-explanation-${i}">${esc(s.explanation || s.summary)}</p>${expandable ? `<button class="news-expand" data-news-expand aria-expanded="false" aria-controls="news-explanation-${i}">Read more</button>` : ''}${s.summaryKind ? `<p class="fine-print">${esc(s.summaryKind)} · known jargon expanded; source claims and uncertainty preserved.</p>` : ''}${s.whyInteresting ? `<p class="news-context"><strong>Why it’s interesting</strong><br>${esc(s.whyInteresting)}</p>` : ''}${s.dateEvidence ? `<details class="date-evidence"><summary>How the date was checked</summary><p>${esc(s.dateEvidence)}</p><a href="${safeUrl(s.dateEvidenceUrl || s.url)}" target="_blank" rel="noopener noreferrer">Date source →</a></details>` : ''}<div class="source-line"><span><b class="source-brand">${esc(s.source)}</b><time datetime="${esc(s.originalPublishedAt || s.publishedAt)}">Reported ${esc(fullStamp(s.originalPublishedAt || s.publishedAt))}</time></span><a class="text-button" href="${safeUrl(s.url)}" target="_blank" rel="noopener noreferrer">Read source →</a></div></div></article>`;
     }).join('');
     for (const img of document.querySelectorAll('.article-image img')) img.addEventListener('error', () => img.closest('figure').remove());
     if (selected.length < 5) $('#news-list').insertAdjacentHTML('beforeend', '<p class="briefing-empty-note">Only the stories that passed this check are shown. No recycled stories or filler.</p>');
@@ -1251,6 +1700,16 @@ function renderNews(data, error = '') {
     state.lastVisit = new Date().toISOString(); persist();
   }
 }
+
+$('#news-list').addEventListener('click', event => {
+  const button = event.target.closest('[data-news-expand]');
+  if (!button) return;
+  const paragraph = document.getElementById(button.getAttribute('aria-controls'));
+  const expanded = button.getAttribute('aria-expanded') !== 'true';
+  paragraph.classList.toggle('expanded', expanded);
+  button.setAttribute('aria-expanded', String(expanded));
+  button.textContent = expanded ? 'Show less' : 'Read more';
+});
 
 async function requestJSON(url) {
   if (globalThis.DAYMARK_STANDALONE) {
@@ -1341,7 +1800,7 @@ $('#import-file').addEventListener('change', async event => {
     if (!confirm('Replace this browser’s dashboard data with the backup? Export your current data first if you want to keep it.')) return;
     state = restored; storageReadable = true; persist();
     visitSeen = structuredClone(state.seen); visitTime = state.lastVisit;
-    renderExercise(); renderRuns(); renderYoutube(); renderDuolingo(); renderMoments(); renderCalendar(); renderDelights();
+    renderExercise(); renderRuns(); renderTasks(); renderYoutube(); renderDuolingo(); renderMoments(); renderCalendar(); renderDelights();
     $('#sheet-url').value = state.sheetUrl;
     toast('Backup restored.'); void refreshAll();
   } catch (error) { toast(`Couldn’t restore: ${error.message}`); }
@@ -1360,7 +1819,7 @@ function tick() {
 }
 document.addEventListener('visibilitychange', () => { if (!document.hidden) tick(); });
 setInterval(tick, 30000);
-renderHeader(); renderExercise(); renderRuns(); renderYoutube(); renderDuolingo(); renderMoments(); renderCalendar(); renderDelights();
+renderHeader(); renderExercise(); renderRuns(); renderTasks(); renderYoutube(); renderDuolingo(); renderMoments(); renderCalendar(); renderDelights();
 // Verify that this browser can really save, without touching existing records.
 if (storageReadable) {
   const probe = `${STORAGE_KEY}:probe:${entryId()}`;
