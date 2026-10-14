@@ -9,6 +9,8 @@ const sourceHosts = {
   'The Verge': ['theverge.com'], 'Science News': ['sciencenews.org'], ScienceDaily: ['sciencedaily.com'],
   'MIT News': ['news.mit.edu'], 'Higher Ed Dive': ['highereddive.com'], NASA: ['nasa.gov'],
   Nature: ['nature.com'], Science: ['science.org', 'sciencemag.org'],
+  'The Guardian': ['theguardian.com'], 'Live Science': ['livescience.com'],
+  ScienceAlert: ['sciencealert.com'], 'Phys.org': ['phys.org'],
 };
 const months = 'january february march april may june july august september october november december'.split(' ');
 const weekdays = 'sunday monday tuesday wednesday thursday friday saturday'.split(' ');

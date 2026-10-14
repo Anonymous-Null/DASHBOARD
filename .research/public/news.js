@@ -18,6 +18,12 @@ export const NEWS_FEEDS = [
   { url: 'https://www.nasa.gov/news-release/feed/', source: 'NASA', category: 'Science', coverage: 'Institution announcement' },
   { url: 'https://www.nature.com/nature.rss', source: 'Nature', category: 'Science', coverage: 'Primary research' },
   { url: 'https://www.science.org/rss/news_current.xml', source: 'Science', category: 'Science' },
+  { url: 'https://www.theguardian.com/world/rss', source: 'The Guardian', category: 'World' },
+  { url: 'https://www.theguardian.com/science/rss', source: 'The Guardian', category: 'Science' },
+  { url: 'https://www.theguardian.com/technology/rss', source: 'The Guardian', category: 'Technology' },
+  { url: 'https://www.livescience.com/feeds/all', source: 'Live Science', category: 'Science' },
+  { url: 'https://www.sciencealert.com/feed', source: 'ScienceAlert', category: 'Science' },
+  { url: 'https://phys.org/rss-feed/', source: 'Phys.org', category: 'Science', coverage: 'Research reporting' },
 ];
 
 export function plainText(value) {
