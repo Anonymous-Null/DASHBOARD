@@ -484,6 +484,7 @@ function recapWeeks(state, now = new Date()) {
     ...Object.keys(state.sessions || {}).map(k => k.slice(0,10)),
     ...(state.tasks || []).filter(t => t.completedAt).map(t => reflectionDate(t.completedAt)),
     ...(state.moments || []).map(m => reflectionDate(m.createdAt)),
+    ...(state.bookmarks || []).map(s => reflectionDate(s.savedAt)),
   ];
   const earliest = dates.sort()[0] || shiftDate(latest,-6);
   const weeks = [latest];
