@@ -68,6 +68,10 @@ dialog{border:1px solid var(--line);border-radius:22px;padding:30px;background:#
 .article-image{float:right;width:112px;margin:3px 0 8px 13px}.article-image img{width:112px;height:76px;min-height:0;max-height:76px;aspect-ratio:auto;border-radius:8px}.article-image figcaption{display:none}.news-item:has(.news-summary.expanded) .article-image figcaption{display:block}.source-line{clear:both}.compact-summary:not(.expanded){display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.news-expand{font-size:10px;color:var(--accent);padding:4px 0;text-decoration:underline;text-underline-offset:3px}.news-item:first-child .news-expand{color:#d7dcec}.news-item:has(.compact-summary:not(.expanded)) .fine-print{display:none}
 .tasks-card{padding:23px}.tasks-total{flex-shrink:0;background:var(--accent-light);color:var(--accent);font-size:10px;border-radius:20px;padding:5px 10px;font-weight:650}.tasks-card .section-subtitle{margin-bottom:12px}.task-column-labels{display:grid;grid-template-columns:1fr 66px 30px;gap:7px;color:var(--muted);font-size:9px;padding-left:1px;margin-bottom:4px}.task-subject{padding:11px 0;border-bottom:1px solid var(--line)}.task-subject:last-child{border-bottom:0}.task-subject-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:7px}.task-subject-heading h3{font-size:12px;font-weight:650;display:flex;align-items:center;gap:7px;letter-spacing:-.1px}.subject-mark{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:6px;font-size:10px;background:var(--accent-light);color:var(--accent)}.task-subject:nth-child(2n) .subject-mark{background:var(--soft-alt);color:var(--soft-ink)}.task-subject:nth-child(3n) .subject-mark{background:var(--soft-third);color:var(--soft-ink)}.task-count{font-size:9px;color:var(--muted);white-space:nowrap}.task-form fieldset{display:grid;grid-template-columns:minmax(0,1fr) 66px 30px;gap:7px;align-items:center}.task-form input{width:100%;min-width:0;height:33px;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font-size:11px}.task-form input::placeholder{color:var(--muted);opacity:.85}.task-form input[type=number]{padding:7px 6px}.task-add{background:var(--accent-light);color:var(--accent);height:30px;width:30px;border-radius:8px;font-size:20px;line-height:1}.task-add:hover{filter:brightness(.95)}.task-list{list-style:none;margin:0;padding:0}.task-entry{display:flex;align-items:flex-start;gap:7px;padding:7px 0;min-width:0}.task-entry label{display:flex;align-items:flex-start;gap:8px;flex:1;min-width:0;font-size:11px;cursor:pointer;line-height:1.6}.task-entry input[type=checkbox]{flex-shrink:0;accent-color:var(--accent);width:14px;height:14px;margin:2px 0 0}.task-title{overflow-wrap:anywhere}.task-entry small{display:block;color:var(--muted);font-size:9px}.task-time{flex-shrink:0;font-size:9px;white-space:nowrap;color:var(--muted);padding-top:2px}.task-delete{font-size:16px;line-height:1;padding:3px 4px;color:var(--muted)}.task-delete:hover{color:var(--accent)}.task-done .task-title{text-decoration:line-through;color:var(--muted)}.completed-tasks{margin-top:12px;border-top:1px solid var(--line);padding-top:12px}.completed-tasks summary{font-size:11px;color:var(--muted);cursor:pointer}.task-help{margin-top:10px}.tasks-card .form-status{font-size:10px;min-height:0}.fact-attribution{font-size:9px!important;opacity:.85;margin-top:12px}.fact-section #fact-text{font-size:12px;line-height:1.8}
 @media(max-width:760px){.dashboard-grid .card{grid-row:auto}.dashboard-grid .tasks-card{grid-row:1}.dashboard-grid .news-card{grid-row:2}.news-card{padding:21px}.tasks-card{padding:21px}.article-image,.article-image img{width:92px}.article-image img{height:65px;max-height:65px}.task-subject-heading h3{font-size:12px}}
+
+/* Let the work stand out; keep class labels and entry controls secondary. */
+.task-subject{padding:15px 0}.task-subject-heading{margin-bottom:9px}.task-subject-heading h3{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}.task-count{font-size:10px}.task-list:empty{display:none}.task-entry{gap:10px;align-items:center;background:var(--bg);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:13px 12px;margin:0 0 9px}.task-entry label{font-size:15px;font-weight:600;line-height:1.5;gap:11px;color:var(--ink);align-items:flex-start}.task-entry input[type=checkbox]{width:19px;height:19px;margin-top:2px}.task-entry label>span{min-width:0}.task-time{background:var(--paper);border-radius:7px;padding:4px 7px;font-size:11px;font-weight:550;color:var(--ink)}.task-delete{font-size:20px;padding:6px;color:var(--muted)}.task-form input{height:33px;font-size:12px}.task-form{opacity:.85}.task-form:focus-within{opacity:1}.task-done{border-left-color:var(--line);padding:9px 10px;margin-bottom:6px;background:transparent}.task-done label{font-size:12px;font-weight:450}.task-done input[type=checkbox]{width:16px;height:16px}.task-done .task-title{color:var(--muted)}.task-entry small{font-size:10px;font-weight:450;margin-bottom:3px}.completed-tasks summary{font-size:12px;font-weight:550}.completed-tasks .task-list{max-height:240px;overflow:auto;margin-top:10px;padding-right:3px}.study-week{margin-top:17px;padding:17px 16px;background:var(--accent-light);border-radius:12px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px}.study-week-label{display:block;font-size:9px;letter-spacing:1.1px;color:var(--accent);font-weight:700}.study-week strong{display:block;font-size:30px;line-height:1.3;letter-spacing:-1px;color:var(--ink);margin:3px 0}.study-week #study-week-detail{font-size:11px;color:var(--muted)}.study-week>p{grid-column:1/-1;font-size:10px;color:var(--muted)}.study-week button{font-size:11px;background:var(--paper);border-color:var(--line);padding:8px 12px;color:var(--accent)}.study-log-entry{display:flex;gap:8px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:11px}.study-log-entry>div{flex:1;min-width:0}.study-log-entry strong{display:block;font-size:12px;overflow-wrap:anywhere;font-weight:550}.study-log-entry small{display:block;color:var(--muted);font-size:10px}.study-log-entry>span{font-size:11px;white-space:nowrap;color:var(--accent);font-weight:600}.study-empty{font-size:11px;color:var(--muted);padding:4px 0}.study-task-title{padding:12px 14px;margin-bottom:16px;background:var(--accent-light);border-radius:9px;font-size:16px;font-weight:600;overflow-wrap:anywhere}.study-dialog-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap}#study-form select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);margin:7px 0 16px;font:inherit}.task-help{margin-top:13px}#tasks-status{margin-top:5px}
+@media(max-width:420px){.task-entry{padding:12px 10px;gap:6px}.task-entry label{font-size:15px;gap:8px}.task-time{font-size:10px;padding:3px 5px}.task-subject-heading h3{font-size:10px}}
 </style>
   
 </head>
@@ -100,7 +104,7 @@ dialog{border:1px solid var(--line);border-radius:22px;padding:30px;background:#
         <section class="card vocabulary-card" aria-labelledby="vocab-heading"><div class="section-heading"><div><p class="section-kicker">ONE NEW WORD, EVERY DAY</p><h2 id="vocab-heading">Word of the day</h2></div><span id="vocab-kind" class="vocab-kind"></span></div><div class="vocab-word-row"><h3 id="vocab-word"></h3><span id="vocab-part"></span></div><p id="vocab-meaning"></p><p id="vocab-example" class="vocab-example"></p><a id="vocab-source" class="text-button" target="_blank" rel="noopener noreferrer">Dictionary →</a></section>
         </div>
         <div class="right-column">
-          <section class="card tasks-card" id="tasks-panel" aria-labelledby="tasks-heading"><div class="section-heading"><div><p class="section-kicker">A LITTLE PLAN, A LITTLE PROGRESS</p><h2 id="tasks-heading">Your to-do list</h2></div><span id="tasks-total" class="tasks-total">0 to do</span></div><p class="section-subtitle">Classes, projects, and everything else.</p><div class="task-column-labels" aria-hidden="true"><span>Task</span><span>Time · min</span></div><div id="task-groups"></div><details id="completed-tasks" class="completed-tasks" hidden><summary id="completed-tasks-count">Completed (0)</summary><ul id="completed-task-list" class="task-list"></ul></details><p class="fine-print task-help">Time estimates are optional. Unfinished tasks carry over.</p><p id="tasks-status" class="form-status" role="status"></p></section>
+          <section class="card tasks-card" id="tasks-panel" aria-labelledby="tasks-heading"><div class="section-heading"><div><p class="section-kicker">A LITTLE PLAN, A LITTLE PROGRESS</p><h2 id="tasks-heading">Your to-do list</h2></div><span id="tasks-total" class="tasks-total">0 to do</span></div><p class="section-subtitle">Classes, projects, and everything else.</p><div class="task-column-labels" aria-hidden="true"><span>Task</span><span>Time · min</span></div><div id="task-groups"></div><div class="study-week"><div><span class="study-week-label">STUDIED THIS WEEK</span><strong id="study-week-total">0.0 h</strong><span id="study-week-detail">0 sessions · 0 min logged</span></div><button id="study-open" class="secondary-button">Log time</button><p id="study-week-range"></p></div><details id="completed-tasks" class="completed-tasks" hidden><summary id="completed-tasks-count">Completed (0)</summary><ul id="completed-task-list" class="task-list"></ul></details><details id="study-log" class="completed-tasks"><summary id="study-log-count">Study-time log (0)</summary><ul id="study-log-list" class="task-list"></ul></details><p class="fine-print task-help">Estimates help you plan. Logged time counts toward your week.</p><p id="tasks-status" class="form-status" role="status"></p></section>
           <section class="card exercise-card" id="movement-panel" aria-labelledby="exercise-heading"><div class="section-heading"><div><p class="section-kicker">SHOW UP FOR YOURSELF</p><h2 id="exercise-heading">Daily movement</h2></div><span class="movement-icon"><svg><use href="#i-move"/></svg></span></div><p class="section-subtitle">Two small sets. One habit worth keeping.</p><div class="exercise-options"><label class="exercise-option"><input type="checkbox" id="pushups"><span class="check-visual" aria-hidden="true"></span><span><strong>25</strong><span>push-ups</span></span></label><label class="exercise-option"><input type="checkbox" id="situps"><span class="check-visual" aria-hidden="true"></span><span><strong>25</strong><span>sit-ups</span></span></label></div><div class="exercise-footer"><span id="exercise-message" role="status"></span><span id="exercise-progress">0 / 2</span></div><div class="week-heading"><span>YOUR LAST 7 DAYS</span><span id="streak" class="streak-pill">0 check-ins</span></div><div id="exercise-week" class="exercise-week" aria-label="Exercise history for the last seven days"></div><div class="history-footer"><span><i class="legend-dot"></i> AM / PM check-ins</span><button class="text-button" id="exercise-history-button">View history <svg><use href="#i-arrow"/></svg></button></div><p class="fine-print">Resets at 7 AM & 7 PM. Refreshing keeps your progress.</p><div class="running-block"><div class="running-heading"><h3>Went for a run?</h3><span id="run-week-stat">0 runs this week</span></div><p class="running-help">About 3 runs a week. Log one whenever you go.</p><form id="run-form" novalidate><fieldset class="entry-fields" data-requires-app disabled><div class="run-fields"><div><label for="run-distance">Distance</label><div class="distance-input"><input id="run-distance" type="number" min="0.01" max="1000" step="any" placeholder="3.0" required><label class="sr-only" for="run-unit">Distance unit</label><select id="run-unit"><option value="mi">mi</option><option value="km">km</option></select></div></div><div><label for="run-time">Time (optional)</label><input id="run-time" type="text" maxlength="15" placeholder="24:30" aria-describedby="run-time-help"></div></div><div class="run-save-row"><label class="sr-only" for="run-date">Date of run</label><input id="run-date" type="date" required><button class="primary-button" type="submit">Log run →</button></div><p id="run-time-help" class="fine-print">Time: minutes or mm:ss. Your log is saved.</p><p id="run-status" class="form-status" role="status"></p></fieldset></form><div id="recent-runs"></div><button id="runs-history-button" class="text-button">All your runs →</button></div></section>
           <section class="card agenda-card" aria-labelledby="agenda-heading"><div class="section-heading"><div><p class="section-kicker">YOUR SHEET · NEXT 7 DAYS</p><h2 id="agenda-heading">Coming up</h2></div><svg aria-hidden="true"><use href="#i-calendar"/></svg></div><p id="agenda-status" class="agenda-status" role="status">Checking your Sheet…</p><div id="upcoming-events"></div><button class="text-button" id="agenda-calendar-button">All your dates →</button></section>
           <section class="card break-card" aria-labelledby="break-heading"><div class="section-heading"><p class="section-kicker">SOMETHING TO LOOK FORWARD TO</p><svg aria-hidden="true"><use href="#i-calendar"/></svg></div><h2 id="break-heading" class="sr-only">School breaks</h2><div id="break-content"></div><button class="text-button light" id="break-button">Your school breaks <svg><use href="#i-arrow"/></svg></button><div class="break-doodle" aria-hidden="true"></div></section>
@@ -111,6 +115,7 @@ dialog{border:1px solid var(--line);border-radius:22px;padding:30px;background:#
     </main>
   </div>
   <dialog id="duolingo-dialog" class="duolingo-dialog"><div class="dialog-header"><div><p class="eyebrow">A LITTLE LANGUAGE, EVERY DAY</p><h2>Duolingo today</h2></div><button class="icon-button close-dialog" aria-label="Close Duolingo reminder">✕</button></div><p id="duolingo-date" class="field-help"></p><a class="primary-button duolingo-open" href="https://www.duolingo.com/learn" target="_blank" rel="noopener noreferrer">Open Duolingo →</a><a class="text-button duolingo-profile" href="https://www.duolingo.com/profile/ViolinKid21" target="_blank" rel="noopener noreferrer">ViolinKid21’s profile →</a><label class="duolingo-check"><input type="checkbox" id="duolingo-done"><span>I did my lesson today</span></label><p id="duolingo-status" class="form-status" role="status"></p><p class="field-help">Mark this after your lesson. The icon remembers your answer and starts fresh each day at midnight Eastern. Automatic account checking isn’t connected.</p></dialog>
+  <dialog id="study-dialog"><div class="dialog-header"><div><p class="eyebrow">ONE SESSION AT A TIME</p><h2 id="study-dialog-heading">Log study time</h2></div><button class="icon-button close-dialog" aria-label="Close study time">✕</button></div><p id="study-task-title" class="study-task-title" hidden></p><form id="study-form" novalidate><fieldset class="entry-fields" data-requires-app disabled><div id="study-subject-field"><label for="study-subject">Class or activity</label><select id="study-subject"></select></div><div id="study-title-field"><label for="study-title">What did you work on? (optional)</label><input id="study-title" maxlength="300" placeholder="Practice problems, reading, research…"></div><div class="form-row"><div><label for="study-minutes">Actual minutes</label><input id="study-minutes" type="number" min="1" max="1440" step="1" inputmode="numeric" placeholder="45" required></div><div><label for="study-date">Date</label><input id="study-date" type="date" required></div></div><p id="study-dialog-help" class="field-help"></p><div class="study-dialog-actions"><button id="study-save" class="primary-button" type="submit">Save study time</button><button id="study-skip" class="text-button" type="button" hidden>Finish without logging time</button></div><p id="study-form-status" class="form-status" role="status"></p></fieldset></form></dialog>
   <dialog id="runs-dialog" class="wide-dialog"><div class="dialog-header"><div><p class="eyebrow">A RECORD OF SHOWING UP</p><h2>Your running log</h2></div><button class="icon-button close-dialog" aria-label="Close running log">✕</button></div><div id="runs-totals" class="history-stats"></div><div id="runs-list"></div><p class="field-help">Log runs whenever you go. Distances stay in the unit you entered; totals are converted to miles.</p></dialog>
   <dialog id="youtube-dialog" class="wide-dialog"><div class="dialog-header"><div><p class="eyebrow">ONE HALF-DAY AT A TIME</p><h2>Your no-YouTube history</h2></div><button class="icon-button close-dialog" aria-label="Close no-YouTube history">✕</button></div><p class="field-help">Morning check-ins cover the previous night. Evening check-ins cover the daytime. Correct a past entry here if you need to.</p><div id="youtube-history"></div></dialog>
   <dialog id="history-dialog" class="wide-dialog"><div class="dialog-header"><div><p class="eyebrow">CONSISTENCY, ONE CHECK-IN AT A TIME</p><h2>Your movement history</h2></div><button class="icon-button close-dialog" aria-label="Close exercise history">✕</button></div><div id="history-stats" class="history-stats"></div><div class="month-controls"><button class="icon-button" id="history-prev" aria-label="Previous month">←</button><label class="sr-only" for="history-month">History month</label><input type="month" id="history-month"><button class="icon-button" id="history-next" aria-label="Next month">→</button></div><div class="calendar-weekdays"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div id="history-calendar" class="history-calendar"></div><p class="history-legend"><span><i class="legend-dot complete"></i> Complete</span><span><i class="legend-dot partial"></i> One set</span><span><i class="legend-dot empty"></i> No entry</span></p><div id="history-day"></div><p class="field-help">Tap a day to review or correct your self-reported sets. Each dot is one morning or evening check-in. Future check-ins can’t be logged.</p></dialog>
@@ -365,12 +370,12 @@ function checkInPick(key, length, salt) {
 }
 
 const taskSubjects = [
-  { id: 'history', label: 'History', short: 'H' },
-  { id: 'english', label: 'English', short: 'E' },
-  { id: 'math', label: 'Math', short: 'M' },
-  { id: 'chinese', label: 'Chinese', short: '中' },
-  { id: 'physics', label: 'Physics', short: 'P' },
-  { id: 'other', label: 'Other · extracurriculars', short: '+' },
+  { id: 'history', label: 'History' },
+  { id: 'english', label: 'English' },
+  { id: 'math', label: 'Math' },
+  { id: 'chinese', label: 'Chinese' },
+  { id: 'physics', label: 'Physics' },
+  { id: 'other', label: 'Other · extracurriculars' },
 ];
 
 function validTask(task) {
@@ -379,7 +384,31 @@ function validTask(task) {
     && typeof task.title === 'string' && task.title.trim().length > 0 && task.title.length <= 300
     && typeof task.completed === 'boolean'
     && (task.minutes === null || Number.isInteger(task.minutes) && task.minutes > 0 && task.minutes <= 1440)
-    && Number.isFinite(Date.parse(task.createdAt)));
+    && Number.isFinite(Date.parse(task.createdAt))
+    && (task.completedAt == null || Number.isFinite(Date.parse(task.completedAt))));
+}
+
+function validStudyDate(date) {
+  return typeof date === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(date)
+    && Number.isFinite(Date.parse(date)) && new Date(`${date}T12:00:00Z`).toISOString().slice(0,10) === date;
+}
+
+function validStudySession(session) {
+  return Boolean(session && typeof session.id === 'string' && session.id.length
+    && taskSubjects.some(s => s.id === session.subject)
+    && typeof session.title === 'string' && session.title.trim() && session.title.length <= 300
+    && Number.isInteger(session.minutes) && session.minutes > 0 && session.minutes <= 1440
+    && validStudyDate(session.date) && Number.isFinite(Date.parse(session.createdAt))
+    && (session.taskId == null || typeof session.taskId === 'string'));
+}
+
+function studyWeek(sessions, now = new Date()) {
+  const { year, month, day } = localParts(now);
+  const today = `${year}-${month}-${day}`;
+  const weekday = new Date(`${today}T12:00:00Z`).getUTCDay();
+  const start = shiftDate(today, -((weekday + 6) % 7)), end = shiftDate(start, 6);
+  const logged = sessions.filter(s => s.date >= start && s.date <= today);
+  return { start, end, minutes: logged.reduce((n,s) => n + s.minutes, 0), count: logged.length };
 }
 
 function taskTime(minutes) {
@@ -958,20 +987,106 @@ const facts = [
 ];
 
 const motivationalQuotes = [
-  { text: 'Well done is better than well said.', author: 'Benjamin Franklin' },
-  { text: 'The best way out is always through.', author: 'Robert Frost' },
-  { text: 'Small steps still move you forward.', author: 'A reminder for you' },
-  { text: 'You don’t need a perfect day to make a little progress.', author: 'A reminder for you' },
-  { text: 'Start with the next useful thing. Let that be enough for now.', author: 'A reminder for you' },
-  { text: 'Your effort today is something your future self can build on.', author: 'A reminder for you' },
-  { text: 'Rest, reset, and return. Consistency includes all three.', author: 'A reminder for you' },
-  { text: 'A difficult moment is a moment, not your whole story.', author: 'A reminder for you' },
-  { text: 'Keep your standards high and your next step small.', author: 'A reminder for you' },
-  { text: 'Curiosity is a good reason to begin.', author: 'A reminder for you' },
-  { text: 'Today’s small win is still a win.', author: 'A reminder for you' },
-  { text: 'Make room for what matters, one choice at a time.', author: 'A reminder for you' },
-  { text: 'Progress can be quiet. Keep going anyway.', author: 'A reminder for you' },
-  { text: 'Show up as you are. Begin where you are.', author: 'A reminder for you' },
+  {
+    "text": "Waste no more time arguing about what a good man should be. Be one.",
+    "author": "Marcus Aurelius",
+    "work": "Meditations, 10.16"
+  },
+  {
+    "text": "First say to yourself what you would be; and then do what you have to do.",
+    "author": "Epictetus",
+    "work": "Discourses, 3.23"
+  },
+  {
+    "text": "If there is no struggle there is no progress.",
+    "author": "Frederick Douglass",
+    "work": "West India Emancipation speech, 1857"
+  },
+  {
+    "text": "Nothing great was ever achieved without enthusiasm.",
+    "author": "Ralph Waldo Emerson",
+    "work": "Circles"
+  },
+  {
+    "text": "Do the thing, and you shall have the power.",
+    "author": "Ralph Waldo Emerson",
+    "work": "Compensation"
+  },
+  {
+    "text": "The credit belongs to the man who is actually in the arena, whose face is marred by dust and sweat and blood.",
+    "author": "Theodore Roosevelt",
+    "work": "Citizenship in a Republic, 1910"
+  },
+  {
+    "text": "Far better it is to dare mighty things, to win glorious triumphs, even though checkered by failure.",
+    "author": "Theodore Roosevelt",
+    "work": "The Strenuous Life, 1899"
+  },
+  {
+    "text": "I’ve failed over and over and over again in my life. And that is why I succeed.",
+    "author": "Michael Jordan",
+    "work": "Nike “Failure” advertisement, 1997"
+  },
+  {
+    "text": "You do not rise to the level of your goals. You fall to the level of your systems.",
+    "author": "James Clear",
+    "work": "Atomic Habits"
+  },
+  {
+    "text": "Every action you take is a vote for the type of person you wish to become.",
+    "author": "James Clear",
+    "work": "Atomic Habits"
+  },
+  {
+    "text": "Enthusiasm is common. Endurance is rare.",
+    "author": "Angela Duckworth",
+    "work": "Grit"
+  },
+  {
+    "text": "It is not that we have a short time to live, but that we waste a lot of it.",
+    "author": "Seneca",
+    "work": "On the Shortness of Life"
+  },
+  {
+    "text": "Do not let what you cannot do interfere with what you can do.",
+    "author": "John Wooden",
+    "work": "Coach and author"
+  },
+  {
+    "text": "When I dare to be powerful, to use my strength in the service of my vision, then it becomes less and less important whether I am afraid.",
+    "author": "Audre Lorde",
+    "work": "The Cancer Journals"
+  },
+  {
+    "text": "Ever tried. Ever failed. No matter. Try again. Fail again. Fail better.",
+    "author": "Samuel Beckett",
+    "work": "Worstward Ho"
+  },
+  {
+    "text": "I am the master of my fate: I am the captain of my soul.",
+    "author": "William Ernest Henley",
+    "work": "Invictus"
+  },
+  {
+    "text": "If one advances confidently in the direction of his dreams, and endeavors to live the life which he has imagined, he will meet with a success unexpected in common hours.",
+    "author": "Henry David Thoreau",
+    "work": "Walden, Conclusion"
+  },
+  {
+    "text": "Only those who will risk going too far can possibly find out how far one can go.",
+    "author": "T. S. Eliot",
+    "work": "Introduction to Transit of Venus"
+  },
+  {
+    "text": "Isn’t it nice to think that tomorrow is a new day with no mistakes in it yet?",
+    "author": "L. M. Montgomery",
+    "work": "Anne of Green Gables"
+  },
+  {
+    "text": "The best way out is always through.",
+    "author": "Robert Frost",
+    "work": "A Servant to Servants"
+  }
 ];
 
 const vocabulary = [
@@ -1254,6 +1369,426 @@ const vocabulary = [
     "kind": "Advanced",
     "meaning": "A figure of speech in which one word applies to two others in different senses.",
     "example": "“She lost her keys and her patience” is a zeugma."
+  },
+  {
+    "word": "obdurate",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Stubbornly refusing to change an opinion or attitude.",
+    "example": "The committee remained obdurate despite the new evidence."
+  },
+  {
+    "word": "recalcitrant",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Resistant to authority, guidance, or control.",
+    "example": "The recalcitrant witness ignored repeated requests to answer."
+  },
+  {
+    "word": "intransigent",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Unwilling to compromise or change one’s position.",
+    "example": "Both sides were intransigent, so negotiations stalled."
+  },
+  {
+    "word": "perfidious",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Disloyal or treacherous; betraying trust.",
+    "example": "The perfidious adviser secretly helped the opposing faction."
+  },
+  {
+    "word": "mendacious",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Dishonest or habitually untruthful.",
+    "example": "The investigation exposed the official’s mendacious account."
+  },
+  {
+    "word": "probity",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "Strong moral integrity and honesty.",
+    "example": "Her reputation for probity made her a trusted treasurer."
+  },
+  {
+    "word": "venality",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "Willingness to act dishonestly in exchange for money or favors.",
+    "example": "The bribery case revealed widespread venality in the department."
+  },
+  {
+    "word": "inveterate",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Long-established and unlikely to change, especially a habit.",
+    "example": "An inveterate skeptic, she checked every source herself."
+  },
+  {
+    "word": "inchoate",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Only just beginning; not fully formed or developed.",
+    "example": "His inchoate research idea still needed a testable question."
+  },
+  {
+    "word": "inscrutable",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Difficult or impossible to interpret or understand.",
+    "example": "Her inscrutable expression revealed nothing about the decision."
+  },
+  {
+    "word": "ineffable",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Too great, intense, or unusual to express adequately in words.",
+    "example": "The poem attempts to describe an ineffable sense of wonder."
+  },
+  {
+    "word": "inexorable",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Impossible to stop, prevent, or persuade.",
+    "example": "The inexorable rise in costs forced the project to change."
+  },
+  {
+    "word": "obviate",
+    "part": "verb",
+    "kind": "Advanced",
+    "meaning": "To remove a difficulty or make something unnecessary.",
+    "example": "A clear diagram obviated the need for a lengthy explanation."
+  },
+  {
+    "word": "elucidate",
+    "part": "verb",
+    "kind": "Advanced",
+    "meaning": "To explain or make something clearer.",
+    "example": "The experiment helped elucidate how the material conducts electricity."
+  },
+  {
+    "word": "attenuate",
+    "part": "verb",
+    "kind": "Advanced",
+    "meaning": "To reduce the strength, intensity, or effect of something.",
+    "example": "The thick walls attenuated the sound from the rehearsal room."
+  },
+  {
+    "word": "exacerbate",
+    "part": "verb",
+    "kind": "Advanced",
+    "meaning": "To make a problem or bad situation worse.",
+    "example": "The delayed response exacerbated the shortage."
+  },
+  {
+    "word": "abrogate",
+    "part": "verb",
+    "kind": "Advanced",
+    "meaning": "To formally repeal a law, agreement, or established practice.",
+    "example": "The legislature voted to abrogate the outdated restriction."
+  },
+  {
+    "word": "repudiate",
+    "part": "verb",
+    "kind": "Advanced",
+    "meaning": "To reject a claim, belief, or association firmly.",
+    "example": "The author repudiated the interpretation that her novel endorsed violence."
+  },
+  {
+    "word": "substantiate",
+    "part": "verb",
+    "kind": "Advanced",
+    "meaning": "To support a claim with evidence or proof.",
+    "example": "The study could not substantiate the company’s health claims."
+  },
+  {
+    "word": "corroborate",
+    "part": "verb",
+    "kind": "Advanced",
+    "meaning": "To confirm or support a statement with additional evidence.",
+    "example": "A second experiment corroborated the original finding."
+  },
+  {
+    "word": "juxtapose",
+    "part": "verb",
+    "kind": "Advanced",
+    "meaning": "To place things side by side for comparison or contrast.",
+    "example": "The essay juxtaposes two very different accounts of the same event."
+  },
+  {
+    "word": "extrapolate",
+    "part": "verb",
+    "kind": "Advanced",
+    "meaning": "To estimate beyond known data by extending an observed pattern.",
+    "example": "The researchers cautioned against extrapolating from such a small sample."
+  },
+  {
+    "word": "expatiate",
+    "part": "verb",
+    "kind": "Advanced",
+    "meaning": "To speak or write at length and in detail.",
+    "example": "The speaker expatiated on the history of the discovery."
+  },
+  {
+    "word": "circumscribe",
+    "part": "verb",
+    "kind": "Advanced",
+    "meaning": "To limit or restrict the scope of something.",
+    "example": "The experiment’s conclusions were circumscribed by its narrow sample."
+  },
+  {
+    "word": "prevaricate",
+    "part": "verb",
+    "kind": "Advanced",
+    "meaning": "To avoid telling the truth by giving evasive answers.",
+    "example": "Asked who approved the change, the manager began to prevaricate."
+  },
+  {
+    "word": "equivocate",
+    "part": "verb",
+    "kind": "Advanced",
+    "meaning": "To use ambiguous language to avoid committing to a clear position.",
+    "example": "The candidate equivocated when asked whether she supported the proposal."
+  },
+  {
+    "word": "circumlocution",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "An indirect or unnecessarily wordy way of saying something.",
+    "example": "His circumlocution turned a simple refusal into a five-minute speech."
+  },
+  {
+    "word": "diffident",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Hesitant or reserved because of a lack of confidence.",
+    "example": "Despite her expertise, she was diffident about speaking at the conference."
+  },
+  {
+    "word": "reticent",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Reluctant to speak freely or reveal thoughts and feelings.",
+    "example": "The normally reticent student offered an unusually detailed response."
+  },
+  {
+    "word": "incisive",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Clear, sharp, and perceptive in thought or expression.",
+    "example": "Her incisive critique identified the argument’s central weakness."
+  },
+  {
+    "word": "trenchant",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Forceful, sharp, and effective, especially in criticism.",
+    "example": "The reviewer offered a trenchant analysis of the policy’s contradictions."
+  },
+  {
+    "word": "polemical",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Strongly arguing for or against a controversial position.",
+    "example": "The polemical essay attacks the assumptions behind the proposed reform."
+  },
+  {
+    "word": "iconoclastic",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Challenging established beliefs, traditions, or institutions.",
+    "example": "The iconoclastic scientist questioned a theory others treated as settled."
+  },
+  {
+    "word": "heterodox",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Departing from accepted or conventional beliefs.",
+    "example": "Her heterodox interpretation challenged the prevailing historical account."
+  },
+  {
+    "word": "esoteric",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Understood by or intended for a small group with specialized knowledge.",
+    "example": "The paper’s esoteric notation made it difficult for newcomers to follow."
+  },
+  {
+    "word": "deleterious",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Causing harm or damage.",
+    "example": "The chemicals had a deleterious effect on the river’s ecosystem."
+  },
+  {
+    "word": "capricious",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Changing unpredictably, often without an obvious reason.",
+    "example": "The capricious rules made it hard to plan ahead."
+  },
+  {
+    "word": "mercurial",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Prone to quick and unpredictable changes in mood or behavior.",
+    "example": "The mercurial director could move from enthusiasm to frustration in minutes."
+  },
+  {
+    "word": "punctilious",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Extremely attentive to rules, formalities, or precise details.",
+    "example": "The punctilious editor checked every citation and punctuation mark."
+  },
+  {
+    "word": "erudite",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Having or showing extensive scholarly knowledge.",
+    "example": "Her erudite lecture connected ancient poetry with modern philosophy."
+  },
+  {
+    "word": "soporific",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Causing sleepiness or dulling attention.",
+    "example": "The warm room and monotonous presentation had a soporific effect."
+  },
+  {
+    "word": "equanimity",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "Calmness and composure, especially under pressure.",
+    "example": "She handled the unexpected setback with equanimity."
+  },
+  {
+    "word": "verisimilitude",
+    "part": "noun",
+    "kind": "Advanced",
+    "meaning": "The appearance of being true or realistic.",
+    "example": "The novel’s precise details give its imaginary city verisimilitude."
+  },
+  {
+    "word": "parsimonious",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Extremely unwilling to spend or use resources; excessively sparing.",
+    "example": "The parsimonious owner refused even essential repairs."
+  },
+  {
+    "word": "profligate",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Recklessly wasteful with money or resources.",
+    "example": "The audit exposed years of profligate spending."
+  },
+  {
+    "word": "tendentious",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Promoting a particular viewpoint in a biased or argumentative way.",
+    "example": "The report’s tendentious framing obscured evidence against its conclusion."
+  },
+  {
+    "word": "specious",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Appearing reasonable or true but actually misleading or unsound.",
+    "example": "The specious argument confused correlation with causation."
+  },
+  {
+    "word": "spurious",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "False, not genuine, or based on an invalid connection.",
+    "example": "The data appeared to show a spurious relationship caused by chance."
+  },
+  {
+    "word": "fallacious",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Based on faulty reasoning or a mistaken belief.",
+    "example": "The conclusion was fallacious because its premise was unsupported."
+  },
+  {
+    "word": "anodyne",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Unlikely to offend or provoke; bland or soothing.",
+    "example": "The committee issued an anodyne statement that avoided the real dispute."
+  },
+  {
+    "word": "acerbic",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Sharp, biting, or harsh in tone.",
+    "example": "Her acerbic reply made the disagreement more tense."
+  },
+  {
+    "word": "obsequious",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Excessively eager to please or obey someone powerful.",
+    "example": "The adviser’s obsequious praise made his judgment hard to trust."
+  },
+  {
+    "word": "ostensible",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Stated or appearing to be true, though possibly hiding the real reason.",
+    "example": "The ostensible purpose of the meeting was to discuss the budget."
+  },
+  {
+    "word": "concomitant",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Accompanying or occurring along with something else.",
+    "example": "The higher processor speed brought a concomitant increase in power use."
+  },
+  {
+    "word": "perfunctory",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Done routinely with little care or interest.",
+    "example": "The perfunctory inspection missed an obvious flaw."
+  },
+  {
+    "word": "desultory",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Lacking a plan, consistency, or sustained attention.",
+    "example": "His desultory preparation jumped between topics without mastering any."
+  },
+  {
+    "word": "internecine",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Involving destructive conflict within a group.",
+    "example": "Internecine disputes weakened the coalition before negotiations began."
+  },
+  {
+    "word": "supercilious",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Showing arrogant superiority or contempt for others.",
+    "example": "The reviewer’s supercilious tone alienated even those who agreed with her."
+  },
+  {
+    "word": "invidious",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Likely to cause resentment, unfair comparisons, or hostility.",
+    "example": "The ranking invited invidious comparisons between very different schools."
+  },
+  {
+    "word": "pusillanimous",
+    "part": "adjective",
+    "kind": "Advanced",
+    "meaning": "Showing a lack of courage or determination.",
+    "example": "The editorial criticized the leader’s pusillanimous response to intimidation."
   }
 ];
 
@@ -1267,7 +1802,7 @@ const paletteNames = ['lavender', 'sage', 'blue', 'rose', 'sand', 'teal'];
 
 const $ = selector => document.querySelector(selector);
 const STORAGE_KEY = 'daymark:v1';
-const defaults = () => ({ version: 1, tasks: [], sessions: {}, newsHistory: {}, briefingEdition: null, duolingoDays: {}, runs: [], youtubeSessions: {}, jokeWindow: null, moments: [], events: [], sheetEvents: [], sheetUrl: DEFAULT_SHEET_URL, sheetConfigured: true, sheetFetchedAt: null, seen: {}, lastVisit: null, jokeDate: null, weather: null, news: null });
+const defaults = () => ({ version: 1, tasks: [], studySessions: [], sessions: {}, newsHistory: {}, briefingEdition: null, duolingoDays: {}, runs: [], youtubeSessions: {}, jokeWindow: null, moments: [], events: [], sheetEvents: [], sheetUrl: DEFAULT_SHEET_URL, sheetConfigured: true, sheetFetchedAt: null, seen: {}, lastVisit: null, jokeDate: null, weather: null, news: null });
 let storageReadable = true;
 let state = defaults();
 
@@ -1281,6 +1816,7 @@ function validateState(value) {
   if (Object.entries(value.sessions).some(([key, v]) => !/^\d{4}-\d{2}-\d{2}-(am|pm)$/.test(key) || !v || typeof v.pushups !== 'boolean' || typeof v.situps !== 'boolean')) throw new Error('The backup contains invalid exercise history.');
   if (value.runs !== undefined && (!Array.isArray(value.runs) || value.runs.some(r => !validRun(r)))) throw new Error('The backup contains an invalid run.');
   if (value.tasks !== undefined && (!Array.isArray(value.tasks) || value.tasks.some(t => !validTask(t)) || new Set(value.tasks.map(t => t.id)).size !== value.tasks.length)) throw new Error('The backup contains an invalid task.');
+  if (value.studySessions !== undefined && (!Array.isArray(value.studySessions) || value.studySessions.some(s => !validStudySession(s)) || new Set(value.studySessions.map(s => s.id)).size !== value.studySessions.length)) throw new Error('The backup contains invalid study time.');
   if (value.youtubeSessions !== undefined && (!value.youtubeSessions || typeof value.youtubeSessions !== 'object' || Array.isArray(value.youtubeSessions) || Object.entries(value.youtubeSessions).some(([k, v]) => !/^\d{4}-\d{2}-\d{2}-(am|pm)$/.test(k) || !validDate(k.slice(0, 10)) || !v || typeof v.completed !== 'boolean'))) throw new Error('The backup contains invalid no-YouTube history.');
   if (value.duolingoDays !== undefined && (!value.duolingoDays || typeof value.duolingoDays !== 'object' || Array.isArray(value.duolingoDays) || Object.entries(value.duolingoDays).some(([date, v]) => !validDate(date) || !v || typeof v.completed !== 'boolean'))) throw new Error('The backup contains invalid Duolingo history.');
   if (value.newsHistory !== undefined && (!value.newsHistory || typeof value.newsHistory !== 'object' || Array.isArray(value.newsHistory))) throw new Error('The backup contains invalid news history.');
@@ -1347,6 +1883,7 @@ let lastRefreshAttempt = 0;
 let queuedRefresh = false;
 let sheetGeneration = 0;
 let toastTimer;
+let pendingStudyTaskId = null;
 
 function toast(message) { $('#toast').textContent = message; $('#toast').hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { $('#toast').hidden = true; }, 4000); }
 function showDialog(id) { const dialog = $(id); if (!dialog.open) dialog.showModal(); }
@@ -1365,11 +1902,13 @@ function renderHeader() {
 
 function taskMarkup(task, showSubject = false) {
   const subject = taskSubjects.find(s => s.id === task.subject);
-  return `<li class="task-entry ${task.completed ? 'task-done' : ''}"><label><input type="checkbox" data-task-id="${esc(task.id)}" ${task.completed ? 'checked' : ''}><span>${showSubject ? `<small>${esc(subject.label)}</small>` : ''}<span class="task-title">${esc(task.title)}</span></span></label>${task.minutes ? `<span class="task-time">${taskTime(task.minutes)}</span>` : ''}<button class="task-delete" data-delete-task="${esc(task.id)}" aria-label="Remove task: ${esc(task.title)}">×</button></li>`;
+  const minutes = task.completed ? state.studySessions.filter(s => s.taskId === task.id).reduce((n,s) => n+s.minutes,0) : task.minutes;
+  const completedDate = task.completed ? task.completedAt ? `Completed ${formatDate(new Date(task.completedAt))}` : 'Completed earlier' : '';
+  return `<li class="task-entry ${task.completed ? 'task-done' : ''}"><label><input type="checkbox" data-task-id="${esc(task.id)}" ${task.completed ? 'checked' : ''}><span>${showSubject ? `<small>${esc(subject.label)} · ${esc(completedDate)}${!minutes ? ' · time not logged' : ''}</small>` : ''}<span class="task-title">${esc(task.title)}</span></span></label>${minutes ? `<span class="task-time">${task.completed ? '' : '~'}${taskTime(minutes)}</span>` : ''}<button class="task-delete" data-delete-task="${esc(task.id)}" aria-label="Remove task: ${esc(task.title)}">×</button></li>`;
 }
 function renderTasks() {
   // Keep the forms mounted so changing one class doesn't erase another draft.
-  if (!$('#task-groups').children.length) $('#task-groups').innerHTML = taskSubjects.map(subject => `<section class="task-subject" data-subject="${subject.id}" aria-labelledby="tasks-${subject.id}-heading"><div class="task-subject-heading"><h3 id="tasks-${subject.id}-heading"><span class="subject-mark" aria-hidden="true">${subject.short}</span>${subject.label}</h3><span id="tasks-${subject.id}-count" class="task-count"></span></div><ul id="tasks-${subject.id}-list" class="task-list"></ul><form class="task-form" data-task-subject="${subject.id}" novalidate><fieldset class="entry-fields" data-requires-app disabled><label class="sr-only" for="task-${subject.id}-title">${subject.label} task</label><input id="task-${subject.id}-title" name="task" maxlength="300" placeholder="Add a task…" required><label class="sr-only" for="task-${subject.id}-minutes">${subject.label} estimated minutes (optional)</label><input id="task-${subject.id}-minutes" name="minutes" type="number" min="1" max="1440" step="1" placeholder="min" inputmode="numeric"><button class="task-add" type="submit" aria-label="Add ${subject.label} task">+</button></fieldset></form></section>`).join('');
+  if (!$('#task-groups').children.length) $('#task-groups').innerHTML = taskSubjects.map(subject => `<section class="task-subject" data-subject="${subject.id}" aria-labelledby="tasks-${subject.id}-heading"><div class="task-subject-heading"><h3 id="tasks-${subject.id}-heading">${subject.label}</h3><span id="tasks-${subject.id}-count" class="task-count"></span></div><ul id="tasks-${subject.id}-list" class="task-list"></ul><form class="task-form" data-task-subject="${subject.id}" novalidate><fieldset class="entry-fields" data-requires-app disabled><label class="sr-only" for="task-${subject.id}-title">${subject.label} task</label><input id="task-${subject.id}-title" name="task" maxlength="300" placeholder="Add a task…" required><label class="sr-only" for="task-${subject.id}-minutes">${subject.label} estimated minutes (optional)</label><input id="task-${subject.id}-minutes" name="minutes" type="number" min="1" max="1440" step="1" placeholder="min" inputmode="numeric"><button class="task-add" type="submit" aria-label="Add ${subject.label} task">+</button></fieldset></form></section>`).join('');
   const active = state.tasks.filter(t => !t.completed), done = state.tasks.filter(t => t.completed);
   for (const subject of taskSubjects) {
     const tasks = active.filter(t => t.subject === subject.id);
@@ -1379,8 +1918,9 @@ function renderTasks() {
   }
   $('#tasks-total').textContent = `${active.length} to do`;
   $('#completed-tasks-count').textContent = `Completed (${done.length})`;
-  $('#completed-task-list').innerHTML = done.slice().reverse().map(t => taskMarkup(t, true)).join('');
+  $('#completed-task-list').innerHTML = done.slice().sort((a,b) => (b.completedAt || '').localeCompare(a.completedAt || '')).map(t => taskMarkup(t, true)).join('');
   $('#completed-tasks').hidden = done.length === 0;
+  renderStudy();
 }
 $('#tasks-panel').addEventListener('submit', event => {
   const form = event.target.closest('[data-task-subject]');
@@ -1396,12 +1936,13 @@ $('#tasks-panel').addEventListener('submit', event => {
 $('#tasks-panel').addEventListener('change', event => {
   const task = state.tasks.find(t => t.id === event.target.dataset.taskId);
   if (!task) return;
-  const id = task.id; task.completed = event.target.checked;
+  if (event.target.checked) { event.target.checked = false; openStudyDialog(task); return; }
+  const id = task.id; task.completed = false; task.completedAt = null;
   const saved = persist(); renderTasks();
   if (task.completed) $('#completed-tasks').open = true;
   const checkbox = [...document.querySelectorAll('[data-task-id]')].find(input => input.dataset.taskId === id);
   checkbox?.focus();
-  $('#tasks-status').textContent = saved ? task.completed ? 'Done. Kept in Completed below.' : 'Moved back to your to-do list.' : 'Updated for this visit. Export a backup to keep it.';
+  $('#tasks-status').textContent = saved ? 'Moved back to your to-do list. Logged study time is kept.' : 'Updated for this visit. Export a backup to keep it.';
 });
 $('#tasks-panel').addEventListener('click', event => {
   const button = event.target.closest('[data-delete-task]');
@@ -1409,6 +1950,65 @@ $('#tasks-panel').addEventListener('click', event => {
   state.tasks = state.tasks.filter(t => t.id !== button.dataset.deleteTask);
   const saved = persist(); renderTasks();
   $('#tasks-status').textContent = saved ? 'Task removed.' : 'Removed for this visit. Export a backup to keep changes.';
+});
+
+function renderStudy() {
+  const week = studyWeek(state.studySessions);
+  $('#study-week-total').textContent = `${(week.minutes / 60).toFixed(1)} h`;
+  $('#study-week-range').textContent = `${formatDate(dateOnly(week.start))}–${formatDate(dateOnly(week.end))} · Mon–Sun`;
+  $('#study-week-detail').textContent = `${week.count} session${week.count === 1 ? '' : 's'} · ${taskTime(week.minutes) || '0 min'} logged`;
+  const sessions = state.studySessions.slice().sort((a,b) => b.date.localeCompare(a.date) || b.createdAt.localeCompare(a.createdAt));
+  $('#study-log-count').textContent = `Study-time log (${sessions.length})`;
+  $('#study-log-list').innerHTML = sessions.length ? sessions.map(s => `<li class="study-log-entry"><div><strong>${esc(s.title)}</strong><small>${esc(taskSubjects.find(t => t.id === s.subject).label)} · ${esc(formatDate(dateOnly(s.date), { year: 'numeric' }))}</small></div><span>${taskTime(s.minutes)}</span><button data-delete-study="${esc(s.id)}" class="task-delete" aria-label="Remove study-time entry: ${esc(s.title)}">×</button></li>`).join('') : '<li class="study-empty">Log time after a session or when finishing a task. Estimates do not count toward your hours.</li>';
+  $('#study-date').max = currentWindow.today;
+}
+function openStudyDialog(task = null) {
+  tick(); pendingStudyTaskId = task?.id || null;
+  $('#study-form').reset();
+  $('#study-dialog-heading').textContent = task ? 'Finish this task' : 'Log study time';
+  $('#study-task-title').textContent = task?.title || '';
+  $('#study-task-title').hidden = !task;
+  $('#study-title-field').hidden = Boolean(task);
+  $('#study-subject-field').hidden = Boolean(task);
+  $('#study-skip').hidden = !task;
+  $('#study-subject').innerHTML = taskSubjects.map(s => `<option value="${s.id}">${esc(s.label)}</option>`).join('');
+  $('#study-subject').value = task?.subject || 'history';
+  $('#study-date').value = currentWindow.today;
+  const alreadyLogged = task && state.studySessions.some(s => s.taskId === task.id);
+  $('#study-minutes').value = task && !alreadyLogged ? task.minutes || '' : '';
+  $('#study-dialog-help').textContent = alreadyLogged ? 'Earlier study time is kept. Enter only additional minutes, or finish without adding time.' : 'Enter the minutes you actually spent. You can log a session before the task is finished.';
+  $('#study-save').textContent = task ? 'Save time & finish' : 'Save study time';
+  $('#study-form-status').textContent = '';
+  showDialog('#study-dialog');
+  $('#study-minutes').focus();
+}
+$('#study-open').addEventListener('click', () => openStudyDialog());
+$('#study-dialog').addEventListener('close', () => { pendingStudyTaskId = null; });
+$('#study-form').addEventListener('submit', event => {
+  event.preventDefault(); tick();
+  const task = state.tasks.find(t => t.id === pendingStudyTaskId), minutes = Number($('#study-minutes').value), date = $('#study-date').value;
+  const session = { id: entryId(), subject: task?.subject || $('#study-subject').value, title: task?.title || $('#study-title').value.trim() || `${taskSubjects.find(s => s.id === $('#study-subject').value).label} study`, minutes, date, taskId: task?.id || null, createdAt: new Date().toISOString() };
+  if (!validStudyDate(date) || date > currentWindow.today || !validStudySession(session)) { $('#study-form-status').textContent = 'Choose today or a past date and enter 1–1,440 whole minutes.'; return; }
+  state.studySessions.push(session);
+  if (task) { task.completed = true; task.completedAt = new Date().toISOString(); }
+  const saved = persist(); renderTasks();
+  if (task) $('#completed-tasks').open = true;
+  $('#study-dialog').close();
+  $('#tasks-status').textContent = saved ? task ? 'Task completed. Actual study time saved.' : 'Study time saved.' : 'Updated for this visit. Export a backup to keep it.';
+});
+$('#study-skip').addEventListener('click', () => {
+  const task = state.tasks.find(t => t.id === pendingStudyTaskId);
+  if (!task) return;
+  task.completed = true; task.completedAt = new Date().toISOString();
+  const saved = persist(); renderTasks(); $('#completed-tasks').open = true; $('#study-dialog').close();
+  $('#tasks-status').textContent = saved ? 'Task completed. No study time added.' : 'Updated for this visit. Export a backup to keep it.';
+});
+$('#study-log-list').addEventListener('click', event => {
+  const button = event.target.closest('[data-delete-study]');
+  if (!button) return;
+  state.studySessions = state.studySessions.filter(s => s.id !== button.dataset.deleteStudy);
+  const saved = persist(); renderTasks();
+  $('#tasks-status').textContent = saved ? 'Study-time entry removed. Weekly total updated.' : 'Updated for this visit. Export a backup to keep it.';
 });
 
 function renderDuolingo() {
@@ -1639,7 +2239,7 @@ function renderDelights() {
   $('#fact-title').textContent = fact.title; $('#fact-text').textContent = fact.text;
   $('#fact-source').textContent = `Source: ${fact.source}`;
   const quote = motivationalQuotes[checkInPick(currentWindow.key, motivationalQuotes.length, 'quotes')];
-  $('#motivation-quote').textContent = quote.text; $('#motivation-author').textContent = quote.author;
+  $('#motivation-quote').textContent = quote.text; $('#motivation-author').textContent = `${quote.author}${quote.work ? ` · ${quote.work}` : ''}`;
   const word = vocabulary[dailyIndex(currentWindow.today, vocabulary.length)];
   $('#vocab-word').textContent = word.word; $('#vocab-part').textContent = word.part;
   $('#vocab-kind').textContent = word.kind; $('#vocab-meaning').textContent = word.meaning;
@@ -1814,7 +2414,7 @@ function tick() {
   currentWindow = next; currentDay = next.today;
   renderHeader(); renderBreak();
   if (changed) { renderExercise(); renderYoutube(); renderDelights(); renderCalendar(); void refreshAll(true); }
-  if (dayChanged) { renderDuolingo(); renderDelights(); renderRuns(); renderCalendar(); }
+  if (dayChanged) { renderDuolingo(); renderDelights(); renderRuns(); renderCalendar(); renderStudy(); }
   if (globalThis.DAYMARK_RESEARCHED && !document.hidden && !refreshPending && state.news?.editionKey !== currentWindow.key && Date.now() - lastRefreshAttempt >= 5 * 60 * 1000) void refreshAll();
 }
 document.addEventListener('visibilitychange', () => { if (!document.hidden) tick(); });
