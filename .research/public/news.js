@@ -68,6 +68,8 @@ export function similarStories(a, b) {
 }
 
 export function readableHeadline(title, summary = '') {
+  if (/Microsoft.*weather forecasts/i.test(title) && /two to six weeks/i.test(summary)) return 'A new method aims to make weather forecasts useful two to six weeks ahead';
+  if (/Chandra.*Treble Clef.*Galaxy Cluster Collision/i.test(title) && /likely caused/i.test(summary)) return 'Colliding galaxy clusters may explain a cosmic “treble clef”';
   if (/3 admissions experts.*supplemental essays/i.test(title)) return 'Three admissions experts explain why colleges keep or drop extra application essays';
   if (/James Webb reveals a massive cosmic structure/i.test(title) && /galaxy cluster.*dense/i.test(summary)) return 'Webb telescope finds an unexpectedly dense ancient group of galaxies';
   if (/Physicists discover.*property of light/i.test(title) && /spinning, twisting/i.test(summary)) return 'Scientists find an unexpected way light can twist as it travels';
@@ -179,6 +181,8 @@ export function plainLanguageSummary(text) {
     [/\bgenerative AI\b/gi, 'AI that creates text, images or other content'],
     [/\bgradient descent\b/gi, 'a method for adjusting an AI model to reduce mistakes'],
     [/\bphotovoltaic cells\b/gi, 'solar cells'],
+    [/\bmachine learning\b/gi, 'computer methods trained to find patterns'],
+    [/\bgalaxy clusters\b/gi, 'galaxy clusters (large groups of galaxies)'],
   ];
   // Keep direct quotations unchanged. Expand known jargon, preserving the
   // source's claims, uncertainty and attribution rather than inventing a summary.

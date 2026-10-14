@@ -99,10 +99,12 @@ export function parseSourceArticle(html, story) {
   const dateLabel = [...document.querySelectorAll('dt')].find(e => /^date:/i.test(e.textContent.trim()))?.nextElementSibling?.textContent.trim();
   const publishedAt = iso(publication || dateLabel);
   const modifiedAt = iso(metadata.dateModified || meta('article:modified_time'));
-  const primary = document.querySelector('#story_text') || document.querySelector('[data-testid="article-body"]') || document.querySelector('.article__body');
+  const primary = document.querySelector('#story_text') || document.querySelector('#storytext') || document.querySelector('[data-testid="article-body"]') || document.querySelector('.article__body');
+  const bbcBlocks = story.source === 'BBC News' ? [...document.querySelectorAll('[data-component="text-block"]')] : [];
   const readable = new Readability(document.cloneNode(true)).parse();
-  const body = primary?.cloneNode(true) || parseHTML(`<div>${readable?.content || ''}</div>`).document;
-  for (const nuisance of body.querySelectorAll('figure,figcaption,button,nav,aside,.credit,.caption,.toggle-caption,.image-credit')) nuisance.remove();
+  const body = bbcBlocks.length ? document.createElement('div') : primary?.cloneNode(true) || parseHTML(`<div>${readable?.content || ''}</div>`).document;
+  if (bbcBlocks.length) for (const block of bbcBlocks) body.appendChild(block.cloneNode(true));
+  for (const nuisance of body.querySelectorAll('figure,figcaption,button,nav,aside,.credit,.caption,.toggle-caption,.image-credit,.captionwrap,.imagewrap,.byline,.headline,.article-header')) nuisance.remove();
   for (const block of body.querySelectorAll('p,div,li,h1,h2,h3,h4,section,blockquote')) block.appendChild(document.createTextNode(' '));
   const text = plainText(body.textContent || body.documentElement?.textContent || '');
   const articleTitle = plainText(metadata.headline || readable?.title || story.title);
