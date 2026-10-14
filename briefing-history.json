@@ -7,16 +7,16 @@
       "eventDate": "2026-10-14",
       "eventRevision": "2026-10-14:Published",
       "editionKey": "2026-10-14-am",
-      "seenAt": "2026-10-14T18:14:18.891Z"
+      "seenAt": "2026-10-14T18:20:22.517Z"
     },
     "https://science.nasa.gov/missions/chandra/nasas-chandra-breaks-down-treble-clefs-galaxy-cluster-collision/": {
       "id": "https://science.nasa.gov/missions/chandra/nasas-chandra-breaks-down-treble-clefs-galaxy-cluster-collision/",
       "title": "NASA’s Chandra Breaks Down ‘Treble Clef’s’ Galaxy Cluster Collision",
       "source": "NASA",
       "eventDate": "2026-10-14",
-      "eventRevision": "2026-10-14:Research announced",
+      "eventRevision": "2026-10-14:Published",
       "editionKey": "2026-10-14-am",
-      "seenAt": "2026-10-14T18:14:18.891Z"
+      "seenAt": "2026-10-14T18:20:22.517Z"
     },
     "https://www.bbc.co.uk/news/articles/c305649p2d6o": {
       "id": "https://www.bbc.co.uk/news/articles/c305649p2d6o",
@@ -25,7 +25,25 @@
       "eventDate": "2026-10-14",
       "eventRevision": "2026-10-14:Event",
       "editionKey": "2026-10-14-am",
-      "seenAt": "2026-10-14T18:14:18.891Z"
+      "seenAt": "2026-10-14T18:20:22.517Z"
+    },
+    "https://www.bbc.co.uk/news/articles/cm2d6e62p49do": {
+      "id": "https://www.bbc.co.uk/news/articles/cm2d6e62p49do",
+      "title": "Starlink restrictions in Ukraine war linked to political situation, Zelensky aide says",
+      "source": "BBC News",
+      "eventDate": "2026-10-14",
+      "eventRevision": "2026-10-14:Event",
+      "editionKey": "2026-10-14-am",
+      "seenAt": "2026-10-14T18:20:22.517Z"
+    },
+    "https://www.npr.org/2026/10/14/nx-s1-5995633/kansas-senate-race-hamilton-marshall-tossup": {
+      "id": "https://www.npr.org/2026/10/14/nx-s1-5995633/kansas-senate-race-hamilton-marshall-tossup",
+      "title": "In Kansas, a newly competitive Senate race tests limit of Trump's unpopular policies",
+      "source": "NPR",
+      "eventDate": "2026-10-13",
+      "eventRevision": "2026-10-13:Announced",
+      "editionKey": "2026-10-14-am",
+      "seenAt": "2026-10-14T18:20:22.517Z"
     },
     "https://science.nasa.gov/photojournal/nasas-record-setting-perseverance-rover-team/": {
       "id": "https://science.nasa.gov/photojournal/nasas-record-setting-perseverance-rover-team/",
@@ -53,8 +71,8 @@
         "The Verge",
         "NASA",
         "BBC News",
-        "NASA",
-        "BBC News"
+        "BBC News",
+        "NPR"
       ]
     }
   ]
