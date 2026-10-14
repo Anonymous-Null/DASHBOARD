@@ -8,9 +8,10 @@ on:
       - '.research/**'
       - '.github/workflows/briefing.yml'
   schedule:
-    # The script checks America/New_York and skips the extra trigger in each
-    # season. This covers 7 AM / 7 PM across both EST and EDT.
+    # Eastern edition keys handle EST/EDT and delayed cron starts. The hourly
+    # catch-up repairs missed triggers; complete editions are a cheap no-op.
     - cron: '0 0,11,12,23 * * *'
+    - cron: '17 * * * *'
 
 permissions:
   contents: write

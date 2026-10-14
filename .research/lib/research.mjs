@@ -157,12 +157,17 @@ async function mapLimit(items, limit, worker) {
   return results;
 }
 
-export async function researchNews({ fetcher = fetch, now = new Date(), previous = [], limit = 45 } = {}) {
+export async function researchNews({ fetcher = fetch, now = new Date(), previous = [], seen = {}, limit = 90 } = {}) {
   const feeds = await Promise.allSettled(NEWS_FEEDS.map(async feed => parseFeed(await fetchText(feed.url, { fetcher }), feed)));
   const available = feeds.filter(f => f.status === 'fulfilled').length;
   if (!available) throw new Error('No live publisher feeds were reachable');
   const raw = feeds.flatMap(r => r.status === 'fulfilled' ? r.value : []);
-  const candidates = rankStories(raw, now, { limit: Math.max(limit, 40) }).slice(0, limit);
+  const key = checkInWindow(now).key;
+  const prior = Object.values(seen).filter(s => s.editionKey && s.editionKey !== key);
+  // Don't spend the article-reading budget on unchanged earlier stories.
+  // A newly dated report remains eligible for a verified major development.
+  const candidates = rankStories(raw, now, { limit: Math.max(raw.length, limit) }).filter(story =>
+    !prior.some(old => similarStories(old, story) && Date.parse(story.publishedAt) <= Date.parse(old.seenAt))).slice(0, limit);
   let pagesRead = 0, primaryDatesRead = 0;
   const checks = await mapLimit(candidates, 4, async story => {
     const article = parseSourceArticle(await fetchArticle(story, fetcher), story); pagesRead++;

@@ -1,23 +1,24 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { researchNews } from '../lib/research.mjs';
 import { selectBriefing } from '../public/news.js';
-import { checkInWindow, localParts } from '../public/shared.js';
+import { checkInWindow } from '../public/shared.js';
+import { briefingDue } from '../lib/briefing-schedule.mjs';
 
 const inDeployment = process.argv.includes('--deployment');
 const scheduled = process.argv.includes('--scheduled');
 const now = new Date();
-if (scheduled && !['07','19'].includes(localParts(now).hour)) {
-  console.log('Skipping the extra UTC trigger outside 7 AM/7 PM Eastern.');
-  process.exit(0);
-}
 const root = new URL('../', import.meta.url);
 const target = inDeployment ? new URL('../briefing.json', root) : new URL('public/data/researched.json', root);
 const historyTarget = inDeployment ? new URL('../briefing-history.json', root) : new URL('.local/briefing-history.json', root);
 let previous = null, history = { seen: {}, editions: [] };
 try { previous = JSON.parse(await readFile(target, 'utf8')); } catch { /* First research run. */ }
 try { history = JSON.parse(await readFile(historyTarget, 'utf8')); } catch { /* No public-story history yet. */ }
+if (scheduled && !briefingDue(previous, now)) {
+  console.log('This Eastern check-in already has a complete briefing.');
+  process.exit(0);
+}
 
-const news = await researchNews({ now, previous: previous?.news?.stories || [] });
+const news = await researchNews({ now, previous: previous?.news?.stories || [], seen: history.seen });
 const key = checkInWindow(now).key;
 const previousSources = history.editions.find(e => e.key !== key)?.sources || [];
 const selected = selectBriefing(news.stories, { key, history: history.seen, previousSources, requireVerified: true, now });
