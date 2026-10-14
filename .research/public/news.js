@@ -70,6 +70,7 @@ export function similarStories(a, b) {
 export function readableHeadline(title, summary = '') {
   if (/Microsoft.*weather forecasts/i.test(title) && /two to six weeks/i.test(summary)) return 'A new method aims to make weather forecasts useful two to six weeks ahead';
   if (/Chandra.*Treble Clef.*Galaxy Cluster Collision/i.test(title) && /likely caused/i.test(summary)) return 'Colliding galaxy clusters may explain a cosmic “treble clef”';
+  if (/CNN, MS NOW and Politico prevail against White House/i.test(title) && /federal judge.*cannot ban/i.test(summary)) return 'Judge temporarily blocks White House bans on news outlets over their coverage';
   if (/3 admissions experts.*supplemental essays/i.test(title)) return 'Three admissions experts explain why colleges keep or drop extra application essays';
   if (/James Webb reveals a massive cosmic structure/i.test(title) && /galaxy cluster.*dense/i.test(summary)) return 'Webb telescope finds an unexpectedly dense ancient group of galaxies';
   if (/Physicists discover.*property of light/i.test(title) && /spinning, twisting/i.test(summary)) return 'Scientists find an unexpected way light can twist as it travels';

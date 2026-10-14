@@ -104,9 +104,14 @@ export function parseSourceArticle(html, story) {
   const readable = new Readability(document.cloneNode(true)).parse();
   const body = bbcBlocks.length ? document.createElement('div') : primary?.cloneNode(true) || parseHTML(`<div>${readable?.content || ''}</div>`).document;
   if (bbcBlocks.length) for (const block of bbcBlocks) body.appendChild(block.cloneNode(true));
-  for (const nuisance of body.querySelectorAll('figure,figcaption,button,nav,aside,.credit,.caption,.toggle-caption,.image-credit,.captionwrap,.imagewrap,.byline,.headline,.article-header')) nuisance.remove();
+  for (const nuisance of body.querySelectorAll('figure,figcaption,button,nav,aside,.credit,.caption,.toggle-caption,.image-credit,.captionwrap,.imagewrap,.byline,.headline,.article-header,.bucketwrap,.storyenhancement,.related-story')) nuisance.remove();
   for (const block of body.querySelectorAll('p,div,li,h1,h2,h3,h4,section,blockquote')) block.appendChild(document.createTextNode(' '));
-  const text = plainText(body.textContent || body.documentElement?.textContent || '');
+  let text = plainText(body.textContent || body.documentElement?.textContent || '');
+  if (story.source === 'BBC News') {
+    if (text.startsWith(story.title)) text = text.slice(story.title.length).trim();
+    text = text.replace(/^By\s*[\p{Lu}][\p{L}'’-]+\s+[\p{Lu}][\p{L}'’-]+\s*/u, '')
+      .replace(/^Updated\s+\d+\s+(?:minutes?|hours?|days?)\s+ago\s*/i, '').trim();
+  }
   const articleTitle = plainText(metadata.headline || readable?.title || story.title);
   const image = sourceImage(meta('og:image') || meta('twitter:image') || (typeof metadata.image === 'string' ? metadata.image : metadata.image?.url));
   let caption = '';
