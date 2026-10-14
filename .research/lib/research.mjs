@@ -12,7 +12,7 @@ const sourceHosts = {
 };
 const months = 'january february march april may june july august september october november december'.split(' ');
 const weekdays = 'sunday monday tuesday wednesday thursday friday saturday'.split(' ');
-const eventVerb = /\b(announced|signed|killed|struck|issued|ruled|discovered|published|demonstrated|achieved|broke|banned|detected|revealed|rescued|erupted|began|invaded|overturned|resigned|collapsed|passed|approved|confirmed|released|attacked|fired|voted|landed|launched)\b/i;
+const eventVerb = /\b(announced|signed|killed|struck|issued|ruled|discovered|published|demonstrated|achieved|broke|banned|detected|revealed|rescued|erupted|began|invaded|overturned|resigned|collapsed|passed|approved|confirmed|released|attacked|fired|voted|landed|launched|agreed|reached|drove|traveled|covered|captured|died|found)\b/i;
 const future = /\b(will|plans to|scheduled to|expected to|is set to)\b/i;
 const majorEvent = /\b(signed|overturned|resigned|invaded|ceasefire|banned|approved|erupted|landed|discovered)\b/i;
 
@@ -31,7 +31,7 @@ export function eventDateInText(text, publishedAt) {
     const named = sentence.match(/\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2})(?:st|nd|rd|th)?(?:,?\s+(20\d{2}))?\b/i);
     if (!date && named) date = `${named[3] || year}-${String(months.indexOf(named[1].toLowerCase()) + 1).padStart(2, '0')}-${named[2].padStart(2, '0')}`;
     if (!date) {
-      const weekday = sentence.match(/\b(?:on|this|last)\s+(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)\b/i);
+      const weekday = sentence.match(/\b(?:(?:on|this|last)\s+)?(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)\b/i);
       if (weekday) {
         const day = new Date(`${anchor}T12:00:00Z`).getUTCDay();
         let distance = (day - weekdays.indexOf(weekday[1].toLowerCase()) + 7) % 7;
@@ -92,7 +92,9 @@ export function parseSourceArticle(html, story) {
   const modifiedAt = iso(metadata.dateModified || meta('article:modified_time'));
   const primary = document.querySelector('#story_text') || document.querySelector('[data-testid="article-body"]') || document.querySelector('.article__body');
   const readable = new Readability(document.cloneNode(true)).parse();
-  const text = plainText(primary?.textContent || readable?.textContent || '');
+  const body = primary?.cloneNode(true) || parseHTML(`<div>${readable?.content || ''}</div>`).document;
+  for (const block of body.querySelectorAll('p,div,li,h1,h2,h3,h4,section,blockquote')) block.appendChild(document.createTextNode(' '));
+  const text = plainText(body.textContent || body.documentElement?.textContent || '');
   const articleTitle = plainText(metadata.headline || readable?.title || story.title);
   const image = sourceImage(meta('og:image') || meta('twitter:image') || (typeof metadata.image === 'string' ? metadata.image : metadata.image?.url));
   let caption = '';
@@ -102,7 +104,7 @@ export function parseSourceArticle(html, story) {
     caption = plainText(img?.closest('figure')?.querySelector('figcaption')?.textContent || '');
   }
   // A publisher's AI illustration is not a real photograph of the event.
-  const realImage = /\b(AI|artificial intelligence|AI-generated|generated image|artist.s concept)\b/i.test(caption) || (story.source === 'ScienceDaily' && !caption) ? null : image;
+  const realImage = /\b(AI|artificial intelligence|AI-generated|generated image|artist.s concept)\b/i.test(caption) || (story.source === 'ScienceDaily' && !caption) || /(?:STK\d|stock[-_ ]?(?:photo|image))/i.test(image || '') ? null : image;
   const references = document.querySelector('#journal_references') || [...document.querySelectorAll('strong')].find(e => /journal references?/i.test(e.textContent))?.parentElement?.nextElementSibling;
   const doiArea = references || primary || document;
   const dois = [...doiArea.querySelectorAll('a[href]')].map(a => a.getAttribute('href')).filter(h => /^https?:\/\/(?:dx\.)?doi\.org\//i.test(h)).map(h => h.replace(/^https?:\/\/(?:dx\.)?doi\.org\//i, ''));
@@ -155,7 +157,7 @@ export async function researchNews({ fetcher = fetch, now = new Date(), previous
       const primary = await paperDate(article.dois[0], fetcher);
       if (primary) { primaryDatesRead++; date = { date: primary.date, kind: 'Study published', evidence: `The study cited by the source, “${primary.title}”, was first published on ${primary.date}.`, url: primary.url }; }
     }
-    if (!date && ['MIT News','NASA'].includes(story.source) && article.publishedAt) {
+    if (!date && ['MIT News','NASA'].includes(story.source) && !story.url.includes('/photojournal/') && article.publishedAt) {
       date = { date: dayOf(article.publishedAt), kind: 'Research announced', evidence: `The institution's original announcement is dated ${dayOf(article.publishedAt)}.`, url: story.url };
     }
     if (!date) throw new Error('The event date could not be established from the source');
