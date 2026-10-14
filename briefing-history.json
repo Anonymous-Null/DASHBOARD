@@ -7,7 +7,7 @@
       "eventDate": "2026-10-14",
       "eventRevision": "2026-10-14:Published",
       "editionKey": "2026-10-14-am",
-      "seenAt": "2026-10-14T18:20:22.517Z"
+      "seenAt": "2026-10-14T18:23:39.590Z"
     },
     "https://science.nasa.gov/missions/chandra/nasas-chandra-breaks-down-treble-clefs-galaxy-cluster-collision/": {
       "id": "https://science.nasa.gov/missions/chandra/nasas-chandra-breaks-down-treble-clefs-galaxy-cluster-collision/",
@@ -16,7 +16,7 @@
       "eventDate": "2026-10-14",
       "eventRevision": "2026-10-14:Published",
       "editionKey": "2026-10-14-am",
-      "seenAt": "2026-10-14T18:20:22.517Z"
+      "seenAt": "2026-10-14T18:23:39.590Z"
     },
     "https://www.bbc.co.uk/news/articles/c305649p2d6o": {
       "id": "https://www.bbc.co.uk/news/articles/c305649p2d6o",
@@ -25,7 +25,25 @@
       "eventDate": "2026-10-14",
       "eventRevision": "2026-10-14:Event",
       "editionKey": "2026-10-14-am",
-      "seenAt": "2026-10-14T18:20:22.517Z"
+      "seenAt": "2026-10-14T18:23:39.590Z"
+    },
+    "https://www.bbc.co.uk/news/articles/cw8dzg094zd9o": {
+      "id": "https://www.bbc.co.uk/news/articles/cw8dzg094zd9o",
+      "title": "Cornell bans all fraternity parties over gang sex assault allegations",
+      "source": "BBC News",
+      "eventDate": "2026-10-13",
+      "eventRevision": "2026-10-13:Announced",
+      "editionKey": "2026-10-14-am",
+      "seenAt": "2026-10-14T18:23:39.590Z"
+    },
+    "https://www.npr.org/2026/10/14/nx-s1-6001398/white-house-media-ban": {
+      "id": "https://www.npr.org/2026/10/14/nx-s1-6001398/white-house-media-ban",
+      "title": "CNN, MS NOW and Politico prevail against White House — for now",
+      "source": "NPR",
+      "eventDate": "2026-10-13",
+      "eventRevision": "2026-10-13:Event",
+      "editionKey": "2026-10-14-am",
+      "seenAt": "2026-10-14T18:23:39.590Z"
     },
     "https://www.bbc.co.uk/news/articles/cm2d6e62p49do": {
       "id": "https://www.bbc.co.uk/news/articles/cm2d6e62p49do",
@@ -53,15 +71,6 @@
       "eventRevision": "2026-10-13:Research announced",
       "editionKey": "2026-10-14-am",
       "seenAt": "2026-10-14T18:14:18.891Z"
-    },
-    "https://www.bbc.co.uk/news/articles/cw8dzg094zd9o": {
-      "id": "https://www.bbc.co.uk/news/articles/cw8dzg094zd9o",
-      "title": "Cornell bans all fraternity parties over gang sex assault allegations",
-      "source": "BBC News",
-      "eventDate": "2026-10-13",
-      "eventRevision": "2026-10-13:Announced",
-      "editionKey": "2026-10-14-am",
-      "seenAt": "2026-10-14T18:14:18.891Z"
     }
   },
   "editions": [
@@ -71,8 +80,8 @@
         "The Verge",
         "NASA",
         "BBC News",
-        "BBC News",
-        "NPR"
+        "NPR",
+        "BBC News"
       ]
     }
   ]

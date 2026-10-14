@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-14T18:20:22.517Z",
+  "fetchedAt": "2026-10-14T18:23:39.590Z",
   "news": {
     "schemaVersion": 2,
     "mode": "researched",
@@ -38,42 +38,7 @@
         "imageUrl": null,
         "imageCaption": "",
         "imageSourceUrl": "https://www.theverge.com/science/1011127/ai-weather-forecast-microsoft",
-        "checkedAt": "2026-10-14T18:20:22.517Z"
-      },
-      {
-        "id": "https://www.npr.org/2026/10/14/nx-s1-5995633/kansas-senate-race-hamilton-marshall-tossup",
-        "url": "https://www.npr.org/2026/10/14/nx-s1-5995633/kansas-senate-race-hamilton-marshall-tossup",
-        "title": "In Kansas, a newly competitive Senate race tests limit of Trump's unpopular policies",
-        "summary": "A sign seen on a Kansas Republican Party bus tour across the state to bolster Republican candidates in an unusually competitive year. Kansas has a Democratic governor and Republican U.S. Senators but recent polls show voters could elect a Republican governor and Democratic U.S. Senator this year. Stephen Fowler/NPR hide caption Stephen Fowler/NPR 📲 Get the latest on the midterms & more in the NPR App DODGE CITY, Kan. — If ever there were a place to symbolize both opportunities and obstacles that Democrats and Republicans face politically this midterm election, it would be Kansas. Two years after President Trump earned 57% of the vote, Kansas Republicans are grappling with the possibility that a Democrat could win a U.S.",
-        "publishedAt": "2026-10-14T09:00:00.000Z",
-        "source": "NPR",
-        "category": "U.S.",
-        "coverage": "Source report",
-        "score": 56,
-        "dimensions": {
-          "surprise": 90,
-          "consequence": 20,
-          "novelty": 85,
-          "relevance": 10
-        },
-        "freshness": "48h",
-        "displayTitle": "In Kansas, a newly competitive Senate race tests limit of Trump's unpopular policies",
-        "originalSummary": "Kansas voters could send a Democrat to the Senate for the first time in nearly a century — and flip the governor's office back to Republican control, even in what could be a tough year for the GOP.",
-        "whyMatters": null,
-        "originalPublishedAt": "2026-10-14T09:00:00.000Z",
-        "eventDate": "2026-10-13",
-        "eventKind": "Announced",
-        "eventDateVerified": true,
-        "dateEvidence": "The president announced Tuesday he would campaign in Wichita next week for Marshall and other Republicans on the ticket.",
-        "dateEvidenceUrl": "https://www.npr.org/2026/10/14/nx-s1-5995633/kansas-senate-race-hamilton-marshall-tossup",
-        "eventRevision": "2026-10-13:Announced",
-        "majorUpdateVerified": false,
-        "explanation": "A sign seen on a Kansas Republican Party bus tour across the state to bolster Republican candidates in an unusually competitive year. Kansas has a Democratic governor and Republican U.S. Senators but recent polls show voters could elect a Republican governor and Democratic U.S. Senator this year. Stephen Fowler/NPR hide caption Stephen Fowler/NPR 📲 Get the latest on the midterms & more in the NPR App DODGE CITY, Kan. — If ever there were a place to symbolize both opportunities and obstacles that Democrats and Republicans face politically this midterm election, it would be Kansas. Two years after President Trump earned 57% of the vote, Kansas Republicans are grappling with the possibility that a Democrat could win a U.S.",
-        "summaryKind": "Source excerpt",
-        "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/5712x3213+0+536/resize/1400/quality/85/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F0b%2F15%2F18fc484f4ddea3d1bb115343ceba%2Fks-bus-tour.JPG",
-        "imageCaption": "",
-        "imageSourceUrl": "https://www.npr.org/2026/10/14/nx-s1-5995633/kansas-senate-race-hamilton-marshall-tossup",
-        "checkedAt": "2026-10-14T18:20:22.517Z"
+        "checkedAt": "2026-10-14T18:23:39.590Z"
       },
       {
         "id": "https://science.nasa.gov/missions/chandra/nasas-chandra-breaks-down-treble-clefs-galaxy-cluster-collision/",
@@ -108,83 +73,13 @@
         "imageUrl": "https://assets.science.nasa.gov/content/dam/science/missions/chandra/2026/trebleclef.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg",
         "imageCaption": "",
         "imageSourceUrl": "https://science.nasa.gov/missions/chandra/nasas-chandra-breaks-down-treble-clefs-galaxy-cluster-collision/",
-        "checkedAt": "2026-10-14T18:20:22.517Z"
-      },
-      {
-        "id": "https://www.bbc.co.uk/news/articles/cm2d6e62p49do",
-        "url": "https://www.bbc.co.uk/news/articles/cm2d6e62p49do",
-        "title": "Starlink restrictions in Ukraine war linked to political situation, Zelensky aide says",
-        "summary": "New restrictions on the speed at which some of Ukraine's weapons can travel and stay connected to the Starlink internet network have disrupted Ukraine's battlefield \"missions\", President Volodymyr Zelensky's adviser has warned. Serhiy Beskrestnov said Ukraine had not been told about speed limits set overnight at 100mph (160km/h) by Elon Musk's SpaceX company. Starlink is a vital tool allowing Kyiv to effectively guide drones to Russian targets and also protect Ukrainian skies. Beskrestnov said SpaceX's move \"cannot be a coincidence and is related to the current political situation\". The firm has not commented.",
-        "publishedAt": "2026-10-14T07:21:50.874Z",
-        "source": "BBC News",
-        "category": "World",
-        "coverage": "Source report",
-        "score": 36.75,
-        "dimensions": {
-          "surprise": 15,
-          "consequence": 90,
-          "novelty": 15,
-          "relevance": 10
-        },
-        "freshness": "24h",
-        "displayTitle": "Starlink restrictions in Ukraine war linked to political situation, Zelensky aide says",
-        "originalSummary": "Elon Musk's system allows Kyiv to protect Ukrainian skies and effectively guide drones to Russian targets.",
-        "whyMatters": null,
-        "originalPublishedAt": "2026-10-14T07:21:50.874Z",
-        "eventDate": "2026-10-14",
-        "eventKind": "Event",
-        "eventDateVerified": true,
-        "dateEvidence": "Later on Wednesday, at least six people were killed in a Russian drone strike on a warehouse in the north-western city of Lutsk, local officials said.",
-        "dateEvidenceUrl": "https://www.bbc.co.uk/news/articles/cm2d6e62p49do",
-        "eventRevision": "2026-10-14:Event",
-        "majorUpdateVerified": false,
-        "explanation": "New restrictions on the speed at which some of Ukraine's weapons can travel and stay connected to the Starlink internet network have disrupted Ukraine's battlefield \"missions\", President Volodymyr Zelensky's adviser has warned. Serhiy Beskrestnov said Ukraine had not been told about speed limits set overnight at 100mph (160km/h) by Elon Musk's SpaceX company. Starlink is a vital tool allowing Kyiv to effectively guide drones to Russian targets and also protect Ukrainian skies. Beskrestnov said SpaceX's move \"cannot be a coincidence and is related to the current political situation\". The firm has not commented.",
-        "summaryKind": "Source excerpt",
-        "imageUrl": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/d0ee/live/d48bf4b0-c7c6-11f1-9a39-31b474234113.jpg",
-        "imageCaption": "",
-        "imageSourceUrl": "https://www.bbc.co.uk/news/articles/cm2d6e62p49do",
-        "checkedAt": "2026-10-14T18:20:22.517Z"
-      },
-      {
-        "id": "https://www.highereddive.com/news/more-students-are-ruling-out-colleges-based-on-politics-poll-finds/832778/",
-        "url": "https://www.highereddive.com/news/more-students-are-ruling-out-colleges-based-on-politics-poll-finds/832778/",
-        "title": "More students are ruling out colleges based on politics, poll finds",
-        "summary": "This audio is auto-generated. Please let us know if you have feedback. The share of students who say they have ruled out colleges solely because of a state’s politics has jumped 10 percentage points in just three years, according to a poll released Tuesday from the higher education consultancy Art & Science Group. That share came to 34% in summer 2026. The spike since 2023 represents “a consistent and legitimate upward trend” rather than “simply a one-time reaction to a particular political moment,” according to the Art & Science Group’s report on the poll’s findings.",
-        "publishedAt": "2026-10-13T05:00:00.000Z",
-        "source": "Higher Ed Dive",
-        "category": "Education",
-        "coverage": "Source report",
-        "score": 36.75,
-        "dimensions": {
-          "surprise": 15,
-          "consequence": 90,
-          "novelty": 15,
-          "relevance": 10
-        },
-        "freshness": "48h",
-        "displayTitle": "More students are ruling out colleges based on politics, poll finds",
-        "originalSummary": "Art & Science Group found that the share of students who decided against a college based entirely on its home state&rsquo;s politics rose to 34% this summer.",
-        "whyMatters": null,
-        "originalPublishedAt": "2026-10-13T05:00:00.000Z",
-        "eventDate": "2026-10-13",
-        "eventKind": "Event",
-        "eventDateVerified": true,
-        "dateEvidence": "The share of students who say they have ruled out colleges solely because of a state’s politics has jumped 10 percentage points in just three years, according to a poll released Tuesday from the higher education consultancy Art & Science Group.",
-        "dateEvidenceUrl": "https://www.highereddive.com/news/more-students-are-ruling-out-colleges-based-on-politics-poll-finds/832778/",
-        "eventRevision": "2026-10-13:Event",
-        "majorUpdateVerified": false,
-        "explanation": "This audio is auto-generated. Please let us know if you have feedback. The share of students who say they have ruled out colleges solely because of a state’s politics has jumped 10 percentage points in just three years, according to a poll released Tuesday from the higher education consultancy Art & Science Group. That share came to 34% in summer 2026. The spike since 2023 represents “a consistent and legitimate upward trend” rather than “simply a one-time reaction to a particular political moment,” according to the Art & Science Group’s report on the poll’s findings.",
-        "summaryKind": "Source excerpt",
-        "imageUrl": "https://imgproxy.divecdn.com/1_O4weHy7VoDpKbMjxaL0btf6K87q1v5Ot5A2R55-uU/g:ce/rs:fit:770:435/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS9HZXR0eUltYWdlcy0xMjM1NjUxNDk4LmpwZw==.webp",
-        "imageCaption": "Demonstrators rally against anti-abortion and voter suppression laws at the Texas State Capitol on Oct. 2, 2021 in Austin, Texas. A state's politics, such as around reproductive rights, are driving more college choices, according to surveys. Montinique Monroe/Getty Images via Getty Images",
-        "imageSourceUrl": "https://www.highereddive.com/news/more-students-are-ruling-out-colleges-based-on-politics-poll-finds/832778/",
-        "checkedAt": "2026-10-14T18:20:22.517Z"
+        "checkedAt": "2026-10-14T18:23:39.590Z"
       },
       {
         "id": "https://www.bbc.co.uk/news/articles/c305649p2d6o",
         "url": "https://www.bbc.co.uk/news/articles/c305649p2d6o",
         "title": "'It's rough out here': Americans struggle with rising inflation",
-        "summary": "Image source, Kathryn Vaughn Image caption, Kathryn Vaughn works many odd jobs to supplement her teacher's salary ByAna Faguy Kathryn Vaughn returned to work at a rural West Tennessee elementary school this autumn with a lot more stress on her plate than in previous years. The 46-year-old, like many Americans, is juggling how to provide for her family with rising costs of, as she described it, \"everything\". She spends her days working three different jobs to support her family of four, including as a primary school art teacher, as US inflation continues to rise. Inflation in September was above forecasts.",
+        "summary": "ByAna Faguy Kathryn Vaughn returned to work at a rural West Tennessee elementary school this autumn with a lot more stress on her plate than in previous years. The 46-year-old, like many Americans, is juggling how to provide for her family with rising costs of, as she described it, \"everything\". She spends her days working three different jobs to support her family of four, including as a primary school art teacher, as US inflation continues to rise. Inflation in September was above forecasts. Over the past 12 months, prices rose by 3.7% - up from 3.4% in the 12 months to August, according to officials numbers released on Wednesday.",
         "publishedAt": "2026-10-14T15:57:11.430Z",
         "source": "BBC News",
         "category": "U.S.",
@@ -208,12 +103,12 @@
         "dateEvidenceUrl": "https://www.bbc.co.uk/news/articles/c305649p2d6o",
         "eventRevision": "2026-10-14:Event",
         "majorUpdateVerified": false,
-        "explanation": "Image source, Kathryn Vaughn Image caption, Kathryn Vaughn works many odd jobs to supplement her teacher's salary ByAna Faguy Kathryn Vaughn returned to work at a rural West Tennessee elementary school this autumn with a lot more stress on her plate than in previous years. The 46-year-old, like many Americans, is juggling how to provide for her family with rising costs of, as she described it, \"everything\". She spends her days working three different jobs to support her family of four, including as a primary school art teacher, as US inflation continues to rise. Inflation in September was above forecasts.",
+        "explanation": "ByAna Faguy Kathryn Vaughn returned to work at a rural West Tennessee elementary school this autumn with a lot more stress on her plate than in previous years. The 46-year-old, like many Americans, is juggling how to provide for her family with rising costs of, as she described it, \"everything\". She spends her days working three different jobs to support her family of four, including as a primary school art teacher, as US inflation continues to rise. Inflation in September was above forecasts. Over the past 12 months, prices rose by 3.7% - up from 3.4% in the 12 months to August, according to officials numbers released on Wednesday.",
         "summaryKind": "Source excerpt",
         "imageUrl": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/e691/live/4f2f6b20-adf0-11f1-ad53-0d91a06f3150.jpg",
         "imageCaption": "Image caption, Kathryn Vaughn works many odd jobs to supplement her teacher's salary",
         "imageSourceUrl": "https://www.bbc.co.uk/news/articles/c305649p2d6o",
-        "checkedAt": "2026-10-14T18:20:22.517Z"
+        "checkedAt": "2026-10-14T18:23:39.590Z"
       },
       {
         "id": "https://www.npr.org/2026/10/14/nx-s1-6001398/white-house-media-ban",
@@ -248,13 +143,13 @@
         "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/5000x2813+0+0/resize/1400/quality/85/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fe0%2F43%2F782065af4948bc749692b20c1373%2Fgettyimages-2295498318.jpg",
         "imageCaption": "",
         "imageSourceUrl": "https://www.npr.org/2026/10/14/nx-s1-6001398/white-house-media-ban",
-        "checkedAt": "2026-10-14T18:20:22.517Z"
+        "checkedAt": "2026-10-14T18:23:39.590Z"
       },
       {
         "id": "https://www.bbc.co.uk/news/articles/cw8dzg094zd9o",
         "url": "https://www.bbc.co.uk/news/articles/cw8dzg094zd9o",
         "title": "Cornell bans all fraternity parties over gang sex assault allegations",
-        "summary": "Cornell bans all fraternity parties over gang sex assault allegations Image source, Getty Images Image caption, State officials and others have criticised how Cornell and local prosecutors handled the case ByMadeline Halpert Updated 6 hours ago Cornell University is banning all parties at fraternity houses as it faces a backlash over its handling of an alleged sexual assault on campus two years ago. Last month, a woman known as Jane Doe filed a lawsuit alleging she was plied with drugs and raped by several men in 2024 at a party at a Cornell fraternity house.",
+        "summary": "Cornell bans all fraternity parties over gang sex assault allegations ByMadeline Halpert Updated 7 hours ago Cornell University is banning all parties at fraternity houses as it faces a backlash over its handling of an alleged sexual assault on campus two years ago. Last month, a woman known as Jane Doe filed a lawsuit alleging she was plied with drugs and raped by several men in 2024 at a party at a Cornell fraternity house. In a statement on Tuesday, Cornell's president, Michael Kotlikoff, announced a series of measures responding to the alleged assault, including the end to fraternity parties for the remainder of the university year.",
         "publishedAt": "2026-10-13T17:59:28.603Z",
         "source": "BBC News",
         "category": "U.S.",
@@ -278,41 +173,40 @@
         "dateEvidenceUrl": "https://www.bbc.co.uk/news/articles/cw8dzg094zd9o",
         "eventRevision": "2026-10-13:Announced",
         "majorUpdateVerified": false,
-        "explanation": "Cornell bans all fraternity parties over gang sex assault allegations Image source, Getty Images Image caption, State officials and others have criticised how Cornell and local prosecutors handled the case ByMadeline Halpert Updated 6 hours ago Cornell University is banning all parties at fraternity houses as it faces a backlash over its handling of an alleged sexual assault on campus two years ago. Last month, a woman known as Jane Doe filed a lawsuit alleging she was plied with drugs and raped by several men in 2024 at a party at a Cornell fraternity house.",
+        "explanation": "Cornell bans all fraternity parties over gang sex assault allegations ByMadeline Halpert Updated 7 hours ago Cornell University is banning all parties at fraternity houses as it faces a backlash over its handling of an alleged sexual assault on campus two years ago. Last month, a woman known as Jane Doe filed a lawsuit alleging she was plied with drugs and raped by several men in 2024 at a party at a Cornell fraternity house. In a statement on Tuesday, Cornell's president, Michael Kotlikoff, announced a series of measures responding to the alleged assault, including the end to fraternity parties for the remainder of the university year.",
         "summaryKind": "Source excerpt",
         "imageUrl": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/0bfb/live/6e2d8910-c738-11f1-9a39-31b474234113.jpg",
         "imageCaption": "",
         "imageSourceUrl": "https://www.bbc.co.uk/news/articles/cw8dzg094zd9o",
-        "checkedAt": "2026-10-14T18:20:22.517Z"
+        "checkedAt": "2026-10-14T18:23:39.590Z"
       }
     ],
-    "fetchedAt": "2026-10-14T18:20:22.517Z",
-    "checkedAt": "2026-10-14T18:20:22.517Z",
+    "fetchedAt": "2026-10-14T18:23:39.590Z",
+    "checkedAt": "2026-10-14T18:23:39.590Z",
     "sources": [
       "The Verge",
-      "NPR",
       "NASA",
       "BBC News",
-      "Higher Ed Dive"
+      "NPR"
     ],
     "providersAvailable": 17,
     "providersTotal": 18,
     "research": {
       "rawCandidates": 376,
-      "candidatesReviewed": 42,
-      "sourcePagesRead": 42,
-      "primaryDatesChecked": 11,
+      "candidatesReviewed": 39,
+      "sourcePagesRead": 39,
+      "primaryDatesChecked": 14,
       "rejected": 34,
-      "qualifying": 8,
+      "qualifying": 5,
       "targetCandidates": 20,
       "method": "Live publisher feeds, original source pages, explicit event-date evidence and Crossref publication dates; automated weighted ranking; attributed source excerpts."
     },
     "selectedIds": [
       "https://www.theverge.com/science/1011127/ai-weather-forecast-microsoft",
       "https://science.nasa.gov/missions/chandra/nasas-chandra-breaks-down-treble-clefs-galaxy-cluster-collision/",
-      "https://www.bbc.co.uk/news/articles/cm2d6e62p49do",
       "https://www.bbc.co.uk/news/articles/c305649p2d6o",
-      "https://www.npr.org/2026/10/14/nx-s1-5995633/kansas-senate-race-hamilton-marshall-tossup"
+      "https://www.npr.org/2026/10/14/nx-s1-6001398/white-house-media-ban",
+      "https://www.bbc.co.uk/news/articles/cw8dzg094zd9o"
     ]
   }
 }
