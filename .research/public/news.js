@@ -28,7 +28,11 @@ export const NEWS_FEEDS = [
 
 export function plainText(value) {
   return String(value ?? '').replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/\s+/g, ' ').trim();
+    .replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&apos;/g, "'")
+    .replace(/&#(x[0-9a-f]+|\d+);/gi, (original, code) => {
+      const n = code[0].toLowerCase() === 'x' ? parseInt(code.slice(1), 16) : Number(code);
+      return n > 0 && n <= 0x10ffff ? String.fromCodePoint(n) : original;
+    }).replace(/\s+/g, ' ').trim();
 }
 
 const trivial = /\b(celebrity|celebrities|horoscope|red carpet|box office|gossip|reality tv|football results|premier league|transfer gossip|quiz|what to watch|shopping deals|prime day|black friday)\b|discovery\+.*prices|streaming.*prices|homeview ad/i;

@@ -75,6 +75,8 @@ dialog{border:1px solid var(--line);border-radius:22px;padding:30px;background:#
 .task-subject-heading h3{font-size:11px;font-weight:750;color:var(--ink)}.task-heading-actions{display:flex;gap:10px;align-items:center}.task-toggle{display:grid;place-items:center;flex-shrink:0;width:27px;height:27px;border-radius:7px;background:var(--accent-light);color:var(--accent);font-size:20px;line-height:1}.task-toggle:hover{filter:brightness(.94)}.task-toggle[aria-expanded=true]{background:var(--bg);color:var(--muted)}.task-subject-heading{margin-bottom:7px}.task-subject{padding:10px 0}.task-form[hidden]{display:none!important}.task-form{margin:11px 0 3px;padding:10px;background:var(--bg);border:1px solid var(--line);border-radius:9px;opacity:1}.task-form fieldset{grid-template-columns:minmax(0,1fr) 83px 43px;gap:5px 7px}.task-field-label{font-size:10px;color:var(--muted);grid-column:1;grid-row:1}.task-minutes-label{grid-column:2;grid-row:1;white-space:nowrap}.task-form input[name=task]{grid-column:1;grid-row:2}.task-form input[name=minutes]{grid-column:2;grid-row:2}.task-form .task-add{grid-column:3;grid-row:2;width:43px;height:33px;font-size:11px;font-weight:650}.task-form input{background:var(--paper)}
 .vocab-actions{display:flex;align-items:center;justify-content:space-between;gap:12px}.vocab-actions .secondary-button{font-size:11px;padding:7px 12px;background:var(--paper);color:var(--accent);border-color:var(--line)}.vocab-known-row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:11px}.vocab-known-row button{font-size:10px}.vocabulary-card .form-status{font-size:10px;min-height:0;margin-top:8px}.news-heading-actions{display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex-shrink:0}.bookmarks-open{font-size:10px;white-space:nowrap}.bookmarks-open span{display:inline-block;background:var(--accent-light);color:var(--accent);border-radius:5px;padding:0 5px;margin-left:3px}.story-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}.save-story{font-size:10px}.save-story[aria-pressed=true]{font-weight:700;text-decoration:underline;text-underline-offset:3px}.saved-story{padding:19px 0;border-bottom:1px solid var(--line)}.saved-story h3{font-size:18px;line-height:1.4;margin:8px 0}.saved-story h3 a{text-decoration:none}.saved-story h3 a:hover{text-decoration:underline}.saved-story>p{font-size:13px;line-height:1.8;color:var(--muted);white-space:pre-line}.saved-story-meta{font-size:10px;color:var(--muted)}.saved-story-footer{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:10px;color:var(--muted);margin-top:12px}.saved-story-footer>span{margin-right:auto}.weekly-recap[hidden]{display:none!important}.recap-range{font-size:11px;color:var(--muted);margin:10px 0 17px}.recap-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}.recap-stats>div{padding:15px;background:var(--bg);border:1px solid var(--line);border-radius:11px}.recap-stats strong{display:block;font-size:26px;line-height:1.3;letter-spacing:-.6px;color:var(--ink)}.recap-stats span{font-size:11px;color:var(--muted)}.recap-small,.recap-empty{font-size:11px;line-height:1.8;color:var(--muted);margin-top:14px}.recap-moment{margin-top:17px;background:var(--soft);padding:16px;border-radius:11px}.recap-moment label{font-size:10px;color:var(--soft-ink);font-weight:600}.recap-moment select,#recap-week{font:inherit;width:100%;background:var(--paper);color:var(--ink);border:1px solid var(--line);padding:9px;border-radius:8px;margin:8px 0 0;min-width:0}.recap-moment select{font-size:11px}.recap-moment blockquote{font-size:13px;line-height:1.8;margin:12px 0 0;overflow-wrap:anywhere;white-space:pre-line}.site-footer>span:last-child{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 @media(max-width:420px){.news-heading-actions .live-badge{display:none}.bookmarks-open{font-size:9px}.source-line{flex-wrap:wrap;gap:9px}.story-actions{justify-content:flex-start;gap:16px}.site-footer>span:last-child{justify-content:center}}
+
+.delight-next{display:block;margin-top:13px;font-size:10px;opacity:.8}.news-source-directory{margin-top:22px;border-top:1px solid var(--line);padding-top:14px}.news-source-directory p{font-size:10px!important;margin-bottom:10px!important}.news-source-directory a{display:inline-block;font-size:11px;margin:4px 8px;color:var(--accent);text-decoration:none}.news-source-directory a:hover{text-decoration:underline}
 </style>
   
 </head>
@@ -111,7 +113,7 @@ dialog{border:1px solid var(--line);border-radius:22px;padding:30px;background:#
           <section class="card exercise-card" id="movement-panel" aria-labelledby="exercise-heading"><div class="section-heading"><div><p class="section-kicker">SHOW UP FOR YOURSELF</p><h2 id="exercise-heading">Daily movement</h2></div><span class="movement-icon"><svg><use href="#i-move"/></svg></span></div><p class="section-subtitle">Two small sets. One habit worth keeping.</p><div class="exercise-options"><label class="exercise-option"><input type="checkbox" id="pushups"><span class="check-visual" aria-hidden="true"></span><span><strong>25</strong><span>push-ups</span></span></label><label class="exercise-option"><input type="checkbox" id="situps"><span class="check-visual" aria-hidden="true"></span><span><strong>25</strong><span>sit-ups</span></span></label></div><div class="exercise-footer"><span id="exercise-message" role="status"></span><span id="exercise-progress">0 / 2</span></div><div class="week-heading"><span>YOUR LAST 7 DAYS</span><span id="streak" class="streak-pill">0 check-ins</span></div><div id="exercise-week" class="exercise-week" aria-label="Exercise history for the last seven days"></div><div class="history-footer"><span><i class="legend-dot"></i> AM / PM check-ins</span><button class="text-button" id="exercise-history-button">View history <svg><use href="#i-arrow"/></svg></button></div><p class="fine-print">Resets at 7 AM & 7 PM. Refreshing keeps your progress.</p><div class="running-block"><div class="running-heading"><h3>Went for a run?</h3><span id="run-week-stat">0 runs this week</span></div><p class="running-help">About 3 runs a week. Log one whenever you go.</p><form id="run-form" novalidate><fieldset class="entry-fields" data-requires-app disabled><div class="run-fields"><div><label for="run-distance">Distance</label><div class="distance-input"><input id="run-distance" type="number" min="0.01" max="1000" step="any" placeholder="3.0" required><label class="sr-only" for="run-unit">Distance unit</label><select id="run-unit"><option value="mi">mi</option><option value="km">km</option></select></div></div><div><label for="run-time">Time (optional)</label><input id="run-time" type="text" maxlength="15" placeholder="24:30" aria-describedby="run-time-help"></div></div><div class="run-save-row"><label class="sr-only" for="run-date">Date of run</label><input id="run-date" type="date" required><button class="primary-button" type="submit">Log run →</button></div><p id="run-time-help" class="fine-print">Time: minutes or mm:ss. Your log is saved.</p><p id="run-status" class="form-status" role="status"></p></fieldset></form><div id="recent-runs"></div><button id="runs-history-button" class="text-button">All your runs →</button></div></section>
           <section class="card agenda-card" aria-labelledby="agenda-heading"><div class="section-heading"><div><p class="section-kicker">YOUR SHEET · NEXT 7 DAYS</p><h2 id="agenda-heading">Coming up</h2></div><svg aria-hidden="true"><use href="#i-calendar"/></svg></div><p id="agenda-status" class="agenda-status" role="status">Checking your Sheet…</p><div id="upcoming-events"></div><button class="text-button" id="agenda-calendar-button">All your dates →</button></section>
           <section class="card break-card" aria-labelledby="break-heading"><div class="section-heading"><p class="section-kicker">SOMETHING TO LOOK FORWARD TO</p><svg aria-hidden="true"><use href="#i-calendar"/></svg></div><h2 id="break-heading" class="sr-only">School breaks</h2><div id="break-content"></div><button class="text-button light" id="break-button">Your school breaks <svg><use href="#i-arrow"/></svg></button><div class="break-doodle" aria-hidden="true"></div></section>
-        <section class="card small-delights" aria-labelledby="delights-heading"><div class="delights-heading"><p class="section-kicker">FRESH AT 7 AM & 7 PM</p><h2 id="delights-heading">A little fuel for your day</h2></div><div class="delight quote-section"><div class="delight-label"><span class="delight-symbol">“</span><span>A LITTLE MOMENTUM</span></div><blockquote id="motivation-quote"></blockquote><cite id="motivation-author"></cite></div><div class="delight joke-section"><div class="delight-label"><span class="delight-symbol">:)</span><span>THIS CHECK-IN’S SMALL LAUGH</span></div><p id="joke-question" class="joke-question"></p><button id="joke-reveal" class="text-button">I’ll bite. Tell me →</button><p id="joke-answer" class="joke-answer" hidden></p></div><div class="delight fact-section"><div class="delight-label"><span class="delight-symbol">✦</span><span>DOWN A LITTLE RABBIT HOLE</span></div><h3 id="fact-title"></h3><p id="fact-text"></p><p id="fact-source" class="fact-attribution"></p></div></section>
+        <section class="card small-delights" aria-labelledby="delights-heading"><div class="delights-heading"><p class="section-kicker">FRESH AT 7 AM & 7 PM</p><h2 id="delights-heading">A little fuel for your day</h2></div><div class="delight quote-section"><div class="delight-label"><span class="delight-symbol">“</span><span>A LITTLE MOMENTUM</span></div><blockquote id="motivation-quote"></blockquote><cite id="motivation-author"></cite></div><div class="delight joke-section"><div class="delight-label"><span class="delight-symbol">:)</span><span>THIS CHECK-IN’S SMALL LAUGH</span></div><p id="joke-question" class="joke-question"></p><button id="joke-reveal" class="text-button">I’ll bite. Tell me →</button><p id="joke-answer" class="joke-answer" hidden></p><button id="joke-next" class="text-button delight-next" type="button">Another joke ↻</button></div><div class="delight fact-section"><div class="delight-label"><span class="delight-symbol">✦</span><span>STRANGE BUT TRUE</span></div><h3 id="fact-title"></h3><p id="fact-text"></p><p id="fact-source" class="fact-attribution"></p><button id="fact-next" class="text-button delight-next" type="button">Another fact ↻</button></div></section>
         </div>
       </div><section class="card youtube-card" id="youtube-panel" aria-labelledby="youtube-heading"><div class="section-heading"><div><p class="section-kicker">MAKE ROOM FOR YOUR OWN LIFE</p><h2 id="youtube-heading">A little less YouTube</h2></div><span id="youtube-streak" class="streak-pill">0 check-in streak</span></div><div class="youtube-check-row"><label class="youtube-option"><input type="checkbox" id="no-youtube"><span class="check-visual" aria-hidden="true"></span><span><strong id="youtube-label">No YouTube last night</strong><span id="youtube-period"></span></span></label><p id="youtube-message" role="status"></p></div><div class="youtube-bottom"><p class="fine-print">7 AM: previous night · 7 PM: daytime. Self-reported.</p><button class="text-button" id="youtube-history-button">Your streak history →</button></div></section>
       <footer class="site-footer"><span class="footer-brand">Matthew Wei <small>A little more intentional.</small></span><span>7 AM & 7 PM · Eastern Time <button class="text-button" id="recap-open">Weekly recap</button> <button class="text-button" id="about-button">About your dashboard</button></span></footer>
@@ -374,6 +376,34 @@ function checkInPick(key, length, salt) {
   return bag[position];
 }
 
+function delightId(item) {
+  return contentHash(Array.isArray(item) ? item.join('\n') : `${item.title}\n${item.text}`).toString(36);
+}
+
+function validDelightHistory(value) {
+  return Boolean(value && typeof value === 'object' && !Array.isArray(value)
+    && Array.isArray(value.seen) && value.seen.length <= 500
+    && value.seen.every(id => typeof id === 'string' && /^[a-z0-9]{1,20}$/.test(id))
+    && (value.current == null || (typeof value.current.id === 'string' && /^[a-z0-9]{1,20}$/.test(value.current.id)
+      && /^\d{4}-\d{2}-\d{2}-(am|pm)$/.test(value.current.key))));
+}
+
+// Track what this visitor saw, rather than assuming they visited every window.
+// Stable content IDs also survive collection reordering and future additions.
+function trackedDelight(items, key, salt, history = { seen: [], current: null }, force = false) {
+  if (!items.length) throw new Error('The delight collection is empty');
+  const ids = items.map(delightId);
+  const existing = ids.indexOf(history.current?.id);
+  if (!force && history.current?.key === key && existing >= 0) return { item: items[existing], history };
+  let eligible = ids.map((id, index) => ({ id, index })).filter(({ id }) => !history.seen.includes(id));
+  if (!eligible.length) {
+    // Once the collection is exhausted, use the least recently seen item.
+    eligible = [{ id: history.seen.find(id => ids.includes(id)), index: ids.indexOf(history.seen.find(id => ids.includes(id))) }];
+  }
+  const choice = eligible[checkInPick(key, eligible.length, `${salt}:${history.seen.length}`)];
+  return { item: items[choice.index], history: { seen: [...history.seen.filter(id => id !== choice.id), choice.id].slice(-500), current: { key, id: choice.id } } };
+}
+
 const taskSubjects = [
   { id: 'history', label: 'History' },
   { id: 'english', label: 'English' },
@@ -595,11 +625,21 @@ const NEWS_FEEDS = [
   { url: 'https://www.nasa.gov/news-release/feed/', source: 'NASA', category: 'Science', coverage: 'Institution announcement' },
   { url: 'https://www.nature.com/nature.rss', source: 'Nature', category: 'Science', coverage: 'Primary research' },
   { url: 'https://www.science.org/rss/news_current.xml', source: 'Science', category: 'Science' },
+  { url: 'https://www.theguardian.com/world/rss', source: 'The Guardian', category: 'World' },
+  { url: 'https://www.theguardian.com/science/rss', source: 'The Guardian', category: 'Science' },
+  { url: 'https://www.theguardian.com/technology/rss', source: 'The Guardian', category: 'Technology' },
+  { url: 'https://www.livescience.com/feeds/all', source: 'Live Science', category: 'Science' },
+  { url: 'https://www.sciencealert.com/feed', source: 'ScienceAlert', category: 'Science' },
+  { url: 'https://phys.org/rss-feed/', source: 'Phys.org', category: 'Science', coverage: 'Research reporting' },
 ];
 
 function plainText(value) {
   return String(value ?? '').replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/\s+/g, ' ').trim();
+    .replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&apos;/g, "'")
+    .replace(/&#(x[0-9a-f]+|\d+);/gi, (original, code) => {
+      const n = code[0].toLowerCase() === 'x' ? parseInt(code.slice(1), 16) : Number(code);
+      return n > 0 && n <= 0x10ffff ? String.fromCodePoint(n) : original;
+    }).replace(/\s+/g, ' ').trim();
 }
 
 const trivial = /\b(celebrity|celebrities|horoscope|red carpet|box office|gossip|reality tv|football results|premier league|transfer gossip|quiz|what to watch|shopping deals|prime day|black friday)\b|discovery\+.*prices|streaming.*prices|homeview ad/i;
@@ -923,142 +963,350 @@ const schoolBreaks = [
 ];
 
 const jokes = [
-  ['Why did the scarecrow win an award?', 'Because he was outstanding in his field.'],
-  ['Why do programmers prefer dark mode?', 'Because light attracts bugs.'],
-  ['What do you call a fake noodle?', 'An impasta.'],
-  ['Why did the bicycle fall over?', 'It was two-tired.'],
-  ['What did one wall say to the other?', 'I’ll meet you at the corner.'],
-  ['Why can’t you trust an atom?', 'They make up everything.'],
-  ['What do you call a bear with no teeth?', 'A gummy bear.'],
-  ['Why was the math book sad?', 'It had too many problems.'],
-  ['What’s a tree’s favorite subject?', 'Geometry.'],
-  ['Why did the coffee file a police report?', 'It got mugged.'],
-  ['What do you call cheese that isn’t yours?', 'Nacho cheese.'],
-  ['How does the moon cut its hair?', 'Eclipse it.'],
-  ['Why are elevator jokes so good?', 'They work on so many levels.'],
-  ['What did the ocean say to the beach?', 'Nothing. It just waved.'],
+  [
+    "I made a to-do list to reduce stress.",
+    "Now the stress is alphabetized."
+  ],
+  [
+    "My computer asked if I wanted to save my changes.",
+    "Honestly, I’d like to return a few."
+  ],
+  [
+    "I named my Wi-Fi “The Wi-Fi Is Down.”",
+    "The family troubleshooting group chat has become very active."
+  ],
+  [
+    "I finally closed all my browser tabs.",
+    "Unfortunately, the ones in my brain are still playing audio."
+  ],
+  [
+    "I tried to organize my procrastination.",
+    "I’ll finish the system tomorrow."
+  ],
+  [
+    "My alarm clock and I have a healthy relationship.",
+    "We disagree every morning, then I give it the silent treatment."
+  ],
+  [
+    "I put “be spontaneous” on my calendar.",
+    "Thursday, 4:15 to 4:30."
+  ],
+  [
+    "I told my plants they were doing a great job.",
+    "They’re the only group project where everyone pulls their weight."
+  ],
+  [
+    "I tried to write a joke about infinity.",
+    "It had no end."
+  ],
+  [
+    "My laptop has incredible multitasking skills.",
+    "It can freeze eight apps simultaneously."
+  ],
+  [
+    "A physics student walks into a wall.",
+    "The probability was small, but apparently not zero."
+  ],
+  [
+    "I started reading a book about anti-gravity.",
+    "I’ve lost it somewhere near the ceiling."
+  ],
+  [
+    "My phone says my screen time is down 20%.",
+    "Great. The laptop is picking up the slack."
+  ],
+  [
+    "I bought a minimalist planner.",
+    "It’s blank. Apparently I’m doing very well."
+  ],
+  [
+    "I have a photographic memory.",
+    "The lens cap is usually on."
+  ],
+  [
+    "I asked the printer to make one copy.",
+    "It began negotiating."
+  ],
+  [
+    "My code works on the first try.",
+    "That’s how I know I forgot to run it."
+  ],
+  [
+    "I cleaned my desk to improve my focus.",
+    "Now I’m focused on where I put everything."
+  ],
+  [
+    "A statistician takes two umbrellas outside.",
+    "One for the weather, one for the margin of error."
+  ],
+  [
+    "I decided to become a morning person.",
+    "The morning has not accepted my application."
+  ],
+  [
+    "I’m great at mental math.",
+    "The math itself is questionable, but it is entirely mental."
+  ],
+  [
+    "My password is “incorrect.”",
+    "The computer keeps reminding me."
+  ],
+  [
+    "I asked a history major what time it was.",
+    "The answer began, “To understand that, we need to go back…”"
+  ],
+  [
+    "I got a new notebook to finally get organized.",
+    "It’s joining the support group of my previous notebooks."
+  ],
+  [
+    "A friend said I should live in the moment.",
+    "So I stopped planning and immediately missed the bus."
+  ],
+  [
+    "I thought I understood the lecture.",
+    "Then the professor said, “That was the easy example.”"
+  ],
+  [
+    "I measure my runs in kilometers.",
+    "It makes the number bigger without requiring more running."
+  ],
+  [
+    "I tried using voice recognition to write an essay.",
+    "It has a lot of strong opinions about what I supposedly said."
+  ],
+  [
+    "My phone autocorrected “studying” to “stunning.”",
+    "Finally, some academic support."
+  ],
+  [
+    "I read all the terms and conditions.",
+    "That’s the joke."
+  ],
+  [
+    "I asked the library for a book on paranoia.",
+    "The librarian whispered, “It’s right behind you.”"
+  ],
+  [
+    "I wanted to build a time machine.",
+    "My future self sent a note saying, “Start the homework first.”"
+  ],
+  [
+    "I set a reminder to drink water.",
+    "Now my phone is more emotionally invested in my health than I am."
+  ],
+  [
+    "I tried to make a spreadsheet of my mistakes.",
+    "It asked if I wanted to purchase more storage."
+  ],
+  [
+    "The cloud sounds so peaceful.",
+    "Then you find out it’s someone else’s computer working very hard."
+  ],
+  [
+    "I left my phone in another room to concentrate.",
+    "My brain immediately opened its own social media app."
+  ],
+  [
+    "Why did the punctuation marks stop arguing?",
+    "They finally found common commas."
+  ],
+  [
+    "The elevator at school has a lot in common with my grades.",
+    "Both occasionally go up without a clear explanation."
+  ],
+  [
+    "I tried to learn a new word every day.",
+    "Today’s word is “overambitious.”"
+  ],
+  [
+    "I said I would go for a quick run.",
+    "I should have specified which part was supposed to be quick."
+  ],
+  [
+    "I’m making a playlist for doing homework.",
+    "So far, making the playlist is the homework."
+  ],
+  [
+    "The tutorial said, “This only takes five minutes.”",
+    "It forgot to mention the prerequisite degree."
+  ],
+  [
+    "I got an email with “quick question” in the subject.",
+    "I’ve cleared the afternoon."
+  ],
+  [
+    "I finally found the missing piece of my project.",
+    "It was the instructions."
+  ],
+  [
+    "I asked my friend to explain quantum mechanics simply.",
+    "We are no longer certain whether the explanation happened."
+  ],
+  [
+    "The group project is going great.",
+    "We’ve all agreed that someone should start it."
+  ],
+  [
+    "I turned my notifications off to find some peace.",
+    "Now I check whether I’m missing notifications."
+  ],
+  [
+    "I asked the GPS to take the scenic route.",
+    "Apparently it considers parking lots an art form."
+  ]
 ];
 
 const facts = [
   {
-    "title": "Cleopatra’s surprisingly modern timeline",
-    "text": "Cleopatra VII lived closer in time to the Apollo 11 Moon landing than to the building of the Great Pyramid. The pyramid was already about 2,500 years old during her lifetime.",
-    "source": "Encyclopaedia Britannica; NASA"
+    "title": "A cathedral took more than a century to get a building permit",
+    "text": "Construction of Barcelona’s Sagrada Família began in 1882, but the church did not receive its modern building permit until 2019. A permit request had been submitted in 1885 to the municipality that then governed the site. One of the world’s most recognizable buildings spent generations inside an unresolved paperwork problem.",
+    "source": "The Guardian · Sagrada Família building permit, 2019"
   },
   {
-    "title": "Oxford predates the Aztec Empire",
-    "text": "Teaching was taking place at Oxford by 1096. The Aztec Empire formed in 1428—more than three centuries later.",
-    "source": "University of Oxford; Encyclopaedia Britannica"
+    "title": "The first Mars picture was colored in by hand",
+    "text": "When Mariner 4 sent back its first close-up image of Mars in 1965, the picture arrived as numbers representing brightness. Impatient engineers at NASA’s Jet Propulsion Laboratory colored numbered strips of paper with pastels before the computer finished processing the image. Humanity’s first close-up of Mars briefly looked like a giant paint-by-numbers project.",
+    "source": "NASA / Jet Propulsion Laboratory · Mariner 4 history"
   },
   {
-    "title": "Nintendo existed during the Ottoman Empire",
-    "text": "Nintendo started in 1889 as a maker of Japanese playing cards. The Ottoman Empire did not end until 1922, so the two existed at the same time for decades.",
-    "source": "Nintendo company history; Encyclopaedia Britannica"
+    "title": "Earth built its own nuclear reactors",
+    "text": "About two billion years ago, uranium deposits at Oklo in what is now Gabon sustained natural nuclear chain reactions. Groundwater helped the reactions happen; heating and cooling helped regulate them. Scientists recognized the evidence in 1972 after noticing that uranium from the mine had an unusual composition. Nobody had built the reactors.",
+    "source": "International Atomic Energy Agency · Oklo"
   },
   {
-    "title": "T. rex is closer to us than to Stegosaurus",
-    "text": "Stegosaurus lived roughly 150 million years ago; T. rex lived around 68–66 million years ago. More time separated those two dinosaurs than separates T. rex from us.",
-    "source": "Smithsonian National Museum of Natural History"
+    "title": "An Olympic marathon “winner” arrived by car",
+    "text": "At the 1904 Olympics, Fred Lorz stopped running and rode in a car for part of the marathon, then returned to the course and crossed the finish line first. He was disqualified. The actual winner, Thomas Hicks, had been given strychnine and brandy by his helpers—a shocking contrast with modern sports medicine.",
+    "source": "Smithsonian Magazine · The 1904 Olympic Marathon"
   },
   {
-    "title": "A day longer than a year",
-    "text": "Venus takes about 243 Earth days to rotate once, but only about 225 Earth days to orbit the Sun. Its rotation is so slow that a full turn takes longer than its year.",
-    "source": "NASA"
+    "title": "Moon rocks got a customs declaration",
+    "text": "After Apollo 11, the astronauts signed a U.S. customs form listing their cargo as “moon rock and moon dust samples.” The departure point was the Moon; the arrival point was Honolulu. The form even included a place to report conditions that might spread disease. Space exploration still found room for paperwork.",
+    "source": "NASA · Apollo 11 customs declaration"
   },
   {
-    "title": "Metal that melts in a warm hand",
-    "text": "Gallium is a metal with a melting point of about 29.8°C (85.6°F). A solid piece can turn into liquid in a warm hand, even though it looks like an ordinary silvery metal.",
-    "source": "Royal Society of Chemistry"
+    "title": "A Moon rocket was struck by lightning—twice",
+    "text": "Apollo 12 was hit by lightning twice shortly after launch in 1969, disrupting electrical systems and filling the cockpit with warnings. Flight controller John Aaron recognized the readings and recommended an obscure switch setting that restored useful data. The mission continued and landed on the Moon.",
+    "source": "NASA · Apollo 12 mission history"
   },
   {
-    "title": "A computer from an ancient shipwreck",
-    "text": "The Antikythera mechanism used intricate bronze gears to model astronomical cycles and predict eclipses more than 2,000 years ago. Divers recovered it from a shipwreck in 1901.",
-    "source": "Nature; National Archaeological Museum, Athens"
+    "title": "A spacecraft was lost over a units mix-up",
+    "text": "NASA lost the Mars Climate Orbiter in 1999 after one team supplied force data in pound-force seconds while another expected newton seconds. The spacecraft ended up approaching Mars too closely. The failure was a real-world example of why the tiny unit written after a number can matter as much as the number itself.",
+    "source": "NASA · Mars Climate Orbiter investigation"
   },
   {
-    "title": "A tower that changes height",
-    "text": "The Eiffel Tower can grow by roughly 15 centimeters in hot weather. Heat makes its iron expand, so the tower’s dimensions change with the temperature.",
-    "source": "Eiffel Tower official website"
+    "title": "A Nobel-famous photo had 17 future or current winners",
+    "text": "The 1927 Solvay physics conference brought together 29 scientists, including Einstein, Marie Curie and Niels Bohr. Seventeen of the people in its group photograph had won or would later win Nobel Prizes. It looks like an ordinary conference photo until you count the scientific revolutions sitting in it.",
+    "source": "International Solvay Institutes · 1927 conference"
   },
   {
-    "title": "Olympic medals for paintings",
-    "text": "From 1912 to 1948, the Olympics awarded medals for art inspired by sport. Architecture, literature, music, painting, and sculpture all had competitions alongside athletics.",
-    "source": "International Olympic Committee"
+    "title": "A radio signal was nicknamed “Little Green Men”",
+    "text": "In 1967, graduate student Jocelyn Bell Burnell found an extremely regular signal in radio-telescope data. Its puzzling precision earned it the temporary nickname LGM-1, for “Little Green Men.” It turned out to be the first discovered pulsar: the spinning remains of a dead star, sweeping a beam past Earth like a lighthouse.",
+    "source": "University of Cambridge · Pulsar discovery history"
   },
   {
-    "title": "Why wombat poop is cube-shaped",
-    "text": "Wombats produce cube-shaped droppings. Researchers found that differences in the stiffness of the intestinal walls help create the corners—the shape does not come from a square opening.",
-    "source": "Georgia Institute of Technology; Soft Matter"
+    "title": "An alien message used prime numbers as instructions",
+    "text": "The 1974 Arecibo radio message contained 1,679 binary digits. That number is 23 × 73, both primes; arranging the bits into a rectangle of the right dimensions reveals a picture. It was a way to embed a clue about how to read the message without expecting its recipient to know a human language.",
+    "source": "SETI Institute · Arecibo message"
   },
   {
-    "title": "Mushrooms are closer to us than to trees",
-    "text": "Fungi and animals share a more recent evolutionary ancestor with each other than either does with plants. A mushroom is therefore more closely related to you than it is to an oak tree.",
-    "source": "Natural History Museum, London"
+    "title": "NASA sent a record with greetings in 55 languages",
+    "text": "Each Voyager spacecraft carries a gold-plated record with greetings in 55 languages, music and encoded images of life on Earth. It also carries instructions for playing it. Launched in 1977, the records are physical introductions to humanity traveling far beyond the planets—even though nobody knows whether they will ever be found.",
+    "source": "NASA · Voyager Golden Record"
   },
   {
-    "title": "A notebook made of knots",
-    "text": "The Inka used quipus: bundles of colored strings with carefully placed knots. They recorded numerical information such as taxes and inventories without relying on an alphabet.",
-    "source": "British Museum"
+    "title": "The U.S. put millions of needles into orbit",
+    "text": "During the Cold War, Project West Ford tested whether tiny copper needles in orbit could act as a reflector for radio communications. In 1963, hundreds of millions of needles were released into space. The project worked as an experiment, but communications satellites became the more practical approach. Space junk once included an intentionally launched cloud of antenna fragments.",
+    "source": "MIT Lincoln Laboratory · Project West Ford"
   },
   {
-    "title": "The forty hidden in quarantine",
-    "text": "The word “quarantine” comes from the Italian for forty days. Ships and their passengers could be held apart for that long to prevent the spread of plague.",
-    "source": "Encyclopaedia Britannica"
+    "title": "Britain camouflaged ships by making them conspicuous",
+    "text": "In World War I, some ships were painted with huge, clashing geometric patterns called dazzle camouflage. The idea was not to make a ship invisible: it was to make its direction and speed harder to judge when aiming a torpedo. The striking paint was meant to confuse the observer, rather than blend into the sea.",
+    "source": "Imperial War Museums · Dazzle camouflage"
   },
   {
-    "title": "A program for a computer that did not exist yet",
-    "text": "In 1843, Ada Lovelace described how Charles Babbage’s planned Analytical Engine could calculate Bernoulli numbers. The full machine was never built during her lifetime.",
-    "source": "Science Museum, London"
+    "title": "A London bridge was moved to Arizona",
+    "text": "The stone London Bridge opened in 1831 was sold in 1968 and reconstructed in Lake Havasu City, Arizona. Its exterior stones were numbered, shipped across the Atlantic and placed around a new structure. Today, you can cross a piece of Victorian London in the Arizona desert. It was London Bridge, not the famous Tower Bridge.",
+    "source": "City of Lake Havasu · London Bridge history"
   },
   {
-    "title": "Bridges that are still alive",
-    "text": "Khasi and Jaintia communities in Meghalaya, India, guide living tree roots into bridges. Unlike a cut wooden beam, the roots keep growing and can strengthen over time.",
-    "source": "UNESCO"
+    "title": "The Post Office once delivered mail by missile",
+    "text": "On June 8, 1959, a U.S. Navy submarine launched a guided missile carrying 3,000 letters to Florida. It reached the air station in about 22 minutes. The postmaster general thought missile delivery might eventually connect continents; ordinary airplanes won that argument.",
+    "source": "United States Postal Service · Missile Mail history"
   },
   {
-    "title": "A teenager invented this reading system",
-    "text": "Louis Braille developed his raised-dot reading system as a teenager. The same basic six-dot cells can represent letters, numbers, and musical notation.",
-    "source": "American Foundation for the Blind"
+    "title": "A dead whale became an accidental demolition experiment",
+    "text": "In 1970, officials in Florence, Oregon, tried to dispose of a beached whale using explosives. They expected the remains to scatter into manageable pieces; instead, chunks flew far enough to damage a parked car. A local television report preserved the spectacularly bad result. The incident is now part of Oregon’s recorded history.",
+    "source": "Oregon Historical Society · Exploding whale, 1970"
   },
   {
-    "title": "A shark lineage older than forests",
-    "text": "The shark lineage reaches back more than 400 million years. That puts its origins before the first forests, which appeared roughly 385 million years ago.",
-    "source": "Smithsonian; Natural History Museum, London"
+    "title": "Australia deployed soldiers against emus",
+    "text": "In 1932, the Australian military sent soldiers with machine guns to help farmers deal with large numbers of crop-damaging emus. The birds proved hard to target, scattered into small groups and kept moving. The episode became known as the “Emu War”—an official military operation against a very uncooperative bird.",
+    "source": "Australian War Memorial · Emu War"
   },
   {
-    "title": "Roman street food",
-    "text": "Ancient Pompeii had food counters called thermopolia, with large jars built into their worktops. People could buy prepared food away from home nearly two thousand years ago.",
-    "source": "Archaeological Park of Pompeii"
+    "title": "A country with hundreds of languages",
+    "text": "Papua New Guinea has more than 800 living languages, an extraordinary amount of linguistic diversity for one country. Geography and long histories of relatively separate communities helped different languages develop. Traveling a modest distance there can mean crossing into a different language, rather than merely hearing a different accent.",
+    "source": "Ethnologue · Papua New Guinea"
   },
   {
-    "title": "The guillotine outlasted the first Star Wars",
-    "text": "France’s last execution by guillotine took place in September 1977. The original Star Wars had already opened in cinemas that May.",
-    "source": "Encyclopaedia Britannica; American Film Institute"
+    "title": "A gloomy summer helped create Frankenstein",
+    "text": "The 1815 eruption of Mount Tambora affected the climate far beyond Indonesia, contributing to the “year without a summer” in 1816. During a wet, cold stay near Lake Geneva, Mary Shelley and her companions challenged each other to write ghost stories. The idea for Frankenstein grew out of that gathering—volcanic fallout helped shape a famous work of fiction.",
+    "source": "British Library · Mary Shelley and Frankenstein"
   },
   {
-    "title": "One animal, three hearts",
-    "text": "An octopus has three hearts: two send blood through its gills, and one sends blood around the rest of its body. Its copper-containing oxygen carrier also makes its blood blue.",
-    "source": "Smithsonian Ocean"
+    "title": "The biggest space telescope mirror started in a much smaller package",
+    "text": "The James Webb Space Telescope’s 6.5-meter mirror was too large to fit into its rocket fully opened. It launched with two mirror wings folded backward, then unfolded them in space. Engineers had to align 18 separate mirror segments so precisely that they worked together as a single telescope—without sending anyone out to adjust them.",
+    "source": "NASA · Webb deployment and mirror alignment"
   },
   {
-    "title": "Australia is wider than the Moon",
-    "text": "Mainland Australia is roughly 4,000 kilometers wide from east to west. The Moon’s diameter is about 3,475 kilometers, so Australia’s width is greater.",
-    "source": "Geoscience Australia; NASA"
+    "title": "A frog can freeze and then restart its heart",
+    "text": "Wood frogs can survive winter with much of the water in their bodies frozen. Their hearts stop beating, and protective chemicals help their cells survive the freeze. When temperatures rise, they thaw and become active again. This is an evolved survival strategy, not something that other animals—or humans—can generally do.",
+    "source": "National Park Service · Wood frog winter survival"
   },
   {
-    "title": "A book older than movable type in Europe",
-    "text": "The Diamond Sutra, dated 868 CE, is the earliest complete dated printed book known to survive. It was printed from carved wooden blocks in China, centuries before Gutenberg’s press.",
-    "source": "British Library"
+    "title": "Scallops have tiny mirror-based eyes",
+    "text": "Some scallops have up to about 200 eyes along the edge of their shells. Unlike our lens-focused eyes, theirs use tiny mirrors to focus light. The reflective surface is built from precisely arranged crystals, giving an animal that looks like a simple shellfish a surprisingly elaborate optical system.",
+    "source": "Science · The image-forming mirror in the eye of the scallop"
   },
   {
-    "title": "A language with its design notes preserved",
-    "text": "Hangul was promulgated in Korea in 1446 under King Sejong. The surviving Hunminjeongeum manuscript explains why the alphabet was created and how its letters work.",
-    "source": "UNESCO"
+    "title": "A sea slug borrows machinery from plants",
+    "text": "Some sea slugs keep chloroplasts—the sunlight-catching structures—from the algae they eat inside their own cells. The stolen chloroplasts can continue photosynthesizing for a time, turning sunlight into chemical energy. The slug has not become a plant; it is keeping part of its food’s cellular machinery running after the meal.",
+    "source": "Smithsonian Ocean · Photosynthetic sea slugs"
   },
   {
-    "title": "Earthrise was taken on a lunar voyage",
-    "text": "The Apollo 8 crew photographed Earthrise in December 1968 during the first crewed mission to orbit the Moon. Humans saw Earth rising above another world before anyone had walked on the Moon.",
-    "source": "NASA"
+    "title": "Your phone’s GPS needs Einstein’s corrections",
+    "text": "GPS satellites carry precise clocks, but their speed and the weaker gravity in orbit make them tick differently from clocks on Earth. Without correcting for both effects, location calculations would drift by kilometers each day. Relativity is not just a topic in a physics textbook; it is built into the system that helps you find the right street.",
+    "source": "NIST · GPS and relativity"
+  },
+  {
+    "title": "A medieval manuscript can have two different texts in one place",
+    "text": "Parchment was valuable, so people sometimes scraped writing off a page and reused it. Scientists can now recover some of the erased text using imaging techniques. The Archimedes Palimpsest, for example, contains mathematical works hidden beneath a later prayer book—one manuscript preserved two very different layers of history.",
+    "source": "The Walters Art Museum · Archimedes Palimpsest"
+  },
+  {
+    "title": "The shortest war is usually measured in minutes",
+    "text": "The 1896 Anglo-Zanzibar War lasted less than an hour, generally reported as around 38 to 45 minutes. The fighting was brief, but its consequences were real: Britain removed the sultan it opposed and installed another ruler. “Shortest war” does not mean an insignificant event for the people caught in it.",
+    "source": "Encyclopaedia Britannica · Anglo-Zanzibar War"
+  },
+  {
+    "title": "An astronaut played golf on the Moon",
+    "text": "During Apollo 14 in 1971, Alan Shepard attached a golf-club head to a tool handle and hit two golf balls on the lunar surface. His bulky spacesuit forced him to swing one-handed. The famous “miles and miles” remark was playful exaggeration; the balls traveled much shorter distances. Both are still on the Moon.",
+    "source": "NASA · Apollo 14 lunar golf"
+  },
+  {
+    "title": "Some animals rebuild an entire nervous system after changing shape",
+    "text": "Caterpillars undergo a dramatic reconstruction when they become butterflies or moths, yet experiments have shown that certain learned responses can survive metamorphosis. In a 2008 study, moths retained an aversion to an odor they had learned as caterpillars. A body can change enormously without erasing every trace of an earlier experience.",
+    "source": "PLOS ONE · Retention of Memory through Metamorphosis, 2008"
+  },
+  {
+    "title": "A swinging pendulum can prove Earth is rotating",
+    "text": "Foucault’s pendulum demonstrates Earth’s rotation without looking at the sky: the plane of a long pendulum’s swing gradually turns relative to the room around it. The rate depends on latitude. At the North Pole, it would make a full turn relative to the floor in about one day; at the equator, that turning effect disappears.",
+    "source": "Smithsonian / Encyclopaedia Britannica · Foucault pendulum"
+  },
+  {
+    "title": "A living animal can regenerate most of its body",
+    "text": "Planarian flatworms have adult stem cells that can rebuild missing tissues, including a new head and brain, after a suitable cut. In some species, relatively small body pieces can develop into complete worms. Researchers study this ability to understand how cells know which structures belong where—regrowing a body requires more than simply making more cells.",
+    "source": "Howard Hughes Medical Institute · Planarian regeneration"
   }
 ];
 
@@ -1879,7 +2127,7 @@ const paletteNames = ['lavender', 'sage', 'blue', 'rose', 'sand', 'teal'];
 
 const $ = selector => document.querySelector(selector);
 const STORAGE_KEY = 'daymark:v1';
-const defaults = () => ({ version: 1, knownWords: [], vocabChoice: null, bookmarks: [], recapHighlights: {}, tasks: [], studySessions: [], sessions: {}, newsHistory: {}, briefingEdition: null, duolingoDays: {}, runs: [], youtubeSessions: {}, jokeWindow: null, moments: [], events: [], sheetEvents: [], sheetUrl: DEFAULT_SHEET_URL, sheetConfigured: true, sheetFetchedAt: null, seen: {}, lastVisit: null, jokeDate: null, weather: null, news: null });
+const defaults = () => ({ version: 1, delights: { jokes: { seen: [], current: null }, facts: { seen: [], current: null } }, knownWords: [], vocabChoice: null, bookmarks: [], recapHighlights: {}, tasks: [], studySessions: [], sessions: {}, newsHistory: {}, briefingEdition: null, duolingoDays: {}, runs: [], youtubeSessions: {}, jokeWindow: null, moments: [], events: [], sheetEvents: [], sheetUrl: DEFAULT_SHEET_URL, sheetConfigured: true, sheetFetchedAt: null, seen: {}, lastVisit: null, jokeDate: null, weather: null, news: null });
 let storageReadable = true;
 let state = defaults();
 
@@ -1901,6 +2149,7 @@ function validateState(value) {
   if (value.vocabChoice != null && (!validDate(value.vocabChoice.date) || typeof value.vocabChoice.word !== 'string' || value.vocabChoice.word.length > 80)) throw new Error('The backup contains an invalid vocabulary choice.');
   if (value.bookmarks !== undefined && (!Array.isArray(value.bookmarks) || value.bookmarks.some(s => !validSavedStory(s)) || new Set(value.bookmarks.map(s => s.id)).size !== value.bookmarks.length)) throw new Error('The backup contains an invalid saved story.');
   if (value.recapHighlights !== undefined && (!value.recapHighlights || typeof value.recapHighlights !== 'object' || Array.isArray(value.recapHighlights) || Object.entries(value.recapHighlights).some(([date,id]) => !validDate(date) || typeof id !== 'string'))) throw new Error('The backup contains an invalid recap highlight.');
+  if (value.delights !== undefined && (!validDelightHistory(value.delights?.jokes) || !validDelightHistory(value.delights?.facts))) throw new Error('The backup contains invalid joke or fact history.');
   // Provider caches are not trusted as backup data; refresh them from the server.
   return { ...defaults(), ...value, weather: null, news: null };
 }
@@ -2332,12 +2581,17 @@ $('#all-events').addEventListener('click', event => {
   state.events = state.events.filter(e => e.id !== button.dataset.deleteEvent); persist(); renderCalendar();
 });
 
-function renderDelights() {
-  const joke = jokes[checkInPick(currentWindow.key, jokes.length, 'jokes')];
+function renderDelights(force = '') {
+  const jokeChoice = trackedDelight(jokes, currentWindow.key, 'jokes', state.delights.jokes, force === 'joke');
+  const factChoice = trackedDelight(facts, currentWindow.key, 'facts', state.delights.facts, force === 'fact');
+  const changed = jokeChoice.history !== state.delights.jokes || factChoice.history !== state.delights.facts;
+  state.delights = { jokes: jokeChoice.history, facts: factChoice.history };
+  if (changed) persist();
+  const joke = jokeChoice.item;
   $('#joke-question').textContent = joke[0]; $('#joke-answer').textContent = joke[1];
   $('#joke-answer').hidden = state.jokeWindow !== currentWindow.key;
   $('#joke-reveal').hidden = state.jokeWindow === currentWindow.key;
-  const fact = facts[checkInPick(currentWindow.key, facts.length, 'rabbit-holes')];
+  const fact = factChoice.item;
   $('#fact-title').textContent = fact.title; $('#fact-text').textContent = fact.text;
   $('#fact-source').textContent = `Source: ${fact.source}`;
   const quote = motivationalQuotes[checkInPick(currentWindow.key, motivationalQuotes.length, 'quotes')];
@@ -2422,6 +2676,8 @@ $('#bookmarks-list').addEventListener('click', event => {
 });
 
 $('#joke-reveal').addEventListener('click', () => { tick(); state.jokeWindow = currentWindow.key; persist(); renderDelights(); });
+$('#joke-next').addEventListener('click', () => { tick(); state.jokeWindow = null; renderDelights('joke'); persist(); });
+$('#fact-next').addEventListener('click', () => { tick(); renderDelights('fact'); });
 
 const embedded = globalThis.DAYMARK_SNAPSHOT;
 if (embedded) {
@@ -2451,7 +2707,8 @@ function renderNews(data, error = '') {
   const research = stats ? `${stats.rawCandidates} candidates gathered · ${stats.sourcePagesRead} source pages read · source research ${fullStamp(data.researchCheckedAt || data.fetchedAt)}.` : '';
   $('#news-status').textContent = `${error ? 'The latest connection failed. ' : ''}${research}${data?.liveFeedError ? ' ' + data.liveFeedError : ''}${globalThis.DAYMARK_RESEARCHED && data?.editionKey !== currentWindow.key ? ' Waiting for this check-in’s source research; checking again automatically.' : ''}${selected.length && selected.length < 5 ? ` ${selected.length} stories passed; no filler added.` : ''}`;
   if (!selected.length) {
-    $('#news-list').innerHTML = `<div class="empty-state"><span class="empty-symbol">◎</span><h3>${error ? 'The briefing couldn’t connect.' : 'No fresh stories passed this check.'}</h3><p>${error ? 'Try again when the connection works. Your saved logs are kept.' : 'Previously shown stories and reports without a supported fresh event date are left out. We’ll check again at the next update.'}</p><button class="text-button" id="retry-news">Check again ↻</button></div>`;
+    const waiting = globalThis.DAYMARK_RESEARCHED && data?.editionKey !== currentWindow.key;
+    $('#news-list').innerHTML = `<div class="empty-state"><span class="empty-symbol">◎</span><h3>${error ? 'The briefing couldn’t connect.' : waiting ? 'This check-in’s briefing is still being prepared.' : 'No qualifying new stories yet.'}</h3><p>${error ? 'Try again when the connection works. Your saved logs are kept.' : waiting ? 'The last edition is from an earlier check-in. New source research hasn’t arrived yet; this page will check again automatically.' : 'The source check finished, but found no fresh, verified stories you haven’t already seen. A short edition is checked again in about an hour.'}</p><button class="text-button" id="retry-news">Check again ↻</button><div class="news-source-directory"><p>Read directly while you wait</p>${[['BBC','https://www.bbc.com/news'],['NPR','https://www.npr.org/'],['Ars Technica','https://arstechnica.com/'],['Science News','https://www.sciencenews.org/'],['NASA','https://www.nasa.gov/news/'],['The Guardian','https://www.theguardian.com/science']].map(([name,url]) => `<a href="${url}" target="_blank" rel="noopener noreferrer">${name} ↗</a>`).join('')}</div></div>`;
     $('#retry-news').addEventListener('click', () => refreshAll(true));
   } else {
     $('#news-list').innerHTML = changes.map((s, i) => {
