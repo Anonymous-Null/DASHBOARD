@@ -1,0 +1,62 @@
+name: Research morning and evening briefing
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [website-ready]
+    paths:
+      - '.research/**'
+      - '.github/workflows/briefing.yml'
+  schedule:
+    # The script checks America/New_York and skips the extra trigger in each
+    # season. This covers 7 AM / 7 PM across both EST and EDT.
+    - cron: '0 0,11,12,23 * * *'
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: researched-briefing
+  cancel-in-progress: false
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: website-ready
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: .research/package-lock.json
+      - name: Install research dependencies
+        working-directory: .research
+        run: npm ci --no-fund
+      - name: Read live sources and check event dates
+        env:
+          SCHEDULED: ${{ github.event_name == 'schedule' }}
+        run: |
+          if [ "$SCHEDULED" = "true" ]; then
+            node .research/scripts/research-briefing.mjs --deployment --scheduled
+          else
+            node .research/scripts/research-briefing.mjs --deployment
+          fi
+      - name: Publish verified briefing
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$(git status --porcelain -- index.html briefing.json briefing-history.json)" ]; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html briefing.json briefing-history.json
+          git commit -m 'Update date-checked news briefing'
+          git push origin HEAD:website-ready
+          # GITHUB_TOKEN pushes do not automatically trigger Pages builds.
+          # Explicitly request a build through the documented Pages endpoint.
+          gh api --method POST repos/${{ github.repository }}/pages/builds
