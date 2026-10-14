@@ -1,0 +1,61 @@
+{
+  "seen": {
+    "https://www.theverge.com/science/1011127/ai-weather-forecast-microsoft": {
+      "id": "https://www.theverge.com/science/1011127/ai-weather-forecast-microsoft",
+      "title": "Microsoft has a new machine learning tool to improve weather forecasts",
+      "source": "The Verge",
+      "eventDate": "2026-10-14",
+      "eventRevision": "2026-10-14:Published",
+      "editionKey": "2026-10-14-am",
+      "seenAt": "2026-10-14T18:14:18.891Z"
+    },
+    "https://science.nasa.gov/missions/chandra/nasas-chandra-breaks-down-treble-clefs-galaxy-cluster-collision/": {
+      "id": "https://science.nasa.gov/missions/chandra/nasas-chandra-breaks-down-treble-clefs-galaxy-cluster-collision/",
+      "title": "NASA’s Chandra Breaks Down ‘Treble Clef’s’ Galaxy Cluster Collision",
+      "source": "NASA",
+      "eventDate": "2026-10-14",
+      "eventRevision": "2026-10-14:Research announced",
+      "editionKey": "2026-10-14-am",
+      "seenAt": "2026-10-14T18:14:18.891Z"
+    },
+    "https://www.bbc.co.uk/news/articles/c305649p2d6o": {
+      "id": "https://www.bbc.co.uk/news/articles/c305649p2d6o",
+      "title": "'It's rough out here': Americans struggle with rising inflation",
+      "source": "BBC News",
+      "eventDate": "2026-10-14",
+      "eventRevision": "2026-10-14:Event",
+      "editionKey": "2026-10-14-am",
+      "seenAt": "2026-10-14T18:14:18.891Z"
+    },
+    "https://science.nasa.gov/photojournal/nasas-record-setting-perseverance-rover-team/": {
+      "id": "https://science.nasa.gov/photojournal/nasas-record-setting-perseverance-rover-team/",
+      "title": "NASA’s Record-Setting Perseverance Rover Team",
+      "source": "NASA",
+      "eventDate": "2026-10-13",
+      "eventRevision": "2026-10-13:Research announced",
+      "editionKey": "2026-10-14-am",
+      "seenAt": "2026-10-14T18:14:18.891Z"
+    },
+    "https://www.bbc.co.uk/news/articles/cw8dzg094zd9o": {
+      "id": "https://www.bbc.co.uk/news/articles/cw8dzg094zd9o",
+      "title": "Cornell bans all fraternity parties over gang sex assault allegations",
+      "source": "BBC News",
+      "eventDate": "2026-10-13",
+      "eventRevision": "2026-10-13:Announced",
+      "editionKey": "2026-10-14-am",
+      "seenAt": "2026-10-14T18:14:18.891Z"
+    }
+  },
+  "editions": [
+    {
+      "key": "2026-10-14-am",
+      "sources": [
+        "The Verge",
+        "NASA",
+        "BBC News",
+        "NASA",
+        "BBC News"
+      ]
+    }
+  ]
+}
