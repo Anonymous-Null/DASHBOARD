@@ -29,6 +29,7 @@ const trivial = /\b(celebrity|celebrities|horoscope|red carpet|box office|gossip
 const stopWords = new Set('the a an and or to of in on for with from as at by is are has have after over amid says say new us uk'.split(' '));
 const routine = /\b(funding round|series [a-f] funding|raises? \$|acquisitions?|acquires?|partnership|partners with|unveils? new|launches? new|new smartphone|product launch|quarterly earnings|admissions experts|application tips|admissions advice|supplemental essays|extra application essays|campus update|college financial aid deadlines|scholarship deadlines?|student recruitment|admissions work|new degree program|college programs)\b/i;
 const hype = /\b(what to expect|everything you need|the future of ai|ai will change everything|vague predictions|best .* to buy)\b/i;
+const routinePolitics = /\b(polls?|campaign|senate race|election strategy)\b/i;
 const personnel = /\b(hires?|appoints?|named|joins?|steps down)\b.{0,90}\b(ceo|chief|executive|director|doug field)\b/i;
 const extraordinary = /\b(world record|first ever|first-ever|first time|never before|reviv\w*.{0,30}extinct|breakthrough|unexpected|unprecedented|record-breaking|bizarre|unusual|rare|escaped|reversed|surviv\w*.{0,30}without|impossible|astonishingly)\b/i;
 const consequences = /\b(ceasefire|invasion|war|missile|earthquake|hurricane|evacuation|nuclear|pandemic|federal|supreme court|ban|bans|banned|ruling|sanctions|tariffs|inflation|recession|millions|thousands|blackout|massive|overthrown|coup|resigns|collapsed)\b/i;
@@ -96,6 +97,7 @@ export function rankStories(items, now = new Date(), options = {}) {
     const text = `${story.title} ${story.originalSummary || story.summary}`;
     if (!Number.isFinite(age) || age < -1 || age > 48 || eventAge > 48 || eventAge < -24 || trivial.test(story.title) || hype.test(story.title)) continue;
     if (routine.test(story.title) && !(extraordinary.test(text) && consequences.test(text))) continue;
+    if (routinePolitics.test(story.title) && !/\b(coup|overthrown|overturned|assassination|unprecedented|first-ever|record-breaking)\b/i.test(story.title)) continue;
     if (['Technology', 'Business', 'Education'].includes(story.category) && personnel.test(story.title)) continue;
     if (/^(I |My |We tested )|\b(opinion|editorial|review:|best deals)\b/i.test(story.title)) continue;
     if (/\/videos\//.test(story.url || '')) continue;

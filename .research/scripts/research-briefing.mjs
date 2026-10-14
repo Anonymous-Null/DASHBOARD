@@ -22,7 +22,9 @@ const key = checkInWindow(now).key;
 const previousSources = history.editions.find(e => e.key !== key)?.sources || [];
 const selected = selectBriefing(news.stories, { key, history: history.seen, previousSources, requireVerified: true, now });
 news.selectedIds = selected.map(s => s.id);
-news.stories = news.stories.filter(s => !history.seen[s.id] || history.seen[s.id].editionKey === key || s.majorUpdateVerified);
+// Publish the actual selected edition. Alternative candidates must not let a
+// browser reintroduce cross-publisher copies rejected by shared story history.
+news.stories = selected;
 for (const story of selected) history.seen[story.id] = { id: story.id, title: story.title, source: story.source, eventDate: story.eventDate, eventRevision: story.eventRevision, editionKey: key, seenAt: now.toISOString() };
 history.editions = [{ key, sources: selected.map(s => s.source) }, ...history.editions.filter(e => e.key !== key)].slice(0, 28);
 history.seen = Object.fromEntries(Object.entries(history.seen).sort((a,b) => b[1].seenAt.localeCompare(a[1].seenAt)).slice(0, 1000));

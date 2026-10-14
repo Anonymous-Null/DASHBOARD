@@ -22,11 +22,20 @@ function validDay(value) {
 function dayOf(value) { return value?.match(/^\d{4}-\d{2}-\d{2}/)?.[0] || new Date(value).toISOString().slice(0, 10); }
 function iso(value) { return value && Number.isFinite(Date.parse(value)) ? new Date(value).toISOString() : null; }
 
-export function eventDateInText(text, publishedAt) {
+export function eventDateInText(text, publishedAt, { title = '', category = '' } = {}) {
   const anchor = dayOf(publishedAt), year = Number(anchor.slice(0, 4));
   const sentences = [...new Intl.Segmenter('en', { granularity: 'sentence' }).segment(text)].map(s => s.segment.trim());
-  for (const sentence of sentences) {
+  const generic = new Set('their these those this that with from have about after before today yesterday first ever only more latest research study findings announced published reported reveals breaks down unexpected unprecedented discovery scientists researchers'.split(' '));
+  const anchors = [...new Set(title.toLowerCase().match(/[a-z]{4,}/g) || [])].filter(w => !generic.has(w));
+  for (let i = 0; i < sentences.length; i++) {
+    const sentence = sentences[i];
     if (!eventVerb.test(sentence) || future.test(sentence) || sentence.length > 1000) continue;
+    // A date for an incidental event elsewhere in the article cannot establish
+    // when the headline development happened. Allow the preceding sentence to
+    // supply context for phrases such as "the findings were published today".
+    const refersBack = /\b(figures|numbers|results|findings|study|paper|the agreement|the decision|the announcement)\b|^(It|They|The team)\b/i.test(sentence);
+    const context = `${refersBack ? sentences[i - 1] || '' : ''} ${sentence}`.toLowerCase();
+    if (anchors.length && !anchors.some(w => context.includes(w)) && !(['Science','Technology'].includes(category) && /\b(study|paper|findings|discovery)\b/i.test(sentence))) continue;
     let date = sentence.match(/\b(20\d{2}-\d{2}-\d{2})\b/)?.[1];
     const named = sentence.match(/\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2})(?:st|nd|rd|th)?(?:,?\s+(20\d{2}))?\b/i);
     if (!date && named) date = `${named[3] || year}-${String(months.indexOf(named[1].toLowerCase()) + 1).padStart(2, '0')}-${named[2].padStart(2, '0')}`;
@@ -93,6 +102,7 @@ export function parseSourceArticle(html, story) {
   const primary = document.querySelector('#story_text') || document.querySelector('[data-testid="article-body"]') || document.querySelector('.article__body');
   const readable = new Readability(document.cloneNode(true)).parse();
   const body = primary?.cloneNode(true) || parseHTML(`<div>${readable?.content || ''}</div>`).document;
+  for (const nuisance of body.querySelectorAll('figure,figcaption,button,nav,aside,.credit,.caption,.toggle-caption,.image-credit')) nuisance.remove();
   for (const block of body.querySelectorAll('p,div,li,h1,h2,h3,h4,section,blockquote')) block.appendChild(document.createTextNode(' '));
   const text = plainText(body.textContent || body.documentElement?.textContent || '');
   const articleTitle = plainText(metadata.headline || readable?.title || story.title);
@@ -152,7 +162,7 @@ export async function researchNews({ fetcher = fetch, now = new Date(), previous
     if (article.text.split(/\s+/).length < 60) throw new Error('Source article was unavailable or too short');
     if (oldResearchEvidence(article.text, now)) throw new Error('The lead describes older research, not a fresh development');
     const publishedAt = article.publishedAt || story.publishedAt;
-    let date = eventDateInText(article.text.split(/\s+/).slice(0, 550).join(' '), publishedAt);
+    let date = eventDateInText(article.text.split(/\s+/).slice(0, 550).join(' '), publishedAt, story);
     if (['Science','Technology'].includes(story.category) && article.dois.length) {
       const primary = await paperDate(article.dois[0], fetcher);
       if (primary) { primaryDatesRead++; date = { date: primary.date, kind: 'Study published', evidence: `The study cited by the source, “${primary.title}”, was first published on ${primary.date}.`, url: primary.url }; }
