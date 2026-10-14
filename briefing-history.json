@@ -1,5 +1,23 @@
 {
   "seen": {
+    "https://www.bbc.co.uk/news/articles/crje5we583qwo": {
+      "id": "https://www.bbc.co.uk/news/articles/crje5we583qwo",
+      "title": "Australia's first-ever Michelin stars go to 11 restaurants in one state",
+      "source": "BBC News",
+      "eventDate": "2026-10-14",
+      "eventRevision": "2026-10-14:Published",
+      "editionKey": "2026-10-14-pm",
+      "seenAt": "2026-10-14T23:19:34.060Z"
+    },
+    "https://www.bbc.co.uk/news/articles/cq80zk5k2ep4o": {
+      "id": "https://www.bbc.co.uk/news/articles/cq80zk5k2ep4o",
+      "title": "Student protesters attack government buildings in Tirana",
+      "source": "BBC News",
+      "eventDate": "2026-10-13",
+      "eventRevision": "2026-10-13:Event",
+      "editionKey": "2026-10-14-pm",
+      "seenAt": "2026-10-14T23:19:34.060Z"
+    },
     "https://www.theverge.com/science/1011127/ai-weather-forecast-microsoft": {
       "id": "https://www.theverge.com/science/1011127/ai-weather-forecast-microsoft",
       "title": "Microsoft has a new machine learning tool to improve weather forecasts",
@@ -74,6 +92,13 @@
     }
   },
   "editions": [
+    {
+      "key": "2026-10-14-pm",
+      "sources": [
+        "BBC News",
+        "BBC News"
+      ]
+    },
     {
       "key": "2026-10-14-am",
       "sources": [
