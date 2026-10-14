@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-14T18:26:20.363Z",
+  "fetchedAt": "2026-10-14T18:28:52.176Z",
   "news": {
     "schemaVersion": 2,
     "mode": "researched",
@@ -38,7 +38,7 @@
         "imageUrl": null,
         "imageCaption": "",
         "imageSourceUrl": "https://www.theverge.com/science/1011127/ai-weather-forecast-microsoft",
-        "checkedAt": "2026-10-14T18:26:20.363Z"
+        "checkedAt": "2026-10-14T18:28:52.176Z"
       },
       {
         "id": "https://science.nasa.gov/missions/chandra/nasas-chandra-breaks-down-treble-clefs-galaxy-cluster-collision/",
@@ -73,13 +73,13 @@
         "imageUrl": "https://assets.science.nasa.gov/content/dam/science/missions/chandra/2026/trebleclef.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg",
         "imageCaption": "",
         "imageSourceUrl": "https://science.nasa.gov/missions/chandra/nasas-chandra-breaks-down-treble-clefs-galaxy-cluster-collision/",
-        "checkedAt": "2026-10-14T18:26:20.363Z"
+        "checkedAt": "2026-10-14T18:28:52.176Z"
       },
       {
         "id": "https://www.bbc.co.uk/news/articles/c305649p2d6o",
         "url": "https://www.bbc.co.uk/news/articles/c305649p2d6o",
         "title": "'It's rough out here': Americans struggle with rising inflation",
-        "summary": "ByAna Faguy Kathryn Vaughn returned to work at a rural West Tennessee elementary school this autumn with a lot more stress on her plate than in previous years. The 46-year-old, like many Americans, is juggling how to provide for her family with rising costs of, as she described it, \"everything\". She spends her days working three different jobs to support her family of four, including as a primary school art teacher, as US inflation continues to rise. Inflation in September was above forecasts. Over the past 12 months, prices rose by 3.7% - up from 3.4% in the 12 months to August, according to officials numbers released on Wednesday.",
+        "summary": "Kathryn Vaughn returned to work at a rural West Tennessee elementary school this autumn with a lot more stress on her plate than in previous years. The 46-year-old, like many Americans, is juggling how to provide for her family with rising costs of, as she described it, \"everything\". She spends her days working three different jobs to support her family of four, including as a primary school art teacher, as US inflation continues to rise. Inflation in September was above forecasts. Over the past 12 months, prices rose by 3.7% - up from 3.4% in the 12 months to August, according to officials numbers released on Wednesday.",
         "publishedAt": "2026-10-14T15:57:11.430Z",
         "source": "BBC News",
         "category": "U.S.",
@@ -103,18 +103,18 @@
         "dateEvidenceUrl": "https://www.bbc.co.uk/news/articles/c305649p2d6o",
         "eventRevision": "2026-10-14:Event",
         "majorUpdateVerified": false,
-        "explanation": "ByAna Faguy Kathryn Vaughn returned to work at a rural West Tennessee elementary school this autumn with a lot more stress on her plate than in previous years. The 46-year-old, like many Americans, is juggling how to provide for her family with rising costs of, as she described it, \"everything\". She spends her days working three different jobs to support her family of four, including as a primary school art teacher, as US inflation continues to rise. Inflation in September was above forecasts. Over the past 12 months, prices rose by 3.7% - up from 3.4% in the 12 months to August, according to officials numbers released on Wednesday.",
+        "explanation": "Kathryn Vaughn returned to work at a rural West Tennessee elementary school this autumn with a lot more stress on her plate than in previous years. The 46-year-old, like many Americans, is juggling how to provide for her family with rising costs of, as she described it, \"everything\". She spends her days working three different jobs to support her family of four, including as a primary school art teacher, as US inflation continues to rise. Inflation in September was above forecasts. Over the past 12 months, prices rose by 3.7% - up from 3.4% in the 12 months to August, according to officials numbers released on Wednesday.",
         "summaryKind": "Source excerpt",
         "imageUrl": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/e691/live/4f2f6b20-adf0-11f1-ad53-0d91a06f3150.jpg",
         "imageCaption": "Image caption, Kathryn Vaughn works many odd jobs to supplement her teacher's salary",
         "imageSourceUrl": "https://www.bbc.co.uk/news/articles/c305649p2d6o",
-        "checkedAt": "2026-10-14T18:26:20.363Z"
+        "checkedAt": "2026-10-14T18:28:52.176Z"
       },
       {
         "id": "https://www.npr.org/2026/10/14/nx-s1-6001398/white-house-media-ban",
         "url": "https://www.npr.org/2026/10/14/nx-s1-6001398/white-house-media-ban",
         "title": "CNN, MS NOW and Politico prevail against White House — for now",
-        "summary": "A federal judge ruled late Tuesday that President Trump cannot ban news organizations from covering him at the White House because he does not like the nature of their coverage — at least, not until the matter goes to a formal trial. Media Judge weighs arguments by CNN and other media outlets over Trump ban U.S. District Court Judge Timothy J. Kelly found that Trump's decision to bar more than 70 journalists from CNN, MS NOW and Politico violated their fundamental free speech in two separate ways as well as their due process rights. Both rights are enshrined in the Bill of Rights to the U.S.",
+        "summary": "A federal judge ruled late Tuesday that President Trump cannot ban news organizations from covering him at the White House because he does not like the nature of their coverage — at least, not until the matter goes to a formal trial. U.S. District Court Judge Timothy J. Kelly found that Trump's decision to bar more than 70 journalists from CNN, MS NOW and Politico violated their fundamental free speech in two separate ways as well as their due process rights. Both rights are enshrined in the Bill of Rights to the U.S. Constitution. The news organizations sued last month after the Trump administration denied them access.",
         "publishedAt": "2026-10-14T07:16:02.000Z",
         "source": "NPR",
         "category": "U.S.",
@@ -127,7 +127,7 @@
           "relevance": 10
         },
         "freshness": "48h",
-        "displayTitle": "CNN, MS NOW and Politico prevail against White House — for now",
+        "displayTitle": "Judge temporarily blocks White House bans on news outlets over their coverage",
         "originalSummary": "A federal judge ruled late Tuesday that President Trump cannot ban news organizations from covering him at the White House because he does not like the nature of their coverage - at least, not until the matter goes to a formal trial.",
         "whyMatters": null,
         "originalPublishedAt": "2026-10-14T07:16:02.000Z",
@@ -138,18 +138,18 @@
         "dateEvidenceUrl": "https://www.npr.org/2026/10/14/nx-s1-6001398/white-house-media-ban",
         "eventRevision": "2026-10-13:Event",
         "majorUpdateVerified": false,
-        "explanation": "A federal judge ruled late Tuesday that President Trump cannot ban news organizations from covering him at the White House because he does not like the nature of their coverage — at least, not until the matter goes to a formal trial. Media Judge weighs arguments by CNN and other media outlets over Trump ban U.S. District Court Judge Timothy J. Kelly found that Trump's decision to bar more than 70 journalists from CNN, MS NOW and Politico violated their fundamental free speech in two separate ways as well as their due process rights. Both rights are enshrined in the Bill of Rights to the U.S.",
+        "explanation": "A federal judge ruled late Tuesday that President Trump cannot ban news organizations from covering him at the White House because he does not like the nature of their coverage — at least, not until the matter goes to a formal trial. U.S. District Court Judge Timothy J. Kelly found that Trump's decision to bar more than 70 journalists from CNN, MS NOW and Politico violated their fundamental free speech in two separate ways as well as their due process rights. Both rights are enshrined in the Bill of Rights to the U.S. Constitution. The news organizations sued last month after the Trump administration denied them access.",
         "summaryKind": "Source excerpt",
         "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/5000x2813+0+0/resize/1400/quality/85/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fe0%2F43%2F782065af4948bc749692b20c1373%2Fgettyimages-2295498318.jpg",
         "imageCaption": "",
         "imageSourceUrl": "https://www.npr.org/2026/10/14/nx-s1-6001398/white-house-media-ban",
-        "checkedAt": "2026-10-14T18:26:20.363Z"
+        "checkedAt": "2026-10-14T18:28:52.176Z"
       },
       {
         "id": "https://www.bbc.co.uk/news/articles/cw8dzg094zd9o",
         "url": "https://www.bbc.co.uk/news/articles/cw8dzg094zd9o",
         "title": "Cornell bans all fraternity parties over gang sex assault allegations",
-        "summary": "Cornell bans all fraternity parties over gang sex assault allegations ByMadeline Halpert Updated 7 hours ago Cornell University is banning all parties at fraternity houses as it faces a backlash over its handling of an alleged sexual assault on campus two years ago. Last month, a woman known as Jane Doe filed a lawsuit alleging she was plied with drugs and raped by several men in 2024 at a party at a Cornell fraternity house. In a statement on Tuesday, Cornell's president, Michael Kotlikoff, announced a series of measures responding to the alleged assault, including the end to fraternity parties for the remainder of the university year.",
+        "summary": "Cornell University is banning all parties at fraternity houses as it faces a backlash over its handling of an alleged sexual assault on campus two years ago. Last month, a woman known as Jane Doe filed a lawsuit alleging she was plied with drugs and raped by several men in 2024 at a party at a Cornell fraternity house. In a statement on Tuesday, Cornell's president, Michael Kotlikoff, announced a series of measures responding to the alleged assault, including the end to fraternity parties for the remainder of the university year. \"I am deeply sorry for the harm Jane Doe suffered in 2024, and appalled that this act of sexual violence occurred within our Cornell community,\" he said.",
         "publishedAt": "2026-10-13T17:59:28.603Z",
         "source": "BBC News",
         "category": "U.S.",
@@ -173,16 +173,16 @@
         "dateEvidenceUrl": "https://www.bbc.co.uk/news/articles/cw8dzg094zd9o",
         "eventRevision": "2026-10-13:Announced",
         "majorUpdateVerified": false,
-        "explanation": "Cornell bans all fraternity parties over gang sex assault allegations ByMadeline Halpert Updated 7 hours ago Cornell University is banning all parties at fraternity houses as it faces a backlash over its handling of an alleged sexual assault on campus two years ago. Last month, a woman known as Jane Doe filed a lawsuit alleging she was plied with drugs and raped by several men in 2024 at a party at a Cornell fraternity house. In a statement on Tuesday, Cornell's president, Michael Kotlikoff, announced a series of measures responding to the alleged assault, including the end to fraternity parties for the remainder of the university year.",
+        "explanation": "Cornell University is banning all parties at fraternity houses as it faces a backlash over its handling of an alleged sexual assault on campus two years ago. Last month, a woman known as Jane Doe filed a lawsuit alleging she was plied with drugs and raped by several men in 2024 at a party at a Cornell fraternity house. In a statement on Tuesday, Cornell's president, Michael Kotlikoff, announced a series of measures responding to the alleged assault, including the end to fraternity parties for the remainder of the university year. \"I am deeply sorry for the harm Jane Doe suffered in 2024, and appalled that this act of sexual violence occurred within our Cornell community,\" he said.",
         "summaryKind": "Source excerpt",
         "imageUrl": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/0bfb/live/6e2d8910-c738-11f1-9a39-31b474234113.jpg",
         "imageCaption": "",
         "imageSourceUrl": "https://www.bbc.co.uk/news/articles/cw8dzg094zd9o",
-        "checkedAt": "2026-10-14T18:26:20.363Z"
+        "checkedAt": "2026-10-14T18:28:52.176Z"
       }
     ],
-    "fetchedAt": "2026-10-14T18:26:20.363Z",
-    "checkedAt": "2026-10-14T18:26:20.363Z",
+    "fetchedAt": "2026-10-14T18:28:52.176Z",
+    "checkedAt": "2026-10-14T18:28:52.176Z",
     "sources": [
       "The Verge",
       "NASA",
@@ -193,10 +193,10 @@
     "providersTotal": 18,
     "research": {
       "rawCandidates": 376,
-      "candidatesReviewed": 39,
-      "sourcePagesRead": 39,
-      "primaryDatesChecked": 13,
-      "rejected": 34,
+      "candidatesReviewed": 40,
+      "sourcePagesRead": 40,
+      "primaryDatesChecked": 14,
+      "rejected": 35,
       "qualifying": 5,
       "targetCandidates": 20,
       "method": "Live publisher feeds, original source pages, explicit event-date evidence and Crossref publication dates; automated weighted ranking; attributed source excerpts."
