@@ -962,198 +962,943 @@ const schoolBreaks = [
   { name: 'Spring break', date: '2027-03-05', time: '15:00', end: '2027-03-22', endTime: '20:00', note: 'Earliest departure: March 5 after 3 p.m. Return March 22 by 8 p.m.' },
 ];
 
+// Joke collection supplied by Matthew; wording preserved from his pasted list.
 const jokes = [
   [
-    "I made a to-do list to reduce stress.",
-    "Now the stress is alphabetized."
+    "I would avoid the sushi if I was you.",
+    "It’s a little fishy."
   ],
   [
-    "My computer asked if I wanted to save my changes.",
-    "Honestly, I’d like to return a few."
+    "Want to hear a joke about paper?",
+    "Nevermind it’s tearable."
   ],
   [
-    "I named my Wi-Fi “The Wi-Fi Is Down.”",
-    "The family troubleshooting group chat has become very active."
+    "Why did the cookie cry?",
+    "Because his father was a wafer so long!"
   ],
   [
-    "I finally closed all my browser tabs.",
-    "Unfortunately, the ones in my brain are still playing audio."
+    "I used to work in a shoe recycling shop.",
+    "It was sole destroying."
   ],
   [
-    "I tried to organize my procrastination.",
-    "I’ll finish the system tomorrow."
+    "What do you call a belt with a watch on it?",
+    "A waist of time."
   ],
   [
-    "My alarm clock and I have a healthy relationship.",
-    "We disagree every morning, then I give it the silent treatment."
+    "How do you organize an outer space party?",
+    "You planet."
   ],
   [
-    "I put “be spontaneous” on my calendar.",
-    "Thursday, 4:15 to 4:30."
+    "I went to a seafood disco last week...",
+    "and pulled a mussel."
   ],
   [
-    "I told my plants they were doing a great job.",
-    "They’re the only group project where everyone pulls their weight."
+    "Do you know where you can get chicken broth in bulk?",
+    "The stock market."
   ],
   [
-    "I tried to write a joke about infinity.",
-    "It had no end."
+    "I cut my finger chopping cheese, but I think that I may have greater problems.",
+    ""
   ],
   [
-    "My laptop has incredible multitasking skills.",
-    "It can freeze eight apps simultaneously."
+    "My cat was just sick on the carpet, I don’t think it’s feline well.",
+    ""
   ],
   [
-    "A physics student walks into a wall.",
-    "The probability was small, but apparently not zero."
+    "Why did the octopus beat the shark in a fight?",
+    "Because it was well armed."
   ],
   [
-    "I started reading a book about anti-gravity.",
-    "I’ve lost it somewhere near the ceiling."
+    "How much does a hipster weigh?",
+    "An instagram."
   ],
   [
-    "My phone says my screen time is down 20%.",
-    "Great. The laptop is picking up the slack."
+    "What did daddy spider say to baby spider?",
+    "You spend too much time on the web."
   ],
   [
-    "I bought a minimalist planner.",
-    "It’s blank. Apparently I’m doing very well."
+    "Atheism is a non-prophet organisation.",
+    ""
   ],
   [
-    "I have a photographic memory.",
-    "The lens cap is usually on."
+    "There’s a new type of broom out, it’s sweeping the nation.",
+    ""
   ],
   [
-    "I asked the printer to make one copy.",
-    "It began negotiating."
+    "What cheese can never be yours?",
+    "Nacho cheese."
   ],
   [
-    "My code works on the first try.",
-    "That’s how I know I forgot to run it."
+    "What did the Buffalo say to his little boy when he dropped him off at school?",
+    "Bison."
   ],
   [
-    "I cleaned my desk to improve my focus.",
-    "Now I’m focused on where I put everything."
+    "Have you ever heard of a music group called Cellophane?",
+    "They mostly wrap."
   ],
   [
-    "A statistician takes two umbrellas outside.",
-    "One for the weather, one for the margin of error."
+    "Why does Superman gets invited to dinners?",
+    "Because he is a Supperhero."
   ],
   [
-    "I decided to become a morning person.",
-    "The morning has not accepted my application."
+    "How was Rome split in two?",
+    "With a pair of Ceasars."
   ],
   [
-    "I’m great at mental math.",
-    "The math itself is questionable, but it is entirely mental."
+    "The shovel was a ground breaking invention.",
+    ""
   ],
   [
-    "My password is “incorrect.”",
-    "The computer keeps reminding me."
+    "A scarecrow says, \"This job isn't for everyone, but hay, it's in my jeans.\"",
+    ""
   ],
   [
-    "I asked a history major what time it was.",
-    "The answer began, “To understand that, we need to go back…”"
+    "A Buddhist walks up to a hot dog stand and says, \"Make me one with everything.\"",
+    ""
   ],
   [
-    "I got a new notebook to finally get organized.",
-    "It’s joining the support group of my previous notebooks."
+    "Did you hear about the guy who lost the left side of his body?",
+    "He's alright now."
   ],
   [
-    "A friend said I should live in the moment.",
-    "So I stopped planning and immediately missed the bus."
+    "What do you call a girl with one leg that's shorter than the other?",
+    "Ilene."
   ],
   [
-    "I thought I understood the lecture.",
-    "Then the professor said, “That was the easy example.”"
+    "I did a theatrical performance on puns.",
+    "It was a play on words."
   ],
   [
-    "I measure my runs in kilometers.",
-    "It makes the number bigger without requiring more running."
+    "What do you do with a dead chemist?",
+    "You barium."
   ],
   [
-    "I tried using voice recognition to write an essay.",
-    "It has a lot of strong opinions about what I supposedly said."
+    "I bet the person who created the door knocker won a Nobel prize.",
+    ""
   ],
   [
-    "My phone autocorrected “studying” to “stunning.”",
-    "Finally, some academic support."
+    "Towels can’t tell jokes.",
+    "They have a dry sense of humor."
   ],
   [
-    "I read all the terms and conditions.",
-    "That’s the joke."
+    "Two birds are sitting on a perch and one says \"Do you smell fish?\"",
+    ""
   ],
   [
-    "I asked the library for a book on paranoia.",
-    "The librarian whispered, “It’s right behind you.”"
+    "Do you know sign language?",
+    "You should learn it, it’s pretty handy."
   ],
   [
-    "I wanted to build a time machine.",
-    "My future self sent a note saying, “Start the homework first.”"
+    "What do you call a beautiful pumpkin?",
+    "GOURDgeous."
   ],
   [
-    "I set a reminder to drink water.",
-    "Now my phone is more emotionally invested in my health than I am."
+    "Why did one banana spy on the other?",
+    "Because she was appealing."
   ],
   [
-    "I tried to make a spreadsheet of my mistakes.",
-    "It asked if I wanted to purchase more storage."
+    "What do you call a cow with no legs?",
+    "Ground beef."
   ],
   [
-    "The cloud sounds so peaceful.",
-    "Then you find out it’s someone else’s computer working very hard."
+    "What do you call a cow with two legs?",
+    "Lean beef."
   ],
   [
-    "I left my phone in another room to concentrate.",
-    "My brain immediately opened its own social media app."
+    "What do you call a cow with all of its legs?",
+    "High steaks."
   ],
   [
-    "Why did the punctuation marks stop arguing?",
-    "They finally found common commas."
+    "A cross eyed teacher couldn’t control his pupils.",
+    ""
   ],
   [
-    "The elevator at school has a lot in common with my grades.",
-    "Both occasionally go up without a clear explanation."
+    "After the accident, the juggler didn’t have the balls to do it.",
+    ""
   ],
   [
-    "I tried to learn a new word every day.",
-    "Today’s word is “overambitious.”"
+    "I used to be afraid of hurdles, but I got over it.",
+    ""
   ],
   [
-    "I said I would go for a quick run.",
-    "I should have specified which part was supposed to be quick."
+    "To write with a broken pencil is pointless.",
+    ""
   ],
   [
-    "I’m making a playlist for doing homework.",
-    "So far, making the playlist is the homework."
+    "I read a book on anti-gravity.",
+    "I couldn’t put it down."
   ],
   [
-    "The tutorial said, “This only takes five minutes.”",
-    "It forgot to mention the prerequisite degree."
+    "I couldn’t remember how to throw a boomerang but it came back to me.",
+    ""
   ],
   [
-    "I got an email with “quick question” in the subject.",
-    "I’ve cleared the afternoon."
+    "What should you do if you are cold?",
+    "Stand in the corner. It’s 90 degrees."
   ],
   [
-    "I finally found the missing piece of my project.",
-    "It was the instructions."
+    "How does Moses make coffee?",
+    "Hebrews it."
   ],
   [
-    "I asked my friend to explain quantum mechanics simply.",
-    "We are no longer certain whether the explanation happened."
+    "The energizer bunny went to jail.",
+    "He was charged with battery."
   ],
   [
-    "The group project is going great.",
-    "We’ve all agreed that someone should start it."
+    "What did the alien say to the pitcher of water?",
+    "Take me to your liter."
   ],
   [
-    "I turned my notifications off to find some peace.",
-    "Now I check whether I’m missing notifications."
+    "What happens when you eat too many spaghettiOs?",
+    "You have a vowel movement."
   ],
   [
-    "I asked the GPS to take the scenic route.",
-    "Apparently it considers parking lots an art form."
+    "The soldier who survived mustard gas and pepper spray was a seasoned veteran.",
+    ""
+  ],
+  [
+    "Sausage puns are the wurst.",
+    ""
+  ],
+  [
+    "What do you call a bear with no teeth?",
+    "A gummy bear."
+  ],
+  [
+    "Why shouldn’t you trust atoms?",
+    "They make up everything."
+  ],
+  [
+    "What’s it called when you have too many aliens?",
+    "Extraterrestrials."
+  ],
+  [
+    "Want to hear a pizza joke?",
+    "Nevermind, it’s too cheesy."
+  ],
+  [
+    "What do cows tell each other at bedtime?",
+    "Dairy tales."
+  ],
+  [
+    "Why can’t you take inventory in Afghanistan?",
+    "Because of the tally ban."
+  ],
+  [
+    "Why didn’t the lion win the race?",
+    "Because he was racing a cheetah."
+  ],
+  [
+    "What happens to nitrogen when the sun comes up?",
+    "It becomes daytrogen."
+  ],
+  [
+    "What’s it called when you put a cow in an elevator?",
+    "Raising the steaks."
+  ],
+  [
+    "What’s america’s favorite soda?",
+    "Mini soda."
+  ],
+  [
+    "Why did the tomato turn red?",
+    "Because it saw the salad dressing."
+  ],
+  [
+    "What kind of car does a sheep drive?",
+    "Their SuBAHHru."
+  ],
+  [
+    "What do you call a french pig?",
+    "Porque."
+  ],
+  [
+    "What do you call a line of rabbits marching backwards?",
+    "A receding hairline."
+  ],
+  [
+    "Why don’t vampires go to barbecues?",
+    "They don’t like steak."
+  ],
+  [
+    "How do trees access the internet?",
+    "They log on."
+  ],
+  [
+    "Why should you never trust a train?",
+    "They have loco motives."
+  ],
+  [
+    "Is your refrigerator running?",
+    "Better go catch it."
+  ],
+  [
+    "The future,the present and the past walked into a bar.Things got a little tense.",
+    ""
+  ],
+  [
+    "I saw an ad for burial plots, and thought to myself this is the last thing I need.",
+    ""
+  ],
+  [
+    "I just found out I'm colorblind.",
+    "The diagnosis came completely out of the purple."
+  ],
+  [
+    "I'd tell you a chemistry joke but I know I wouldn't get a reaction.",
+    ""
+  ],
+  [
+    "Have you ever tried to eat a clock?",
+    "It's very time consuming."
+  ],
+  [
+    "I wondered why the baseball was getting bigger.",
+    "Then it hit me."
+  ],
+  [
+    "Read enough of our funny puns, and you'll be punstoppable.",
+    ""
+  ],
+  [
+    "Yesterday a clown held the door for me.",
+    "It was a nice jester."
+  ],
+  [
+    "I used to go fishing with Skrillex but he kept dropping the bass.",
+    ""
+  ],
+  [
+    "The wedding was so emotional even the cake was in tiers.",
+    ""
+  ],
+  [
+    "What does a house wear?",
+    "A dress."
+  ],
+  [
+    "Why can't bicycles stand up on their own?",
+    "Since they are 2 tired."
+  ],
+  [
+    "I owe a lot to the sidewalks.",
+    "They’ve been keeping me off the streets for years."
+  ],
+  [
+    "Imagine if alarm clocks hit you back in the morning.It would be truly alarming.",
+    ""
+  ],
+  [
+    "Why is a skeleton a bad liar?",
+    "You can see right through it."
+  ],
+  [
+    "What do you receive when you ask a lemon for help?",
+    "Lemonaid."
+  ],
+  [
+    "A man sued an airline company after it lost his luggage.",
+    "Sadly, he lost his case."
+  ],
+  [
+    "What does a dog say when he sits down on a piece of sandpaper?",
+    "Ruff!"
+  ],
+  [
+    "What do you call crystal clear urine?",
+    "1080pee."
+  ],
+  [
+    "At my boxing club there is only one punch bag.",
+    "I hate waiting for the punch line!"
+  ],
+  [
+    "An untalented gymast walks into a bar.",
+    ""
+  ],
+  [
+    "Einstein developed a theory about space, and it was about time too.",
+    ""
+  ],
+  [
+    "I was accused of being a plagiarist, their word not mine.",
+    ""
+  ],
+  [
+    "My friends say they don’t like skeleton puns.",
+    "I should put more backbone into them."
+  ],
+  [
+    "Let me FILL you in on my trip to the dentist.",
+    ""
+  ],
+  [
+    "Why does the singer of Cheap Thrills not want us to Sia?",
+    ""
+  ],
+  [
+    "Traveling on a flying carpet is a rugged experience.",
+    ""
+  ],
+  [
+    "Cartoonist found dead in home.",
+    "Details are sketchy."
+  ],
+  [
+    "The old woman who lived in a shoe wasn’t the sole owner,there were strings attached.",
+    ""
+  ],
+  [
+    "Did you hear about the crime in the parking garage?",
+    "It was wrong on so many levels."
+  ],
+  [
+    "My new diet consists of aircraft, its a bit plane.",
+    ""
+  ],
+  [
+    "Have you ever tried to milk a cow which has been cut in half?",
+    "Udder madness."
+  ],
+  [
+    "Why are there fences on graveyards?",
+    "Because people are dying to get in."
+  ],
+  [
+    "Why do trees have so many friends?",
+    "They branch out."
+  ],
+  [
+    "Models of dragons are not to scale.",
+    ""
+  ],
+  [
+    "Never discuss infinity with a mathematician, they can go on about it forever.",
+    ""
+  ],
+  [
+    "Why don’t some couples go to the gym?",
+    "Because some relationships don’t work out."
+  ],
+  [
+    "Don’t trust people that do acupuncture, they’re back stabbers.",
+    ""
+  ],
+  [
+    "A persistent banker wouldn’t stop hitting on me so I asked him to leave me a loan.",
+    ""
+  ],
+  [
+    "I ordered a book of puns last week, but i didn't get it.",
+    ""
+  ],
+  [
+    "People say i look better without glasses but i just can't see it.",
+    ""
+  ],
+  [
+    "Don’t judge a meal by the look of the first course.",
+    "It’s very souperficial."
+  ],
+  [
+    "I heard Donald Trump is going to ban shredded cheese, and make America grate again.",
+    ""
+  ],
+  [
+    "I relish the fact that you’ve mustard the strength to ketchup to me.",
+    ""
+  ],
+  [
+    "What do you call a young musician?",
+    "A minor."
+  ],
+  [
+    "Police were called to a daycare yesterday, where a 2-year-old was resisting a rest.",
+    ""
+  ],
+  [
+    "If artists wear sketchers do linguists wear converse?",
+    ""
+  ],
+  [
+    "I changed my iPod name to Titanic.",
+    "It’s syncing now."
+  ],
+  [
+    "Jill broke her finger today, but on the other hand she was completely fine.",
+    ""
+  ],
+  [
+    "I smeared some ketchup all over my eyes once.",
+    "It was a bad idea in Heinz- sight."
+  ],
+  [
+    "I flipped a coin over an issue the other day, it was quite the toss-up.",
+    ""
+  ],
+  [
+    "I got hit in the head with a can of soda?",
+    "Luckily it was a soft drink."
+  ],
+  [
+    "I heard that the post office was a male dominated industry.",
+    ""
+  ],
+  [
+    "Why isn’t suntanning an Olympic sport?",
+    "Because the best you can ever get is bronze."
+  ],
+  [
+    "What do you mean June is over?",
+    "Julying."
+  ],
+  [
+    "Why is Kylo Ren so angry?",
+    "Beause he’s always Ben Solo."
+  ],
+  [
+    "These reversing cameras are great.",
+    "Since I got one I haven’t looked back."
+  ],
+  [
+    "The candle quit his job because he felt burned out.",
+    ""
+  ],
+  [
+    "Our maintenance guy lost his legs on the job, now he’s just a handyman.",
+    ""
+  ],
+  [
+    "Going to bed with music on gave him sound sleep.",
+    ""
+  ],
+  [
+    "A magic tractor drove down the road and turned into a field!",
+    ""
+  ],
+  [
+    "I met some aliens from outer space.",
+    "They were pretty down to earth."
+  ],
+  [
+    "The plane flight brought my acrophobia to new heights.",
+    ""
+  ],
+  [
+    "My phone has to wear glasses ever since it lost its contacts.",
+    ""
+  ],
+  [
+    "I, for one, like Roman numerals.",
+    ""
+  ],
+  [
+    "How do mountains see?",
+    "They peak."
+  ],
+  [
+    "The show was called Spongebob Squarepants but everyone knows the star was Patrick.",
+    ""
+  ],
+  [
+    "This is not alcohol, water you thinking?!",
+    ""
+  ],
+  [
+    "Novice pirates make terrible singers because they can’t hit the high seas.",
+    ""
+  ],
+  [
+    "I told my friend she drew her eyebrows too high.",
+    "She seemed surprised."
+  ],
+  [
+    "The earth's rotation really makes my day.",
+    ""
+  ],
+  [
+    "If I buy a bigger bed will I have more or less bedroom?",
+    ""
+  ],
+  [
+    "Two peanuts were walking in a tough neighborhood and one of them was a-salted.",
+    ""
+  ],
+  [
+    "Two ropes were walking in a tough neighborhood and one of them was a-frayed.",
+    ""
+  ],
+  [
+    "What kind of shoes do ninjas wear?",
+    "Sneakers."
+  ],
+  [
+    "I got a master’s degree in being ignored; no one seems to care.",
+    ""
+  ],
+  [
+    "After eating the ship, the sea monster said, I can’t believe I ate the hull thing.",
+    ""
+  ],
+  [
+    "Smaller babies may be delivered by stork but the heavier ones need a crane.",
+    ""
+  ],
+  [
+    "A bartender broke up with her boyfriend, but he kept asking her for another shot.",
+    ""
+  ],
+  [
+    "I had a pun about insanity but then I lost it.",
+    ""
+  ],
+  [
+    "He couldn’t work out how to fix the washing machine so he threw in the towel.",
+    ""
+  ],
+  [
+    "Why does the man want to buy nine rackets?",
+    "Cause tennis too many."
+  ],
+  [
+    "Why don’t cannibals eat clowns?",
+    "Because they taste funny."
+  ],
+  [
+    "If I got paid in lots of Pennes I would make loads of pasta.",
+    ""
+  ],
+  [
+    "I thought I saw a spider on my laptop, but my friend said it was just a bug.",
+    ""
+  ],
+  [
+    "A doctor broke his leg while auditioning for a play.Luckily he still made the cast.",
+    ""
+  ],
+  [
+    "The tale of the haunted refrigerator was chilling.",
+    ""
+  ],
+  [
+    "Why are frogs so happy?",
+    "They eat whatever bugs them."
+  ],
+  [
+    "If you wear cowboy clothes are you ranch dressing?",
+    ""
+  ],
+  [
+    "I was addicted to the hokey pokey but I turned myself around.",
+    ""
+  ],
+  [
+    "Simba, you're falling behind.",
+    "I must ask you to Mufasa."
+  ],
+  [
+    "I bought a wooden whistle but it wooden whistle.",
+    ""
+  ],
+  [
+    "The bomb didn't want to go off.",
+    "So it refused."
+  ],
+  [
+    "The sore mummy needed a Cairo-practor",
+    ""
+  ],
+  [
+    "I feel sorry for shopping carts.",
+    "They’re always getting pushed around."
+  ],
+  [
+    "The display of still-life art was not at all moving!",
+    ""
+  ],
+  [
+    "On Halloween October is nearly Octover.",
+    ""
+  ],
+  [
+    "Pig puns are so boaring.",
+    ""
+  ],
+  [
+    "Why couldn’t the dead car drive into the cluttered garage?",
+    "Lack of vroom."
+  ],
+  [
+    "What do you call Samsung's security guards?",
+    "Guardians of the Galaxy."
+  ],
+  [
+    "What does Superman have in his drink?",
+    "Just ice."
+  ],
+  [
+    "How does a penguin build it’s house?",
+    "Igloos it together."
+  ],
+  [
+    "Time flies like an arrow.",
+    "Fruit flies like a banana."
+  ],
+  [
+    "The safe was invented by a cop and a robber.",
+    "It was quite a combination."
+  ],
+  [
+    "What do you do when balloons are hurt?",
+    "You helium."
+  ],
+  [
+    "One hat says to the other, \"You stay here, I’ll go on a head.\"",
+    ""
+  ],
+  [
+    "How many tickles does it take to make an octopus laugh?",
+    "Ten tickles."
+  ],
+  [
+    "When does a farmer dance?",
+    "When he drops the beet."
+  ],
+  [
+    "When the scientist wanted to clone a deer, he bought a doe it yourself kit.",
+    ""
+  ],
+  [
+    "If people ask how many puns I made in Germany I reply, \"nein\"",
+    ""
+  ],
+  [
+    "Did you hear about the invention of the white board?",
+    "It was remarkable."
+  ],
+  [
+    "If Donald Trump becomes president, America is going toupee.",
+    ""
+  ],
+  [
+    "Can February March?",
+    "No, but April May."
+  ],
+  [
+    "I hate Russian Dolls, they are so full of themselves.",
+    ""
+  ],
+  [
+    "What do you do to an open wardrobe?",
+    "You closet."
+  ],
+  [
+    "The magazine about ceiling fans went out of business due to low circulation.",
+    ""
+  ],
+  [
+    "So what if I don’t know what apocalypse means?",
+    "It’s not the end of the world!"
+  ],
+  [
+    "Some aquatic mammals at the zoo escaped.",
+    "It was otter chaos."
+  ],
+  [
+    "A backwards poem writes inverse.",
+    ""
+  ],
+  [
+    "Getting the ability to fly would be so uplifting.",
+    ""
+  ],
+  [
+    "I asked my friend, Nick, if he had 5 cents I could borrow.",
+    "But he was Nicholas."
+  ],
+  [
+    "The soundtrack for Blackfish was orcastrated.",
+    ""
+  ],
+  [
+    "Where do you imprison a skeleton?",
+    "In a rib cage."
+  ],
+  [
+    "There’s a fine line between the numerator and the denominator.",
+    ""
+  ],
+  [
+    "I used to work at a hairdresser but i just wasn’t cut out for it.",
+    ""
+  ],
+  [
+    "Why is metal and a microwave a match made in heaven?",
+    "When they met, sparks flew."
+  ],
+  [
+    "The lumberjack loved his new computer.",
+    "He especially enjoyed logging in."
+  ],
+  [
+    "Garbage collectors are rubbish drivers!",
+    ""
+  ],
+  [
+    "When the church relocated it had an organ transplant.",
+    ""
+  ],
+  [
+    "Lettuce take a moment to appreciate this salad pun.",
+    ""
+  ],
+  [
+    "The scarecrow get promoted because he was outstanding in his field.",
+    ""
+  ],
+  [
+    "Sleeping comes so naturally to me, I could do it with my eyes closed.",
+    ""
+  ],
+  [
+    "I never understood odorless chemicals, they never make scents.",
+    ""
+  ],
+  [
+    "What do prisoners use to call each other?",
+    "Cell phones."
+  ],
+  [
+    "Why was dumbo sad?",
+    "He felt irrelephant."
+  ],
+  [
+    "When a clock is hungry, it goes back four seconds.",
+    ""
+  ],
+  [
+    "Old skiers never die.",
+    "They just go down hill."
+  ],
+  [
+    "Did you hear about the pun that was actually funny?",
+    "Neither have we."
+  ],
+  [
+    "You know why I like egg puns?",
+    "They crack me up!"
+  ],
+  [
+    "Want to hear a pun about ghosts?",
+    "That's the spirit!"
+  ],
+  [
+    "I used to make clown shoes… which was no small feat.",
+    ""
+  ],
+  [
+    "Did you hear about the human cannonball?",
+    "Too bad he got fired!"
+  ],
+  [
+    "What happened when the magician got mad?",
+    "She pulled her hare out!"
+  ],
+  [
+    "Did you hear about the circus that caught on fire?",
+    "It was in tents."
+  ],
+  [
+    "The one day of the week that eggs are definitely afraid of is Fry-day.",
+    ""
+  ],
+  [
+    "A hen will always leave her house through the proper eggs-it.",
+    ""
+  ],
+  [
+    "The man who ate too many eggs was considered to be an egg-oholic.",
+    ""
+  ],
+  [
+    "All the hens consider the chef to be very mean because he beats the eggs.",
+    ""
+  ],
+  [
+    "Eskimos keep all of their chilled eggs inside of the egg-loo.",
+    ""
+  ],
+  [
+    "Under the doctor’s advice, the hen is laying off eggs for a few weeks.",
+    ""
+  ],
+  [
+    "I had a real problem making a hard-boiled egg this morning until I cracked it.",
+    ""
+  ],
+  [
+    "The best time of day to eat eggs is at the crack of dawn.",
+    ""
+  ],
+  [
+    "The chicken coop only had 2 doors since if it had 4 doors it would be a sedan.",
+    ""
+  ],
+  [
+    "Crossing a cement mixer and a chicken will result in you getting a brick layer.",
+    ""
+  ],
+  [
+    "That reckless little egg always seems to egg-celerate when he sees the light turn yellow.",
+    ""
+  ],
+  [
+    "Hopefully this egg pun doesn't make your brain too fried or scrambled.",
+    ""
+  ],
+  [
+    "Don't ever have multiple people wash dishes together.",
+    "It's hard for them to stay in sink."
+  ],
+  [
+    "People using umbrellas always seem to be under the weather.",
+    ""
+  ],
+  [
+    "I dissected an iris today.",
+    "It was an eye-opening experience."
+  ],
+  [
+    "What was Forrest Gump’s email password?",
+    "1forrest1."
+  ],
+  [
+    "What planet is like a circus?",
+    "Saturn, it has three rings!"
+  ],
+  [
+    "Before my father died he worked in a circus as a stilt walker.",
+    "I used to look up to him."
+  ],
+  [
+    "Why did the lion eat the tightrope walker?",
+    "He wanted a well-balanced meal!"
+  ],
+  [
+    "I really look up to my tall friends.",
+    ""
+  ],
+  [
+    "I hate negative numbers and will stop at nothing to avoid them.",
+    ""
+  ],
+  [
+    "Long fairy tales have a tendency to dragon.",
+    ""
+  ],
+  [
+    "It takes guts to make a sausage.",
+    ""
   ]
 ];
 
@@ -2585,12 +3330,13 @@ function renderDelights(force = '') {
   const jokeChoice = trackedDelight(jokes, currentWindow.key, 'jokes', state.delights.jokes, force === 'joke');
   const factChoice = trackedDelight(facts, currentWindow.key, 'facts', state.delights.facts, force === 'fact');
   const changed = jokeChoice.history !== state.delights.jokes || factChoice.history !== state.delights.facts;
+  if (jokeChoice.history.current?.id !== state.delights.jokes.current?.id) state.jokeWindow = null;
   state.delights = { jokes: jokeChoice.history, facts: factChoice.history };
   if (changed) persist();
   const joke = jokeChoice.item;
   $('#joke-question').textContent = joke[0]; $('#joke-answer').textContent = joke[1];
-  $('#joke-answer').hidden = state.jokeWindow !== currentWindow.key;
-  $('#joke-reveal').hidden = state.jokeWindow === currentWindow.key;
+  $('#joke-answer').hidden = !joke[1] || state.jokeWindow !== currentWindow.key;
+  $('#joke-reveal').hidden = !joke[1] || state.jokeWindow === currentWindow.key;
   const fact = factChoice.item;
   $('#fact-title').textContent = fact.title; $('#fact-text').textContent = fact.text;
   $('#fact-source').textContent = `Source: ${fact.source}`;
