@@ -1,6 +1,6 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { researchNews } from '../lib/research.mjs';
-import { selectBriefing } from '../public/news.js';
+import { completeBriefing } from '../public/news.js';
 import { checkInWindow } from '../public/shared.js';
 import { briefingDue } from '../lib/briefing-schedule.mjs';
 
@@ -21,12 +21,20 @@ if (scheduled && !briefingDue(previous, now)) {
 const news = await researchNews({ now, previous: previous?.news?.stories || [], seen: history.seen });
 const key = checkInWindow(now).key;
 const previousSources = history.editions.find(e => e.key !== key)?.sources || [];
-const selected = selectBriefing(news.stories, { key, history: history.seen, previousSources, requireVerified: true, now });
+const reserve = [...(previous?.news?.stories || []), ...(previous?.news?.reserveStories || []), ...(history.archive || [])];
+const selected = completeBriefing(news.stories, { key, history: history.seen, previousSources, now, fallback:reserve });
+if (selected.length < 5) throw new Error(`Only ${selected.length} usable reports available; retaining the previous edition instead of publishing a short briefing.`);
+news.minimumStories = 5;
+news.freshCount = selected.filter(s => !s.carriedForward && !s.olderReport).length;
+news.carriedCount = selected.filter(s => s.carriedForward).length;
+news.olderCount = selected.filter(s => s.olderReport && !s.carriedForward).length;
+news.reserveStories = [...new Map([...selected, ...reserve].map(s => [s.id,s])).values()].slice(0,30);
 news.selectedIds = selected.map(s => s.id);
 // Publish the actual selected edition. Alternative candidates must not let a
 // browser reintroduce cross-publisher copies rejected by shared story history.
 news.stories = selected;
-for (const story of selected) history.seen[story.id] = { id: story.id, title: story.title, source: story.source, eventDate: story.eventDate, eventRevision: story.eventRevision, editionKey: key, seenAt: now.toISOString() };
+for (const story of selected) if (!story.carriedForward) history.seen[story.id] = { id: story.id, title: story.title, source: story.source, eventDate: story.eventDate, eventRevision: story.eventRevision, editionKey: key, seenAt: now.toISOString() };
+history.archive = news.reserveStories;
 history.editions = [{ key, sources: selected.map(s => s.source) }, ...history.editions.filter(e => e.key !== key)].slice(0, 28);
 history.seen = Object.fromEntries(Object.entries(history.seen).sort((a,b) => b[1].seenAt.localeCompare(a[1].seenAt)).slice(0, 1000));
 const result = { fetchedAt: now.toISOString(), news };
@@ -44,4 +52,4 @@ if (inDeployment) {
 }
 console.log(JSON.stringify({ edition: key, selected: selected.length, ...news.research }));
 if (process.env.GITHUB_STEP_SUMMARY) await writeFile(process.env.GITHUB_STEP_SUMMARY,
-  `## Briefing ${key}\n\nGathered ${news.research.rawCandidates} live feed candidates; reviewed ${news.research.candidatesReviewed}; read ${news.research.sourcePagesRead} original source pages; checked ${news.research.primaryDatesChecked} primary publication dates.\n\n${selected.length} fresh stories selected. Shortfalls are shown without filler.\n`, { flag: 'a' });
+  `## Briefing ${key}\n\nGathered ${news.research.rawCandidates} candidates; read ${news.research.sourcePagesRead} original source pages.\n\n${selected.length} stories: ${news.freshCount} recent reports, ${news.olderCount} catch-up reports, ${news.carriedCount} carried forward. Unconfirmed event dates are labeled.\n`, { flag: 'a' });

@@ -168,7 +168,7 @@ export async function researchNews({ fetcher = fetch, now = new Date(), previous
   const prior = Object.values(seen).filter(s => s.editionKey && s.editionKey !== key);
   // Don't spend the article-reading budget on unchanged earlier stories.
   // A newly dated report remains eligible for a verified major development.
-  const candidates = rankStories(raw, now, { limit: Math.max(raw.length, limit) }).filter(story =>
+  const candidates = rankStories(raw, now, { broad:true, minScore:20, limit: Math.max(raw.length, limit) }).filter(story =>
     !prior.some(old => similarStories(old, story) && Date.parse(story.publishedAt) <= Date.parse(old.seenAt))).slice(0, limit);
   let pagesRead = 0, primaryDatesRead = 0;
   const checks = await mapLimit(candidates, 4, async story => {
@@ -178,34 +178,37 @@ export async function researchNews({ fetcher = fetch, now = new Date(), previous
     const publishedAt = article.publishedAt || story.publishedAt;
     let date = eventDateInText(article.text.split(/\s+/).slice(0, 550).join(' '), publishedAt, story);
     if (['Science','Technology'].includes(story.category) && article.dois.length) {
-      const primary = await paperDate(article.dois[0], fetcher);
+      // An unavailable metadata service must not discard readable reporting.
+      let primary = null;
+      try { primary = await paperDate(article.dois[0], fetcher); } catch { date = null; }
       if (primary) { primaryDatesRead++; date = { date: primary.date, kind: 'Study published', evidence: `The study cited by the source, “${primary.title}”, was first published on ${primary.date}.`, url: primary.url }; }
     }
-    if (!date && ['MIT News','NASA'].includes(story.source) && !story.url.includes('/photojournal/') && article.publishedAt) {
+    if (!date && ['MIT News','NASA'].includes(story.source) && !/\/(photojournal|image-article)\//.test(story.url) && article.publishedAt) {
       date = { date: dayOf(article.publishedAt), kind: 'Research announced', evidence: `The institution's original announcement is dated ${dayOf(article.publishedAt)}.`, url: story.url };
     }
-    if (!date) throw new Error('The event date could not be established from the source');
-    const eventTime = Date.parse(date.date + 'T00:00:00Z');
+    const eventTime = date ? Date.parse(date.date + 'T12:00:00Z') : Date.parse(publishedAt);
     const age = (+now - eventTime) / 3600000;
-    if (age < -1 || age > 48) throw new Error('The actual event/announcement falls outside the 48-hour window');
+    if (!Number.isFinite(age) || age < -24 || age > 168) throw new Error('The actual event/announcement is more than a week old');
     const old = previous.find(p => p.id === story.id || similarStories(p, story));
-    const majorUpdateVerified = Boolean(old && old.eventDate && date.date > old.eventDate && majorEvent.test(date.evidence) && article.modifiedAt && +now - Date.parse(article.modifiedAt) <= 48 * 3600000);
+    const majorUpdateVerified = Boolean(date && old && old.eventDate && date.date > old.eventDate && majorEvent.test(date.evidence) && article.modifiedAt && +now - Date.parse(article.modifiedAt) <= 48 * 3600000);
     const verified = { ...story, publishedAt, originalPublishedAt: publishedAt,
-      eventDate: date.date, eventKind: date.kind, eventDateVerified: true, dateEvidence: date.evidence,
-      dateEvidenceUrl: date.url || story.url, eventRevision: `${date.date}:${date.kind}`, majorUpdateVerified,
+      sourcePageChecked:true, eventDate: date?.date || null, eventKind: date?.kind || null, eventDateVerified: Boolean(date), dateEvidence: date?.evidence || null,
+      dateEvidenceUrl: date?.url || story.url, eventRevision: date ? `${date.date}:${date.kind}` : null, majorUpdateVerified,
       explanation: explanationFromText(article.text), summaryKind: 'Source excerpt',
       imageUrl: article.imageUrl, imageCaption: article.imageCaption, imageSourceUrl: story.url,
       checkedAt: now.toISOString() };
     if (majorUpdateVerified) verified.publishedAt = article.modifiedAt;
     return verified;
   });
-  const stories = rankStories(checks.flatMap(r => r.value ? [r.value] : []), now, { requireVerified: true, limit: 30 });
+  const stories = rankStories(checks.flatMap(r => r.value ? [r.value] : []), now, { broad:true, minScore:20, maxAgeHours:168, limit:60 });
   return {
     schemaVersion: 2, mode: 'researched', editionKey: checkInWindow(now).key, stories,
     fetchedAt: now.toISOString(), checkedAt: now.toISOString(), sources: [...new Set(stories.map(s => s.source))],
     providersAvailable: available, providersTotal: NEWS_FEEDS.length,
     research: { rawCandidates: raw.length, candidatesReviewed: candidates.length, sourcePagesRead: pagesRead, primaryDatesChecked: primaryDatesRead,
-      rejected: checks.filter(r => r.error).length, qualifying: stories.length, targetCandidates: 20,
+      rejected: checks.filter(r => r.error).length, qualifying: stories.length, eventDatesVerified:stories.filter(s => s.eventDateVerified).length,
+      eventDatesUnconfirmed:stories.filter(s => !s.eventDateVerified).length,
+      rejectionReasons:checks.filter(r => r.error).reduce((out,r) => ({...out,[r.error]:(out[r.error] || 0)+1}),{}), targetCandidates: 20,
       method: 'Live publisher feeds, original source pages, explicit event-date evidence and Crossref publication dates; automated weighted ranking; attributed source excerpts.' },
   };
 }

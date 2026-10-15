@@ -108,7 +108,9 @@ export function rankStories(items, now = new Date(), options = {}) {
     const age = (+now - Date.parse(story.publishedAt)) / 3600000;
     const eventAge = story.eventDate ? (+now - Date.parse(story.eventDate.length === 10 ? `${story.eventDate}T12:00:00Z` : story.eventDate)) / 3600000 : age;
     const text = `${story.title} ${story.originalSummary || story.summary}`;
-    if (!Number.isFinite(age) || age < -1 || age > 48 || eventAge > 48 || eventAge < -24 || trivial.test(story.title) || hype.test(story.title)) continue;
+    const maxAge = options.maxAgeHours ?? 48;
+    if (!Number.isFinite(age) || age < -1 || age > maxAge || eventAge > maxAge || eventAge < -24 || trivial.test(story.title) || hype.test(story.title)
+      || /\b(APOD|picture of the day|photo of the day|week in pictures|crossword)\b/i.test(story.title)) continue;
     if (routine.test(story.title) && !(extraordinary.test(text) && consequences.test(text))) continue;
     if (routinePolitics.test(story.title) && !/\b(coup|overthrown|overturned|assassination|unprecedented|first-ever|record-breaking)\b/i.test(story.title)) continue;
     if (['Technology', 'Business', 'Education'].includes(story.category) && personnel.test(story.title)) continue;
@@ -116,7 +118,7 @@ export function rankStories(items, now = new Date(), options = {}) {
     if (/\/videos\//.test(story.url || '')) continue;
     if (options.requireVerified && (!story.eventDateVerified || !story.eventDate || !story.dateEvidence)) continue;
     const { score, dimensions } = interestScore(story);
-    if (['Science', 'Technology'].includes(story.category) && dimensions.surprise < 65 && dimensions.consequence < 60) continue;
+    if (!options.broad && ['Science', 'Technology'].includes(story.category) && dimensions.surprise < 65 && dimensions.consequence < 60) continue;
     if (score < (options.minScore ?? 32)) continue;
     const freshness = age <= 24 && eventAge <= 24 ? '24h' : '48h';
     const old = unique.get(story.id);
@@ -156,6 +158,36 @@ export function selectBriefing(stories, { key, history = {}, previousSources = [
     selected.push(story);
     if (selected.length === 5) break;
   }
+  return selected;
+}
+
+// Quantity is now a product requirement. Prefer new verified developments,
+// then checked reporting with an explicitly unknown event date, then catch-up
+// reporting and finally the real previously published edition. Never invent
+// a date or disguise a carried story as a new development.
+export function completeBriefing(stories, { key, history = {}, previousSources = [], now = new Date(), fallback = [], editionKey = key } = {}) {
+  const checked = s => s && typeof s.id === 'string' && typeof s.title === 'string'
+    && typeof s.source === 'string' && /^https:\/\//.test(s.url || '') && Number.isFinite(Date.parse(s.publishedAt))
+    && (s.sourcePageChecked || s.eventDateVerified) && (s.explanation || s.summary || '').trim().length > 40
+    && !/\b(APOD|picture of the day|photo of the day)\b/i.test(s.title);
+  const prior = Object.values(history).filter(h => h.editionKey && h.editionKey !== key);
+  const unseen = s => !s.carriedForward && (!s.selectedEdition || s.selectedEdition === key)
+    && (!prior.some(h => h.id === s.id || h.title && similarStories(h,s)) || s.majorUpdateVerified);
+  const current = editionKey === key ? stories.filter(checked) : [];
+  const selected = [];
+  const add = (items, flags) => {
+    for (const s of items) {
+      if (selected.length === 5) break;
+      if (selected.some(old => similarStories(old,s))) continue;
+      selected.push({ ...s, ...flags });
+    }
+  };
+  add(selectBriefing(current.filter(unseen), { key, history, previousSources, now, requireVerified:true }), { carriedForward:false, olderReport:false, selectedEdition:key });
+  const broader = rankStories(current.filter(unseen), now, { broad:true, minScore:20, limit:100 });
+  add(broader, { carriedForward:false, olderReport:false, selectedEdition:key });
+  const catchup = rankStories(current.filter(unseen), now, { broad:true, minScore:20, maxAgeHours:168, limit:100 });
+  add(catchup, { carriedForward:false, olderReport:true, selectedEdition:key });
+  add([...stories, ...fallback].filter(checked).sort((a,b) => Date.parse(b.publishedAt)-Date.parse(a.publishedAt)), { carriedForward:true });
   return selected;
 }
 
