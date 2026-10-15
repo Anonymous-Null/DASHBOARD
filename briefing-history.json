@@ -1,5 +1,14 @@
 {
   "seen": {
+    "https://science.nasa.gov/image-article/apod-2026-october-15-the-milky-way-over-manhattan/": {
+      "id": "https://science.nasa.gov/image-article/apod-2026-october-15-the-milky-way-over-manhattan/",
+      "title": "APOD: 2026 October 15 – The Milky Way over Manhattan",
+      "source": "NASA",
+      "eventDate": "2026-10-15",
+      "eventRevision": "2026-10-15:Research announced",
+      "editionKey": "2026-10-15-am",
+      "seenAt": "2026-10-15T15:03:31.995Z"
+    },
     "https://www.bbc.co.uk/news/articles/crje5we583qwo": {
       "id": "https://www.bbc.co.uk/news/articles/crje5we583qwo",
       "title": "Australia's first-ever Michelin stars go to 11 restaurants in one state",
@@ -119,6 +128,12 @@
     }
   },
   "editions": [
+    {
+      "key": "2026-10-15-am",
+      "sources": [
+        "NASA"
+      ]
+    },
     {
       "key": "2026-10-14-pm",
       "sources": [
