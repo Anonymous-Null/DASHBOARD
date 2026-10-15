@@ -701,12 +701,29 @@ const NEWS_WEIGHTS = { surprise: 0.35, consequence: 0.30, novelty: 0.20, relevan
 
 function interestScore(story) {
   const text = `${story.title} ${story.originalSummary || story.summary}`;
+  // Reward a concrete twist or consequence, not a science/AI topic alone.
+  const contradiction = /\b(couldn['’]t|cannot|can['’]t|unable to) fly\b|\b(challenges?|overturns?|contradicts?)\b.{0,65}\b(assumptions?|theor\w*|understanding|beliefs?)\b|\b(thought extinct|survived without|evolved away from)\b/i.test(text);
+  const securityResponse = /\b(cybersecurity|cyberattacks?|hacking|software vulnerabilities)\b/i.test(text)
+    && /\b(hired|hires?|added|deploys?)\b.{0,45}\b([1-9][\d,]{2,}|thousands?)\b/i.test(text);
+  const crisis = /\b(protests?|demonstrations?)\b/i.test(text)
+    && /\b(injured|killed|resignation|political crisis|government falls)\b/i.test(text);
+  const everydayChange = /\b(approved|approval|can finally buy|newly available)\b/i.test(text)
+    && /\b(sunscreen|medicine|treatment|vaccine|hearing aids?)\b/i.test(text);
+  const abstractMechanism = /\b(spin defects?|internal conversion|quantum material|electrical regions|learning machinery)\b/i.test(text);
+  const practicalResult = /\b(patients?|clinical trial|power homes|drinking water|food supply|cuts? costs?|lives? saved)\b/i.test(text);
   const dimensions = {
     surprise: extraordinary.test(text) ? 90 : /\b(discover\w*|myster\w*|record|defies|unexpected|ceasefire|coup|overthrown|resigns|overturned|collapse)\b/i.test(text) ? 65 : 15,
     consequence: consequences.test(text) ? 90 : /\b(climate|energy|health|disease|cancer|privacy|hack|security|financial aid|student loan|cost)\b/i.test(text) ? 60 : 20,
     novelty: novelty.test(text) ? 85 : /\b(new law|new policy|unexpected decision|peace deal|ceasefire|coup|overthrown)\b/i.test(text) ? 65 : 15,
     relevance: interests.test(text) ? 90 : 10,
   };
+  if (contradiction) dimensions.surprise = 95;
+  if (securityResponse || crisis) { dimensions.consequence = 95; dimensions.surprise = Math.max(dimensions.surprise, 75); }
+  if (everydayChange) { dimensions.consequence = Math.max(dimensions.consequence, 75); dimensions.surprise = Math.max(dimensions.surprise, 65); }
+  if (abstractMechanism && !practicalResult && !contradiction) {
+    dimensions.surprise = Math.min(dimensions.surprise, 25);
+    dimensions.consequence = Math.min(dimensions.consequence, 20);
+  }
   const score = Object.entries(NEWS_WEIGHTS).reduce((sum, [key, weight]) => sum + dimensions[key] * weight, 0);
   return { score, dimensions };
 }
@@ -771,7 +788,7 @@ function selectBriefing(stories, { key, history = {}, previousSources = [], avoi
 }
 
 // Quantity is now a product requirement. Prefer new verified developments,
-// then checked reporting with an explicitly unknown event date, then catch-up
+// including checked reporting with an explicitly unknown event date, then catch-up
 // reporting and finally the real previously published edition. Never invent
 // a date or disguise a carried story as a new development.
 function completeBriefing(stories, { key, history = {}, previousSources = [], now = new Date(), fallback = [], editionKey = key } = {}) {
@@ -791,8 +808,12 @@ function completeBriefing(stories, { key, history = {}, previousSources = [], no
       selected.push({ ...s, ...flags });
     }
   };
-  add(selectBriefing(current.filter(unseen), { key, history, previousSources, now, requireVerified:true }), { carriedForward:false, olderReport:false, selectedEdition:key });
   const broader = rankStories(current.filter(unseen), now, { broad:true, minScore:20, limit:100 });
+  // Date confidence breaks close ties; it must not override editorial interest.
+  broader.sort((a,b) => {
+    const value = s => s.score + (s.freshness === '24h' ? 6 : 0) + (s.eventDateVerified ? 2 : 0) + (previousSources.includes(s.source) ? 0 : 2);
+    return value(b) - value(a);
+  });
   add(broader, { carriedForward:false, olderReport:false, selectedEdition:key });
   const catchup = rankStories(current.filter(unseen), now, { broad:true, minScore:20, maxAgeHours:168, limit:100 });
   add(catchup, { carriedForward:false, olderReport:true, selectedEdition:key });
