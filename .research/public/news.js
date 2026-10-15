@@ -168,7 +168,7 @@ export function selectBriefing(stories, { key, history = {}, previousSources = [
 export function completeBriefing(stories, { key, history = {}, previousSources = [], now = new Date(), fallback = [], editionKey = key } = {}) {
   const checked = s => s && typeof s.id === 'string' && typeof s.title === 'string'
     && typeof s.source === 'string' && /^https:\/\//.test(s.url || '') && Number.isFinite(Date.parse(s.publishedAt))
-    && (s.sourcePageChecked || s.eventDateVerified) && (s.explanation || s.summary || '').trim().length > 40
+    && (s.sourcePageChecked || s.eventDateVerified) && typeof (s.explanation || s.summary) === 'string' && (s.explanation || s.summary).trim().length > 40
     && !/\b(APOD|picture of the day|photo of the day)\b/i.test(s.title);
   const prior = Object.values(history).filter(h => h.editionKey && h.editionKey !== key);
   const unseen = s => !s.carriedForward && (!s.selectedEdition || s.selectedEdition === key)

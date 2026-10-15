@@ -32,6 +32,8 @@ export function eventDateInText(text, publishedAt, { title = '', category = '' }
   for (let i = 0; i < sentences.length; i++) {
     const sentence = sentences[i];
     if (!eventVerb.test(sentence) || future.test(sentence) || sentence.length > 1000) continue;
+    if (/\b(denied|denies|deny|did not|didn't|had not|hadn't|no evidence|unconfirmed)\b/i.test(sentence)
+      || /^(Earlier|Previously|Meanwhile|Separately|In a separate|In another)\b/i.test(sentence)) continue;
     // A date for an incidental event elsewhere in the article cannot establish
     // when the headline development happened. Allow the preceding sentence to
     // supply context for phrases such as "the findings were published today".
@@ -183,9 +185,12 @@ export async function researchNews({ fetcher = fetch, now = new Date(), previous
       try { primary = await paperDate(article.dois[0], fetcher); } catch { date = null; }
       if (primary) { primaryDatesRead++; date = { date: primary.date, kind: 'Study published', evidence: `The study cited by the source, “${primary.title}”, was first published on ${primary.date}.`, url: primary.url }; }
     }
-    if (!date && ['MIT News','NASA'].includes(story.source) && !/\/(photojournal|image-article)\//.test(story.url) && article.publishedAt) {
+    if (!date && (story.source === 'MIT News' || story.source === 'NASA' && story.url.includes('/news-release/')) && article.publishedAt) {
       date = { date: dayOf(article.publishedAt), kind: 'Research announced', evidence: `The institution's original announcement is dated ${dayOf(article.publishedAt)}.`, url: story.url };
     }
+    // Journal issue dates can be in the future even when reporting is already
+    // available. Keep the report, but don't claim that future date as an event.
+    if (date && date.date > now.toISOString().slice(0,10)) date = null;
     const eventTime = date ? Date.parse(date.date + 'T12:00:00Z') : Date.parse(publishedAt);
     const age = (+now - eventTime) / 3600000;
     if (!Number.isFinite(age) || age < -24 || age > 168) throw new Error('The actual event/announcement is more than a week old');

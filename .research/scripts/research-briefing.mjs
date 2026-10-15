@@ -28,7 +28,7 @@ news.minimumStories = 5;
 news.freshCount = selected.filter(s => !s.carriedForward && !s.olderReport).length;
 news.carriedCount = selected.filter(s => s.carriedForward).length;
 news.olderCount = selected.filter(s => s.olderReport && !s.carriedForward).length;
-news.reserveStories = [...new Map([...selected, ...reserve].map(s => [s.id,s])).values()].slice(0,30);
+news.reserveStories = [...selected, ...reserve].filter((s,i,all) => all.findIndex(old => old.id === s.id) === i).slice(0,30);
 news.selectedIds = selected.map(s => s.id);
 // Publish the actual selected edition. Alternative candidates must not let a
 // browser reintroduce cross-publisher copies rejected by shared story history.
